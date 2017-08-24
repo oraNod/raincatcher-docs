@@ -27,7 +27,7 @@ functionality required to get started.
 
 == Implementing UserRepository
 
-Passport.js requires developers to implement UserRepository that will be used by framework to
+Passport.js requires developers to implement link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/interfaces/_src_user_userrepository_.userrepository.html++[UserRepository] that will be used by framework to
 fetch user data. UserRepository requires that users data will contain at least username and passwordHash.
 
 For end to end implementation of UserRepository please follow our example app:
