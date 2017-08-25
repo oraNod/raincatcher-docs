@@ -11,9 +11,14 @@ Keycloak has role based access control. This can be configured on the Keycloak s
 link:https://keycloak.gitbooks.io/documentation/server_admin/topics/roles.html[roles administration] for more information.
 
 == Password Storage
-Keycloak stores passwords on the Keycloak server.
+With the default configured Keycloak can secure passwords on the Keycloak server. Access to user passwords is restricted.
+Keycloak can be configured to use link:https://keycloak.gitbooks.io/documentation/server_admin/topics/identity-broker.html[external providers]
+like *OAuth/SAML/Open ID Connect* or link:https://keycloak.gitbooks.io/documentation/server_admin/topics/user-federation.html[user federation]
+a *ldap/Kerberous*. So it is not always the case that passwords are store on the Keycloak server.
 
 == Authentication
-Keycloak has a wide variety of Authentication mechanisms available to it.
+Keycloak has a wide variety of Authentication mechanisms available to it see the
+link:https://keycloak.gitbooks.io/documentation/server_admin/topics/authentication.html[Keycloak Documentation].
 
-== Authorization
+== Authorisation
+Is documented fully in the link:https://keycloak.gitbooks.io/documentation/authorization_services/index.html[Keycloak Documentaion]
