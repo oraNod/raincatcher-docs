@@ -56,17 +56,19 @@ The _rhmap_ and _upstream-1_ folder have access to the _topics_ folder via a sym
 
 === Building the Community Edition
 
-The *master.adoc* file is the only file to build when rendering the files into text.
-Build the example located in the _upstream-1_ folder:
+Command line tool created.
+Setup required packages (Node.js/npm required)
 
-    gem install asciidoctor
-    git checkout gh-pages
-    cd docs/workforce-management-framework/upstream-1
-    asciidoctor master.adoc
-    cp master.html ../../index.html
-    git commit -a -m"Pages update"
-    git push origin +gh-pages
-    
+    npm install
+
+Publishing 
+
+    npm run buildAsciiDocs
+    npm run buildApiDocs
+    npm run publish   
+
+NOTE: _ascidoctor_ needs to be installed on machine. To install asciidoctor run _gem install asciidoctor_
+
 === Creating Anchors and xrefs
 
 ==== Dynamic Anchor and Dynamic xref
