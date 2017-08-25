@@ -1,0 +1,80 @@
+[id='enable-keycloak-integration-{chapter}']
+= Enable Keycloak Integration
+
+The {WFM-RC-NameLong} Demo Applications allow for Authentication and Access Management using
+link:http://www.keycloak.org/index.html[Keycloak].
+The {WFM-RC-NameLong} Keycloak integration is situated inside of the Demo Applications.
+
+By default, the Keycloak Authentication and Access Management is not setup with the Demo Applications.
+A {WFM-RC-NameLong} Keycloak Docker image has been created to allow easy deployment of a Keycloak server configured
+with the {WFM-RC-NameLong} demo data.
+
+== Run Keycloak Docker image
+
+The image is published to docker hub
+
+    docker run -p 8080:8080 feedhenry/raincatcher-keycloak
+
+For more information on this docker image see the docker image link:https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/master/README.md[README.md]
+
+[[enabling-the-keycloak-demo-server]]
+== Enabling Keycloak on the Demo Server
+The following steps are for using the pre-configured docker image. If you wish to configure your own
+instance of Keycloak see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
+
+- login into the Keycloak server via a browser using the following URL
+
+    http://localhost:8080/auth/
+
+- Click on `client` on the left menu
+- Select raincatcher-cloud from the list
+- Select `installation` from the selection bar at the top of the screen
+- From the `Format Options` drop down select `Keycloak OIDC JSON`
+- JSON Data similar to below will render (this data depends on the configuration of the Keycloak server and can vary)
+
+    {
+      "realm": "raincatcher",
+      "auth-server-url": "http://localhost:8080/auth",
+      "ssl-required": "external",
+      "resource": "raincatcher-cloud",
+      "public-client": true,
+      "use-resource-role-mappings": true
+    }
+
+- Create a new JSON object "keycloakConfig": with the data copied from the previous step
+- Add this object to your production or development environment by editing the relevant file in the Demo Application
+
+link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/master/demo/server/config-dev.json[raincatcher-core/demo/server/config-dev.json]
+
+link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/master/demo/server/config-prod.json[raincatcher-core/demo/server/config-prod.json]
+
+- Some small changes to the mobile and and portal applications are required to disable passportAuth and enable Keycloak
+
+Change the following file link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/master/demo/mobile/src/app/app.js[raincatcter-angularjs/demo/mobile/src/app/app.js]
+
+    // Comment to disable passport auth
+    require('@raincatcher/demo-auth-passport')('wfm-mobile'),
+    // Uncomment to enable Keycloak
+    // require('../keycloak');
+
+As above change the following file link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/master/demo/portal/src/app/main.js[raincatcher-angularjs/demo/portal/src/app/main.js]
+
+    // Comment
+    require('@raincatcher/demo-auth-passport')('app'),
+    // Uncomment
+    // require('./keycloak');
+
+
+- Routes will now be protected with Keycloak
+
+== Reference Keycloak
+
+To login into Keycloak Docker image navigate to http://localhost:8080/auth/ login as the admin user using the following credentials:
+
+    Username: admin
+    Password: admin
+
+
+
+
+

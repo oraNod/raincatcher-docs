@@ -20,6 +20,3 @@ include::introducing-raincatcher.adoc[leveloffset=+2]
 include::running-the-demo-app.adoc[leveloffset=+2]
 
 
-
-
-
