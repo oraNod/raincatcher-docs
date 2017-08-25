@@ -1,7 +1,11 @@
 []
 = {WFM-RC-NameShort} Passport.js integration module
 Link to
+<<<<<<< HEAD
 link:https://github.com/feedhenry-raincatcher/raincatcher-core/tree/{WFM-RC-Branch}/cloud/passportauth[passportAuth] module.
+=======
+link:https://github.com/feedhenry-raincatcher/raincatcher-core/tree/master/cloud/passportauth[passportAuth] module.
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
 
 {WFM-RC-NameShort} authentication and authorisation module using link:http://passportjs.org[PassportJS].
 The Passport.js module is the default security module for {WFM-RC-NameShort}.
@@ -12,6 +16,7 @@ Passport.js offers comprehensive set of strategies that support authentication u
 Twitter, and more.
 This module allows:
 
+<<<<<<< HEAD
 - Access Control of Express routes
 - Authorisation insures access to routes based on currently authenticated user and role.
 - Authentication using the link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategy}[default strategy]
@@ -25,11 +30,24 @@ It is an out of the box security solution for default integration using static j
 The sample users and access roles are defined in a JSON file for Demo purposes in the
 link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/data/src/users.json[Demo Data]
 To use different source please follow guide bellow.
+=======
+- Authorisation insures access to routes based on currently authenticated user and role.
+- Authentication the process of verifying the identity of a user using the link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/modules/_src_auth_defaultstrategy_.html++[default strategy]
+- Storing user sessions using link:https://github.com/expressjs/session[express-session]
+- Default strategy using cookies and username and password.
+
+
+== Configuration of PassportAuth module
+As the PassportAuth module is the default security module it is install as part of running the Demo App.
+Demo application starts with Passport module enabled by default. It is an out of the box security solution for
+Default integration using static json files as user source. To use different source please follow guide bellow.
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
 {WFM-RC-NameShort}. Passport.js is a lightweight solution that offers all the
 functionality required to get started.
 
 == Implementing UserRepository
 
+<<<<<<< HEAD
 Passport.js requires developers to implement the link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[UserRepository]
 interface that will be used by framework to fetch user data. UserRepository requires that users data will contain at least
 username and password.
@@ -42,11 +60,17 @@ The link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strat
 module implements the Passport.js local strategy. As a developer you may wish to
 use a different security strategy with the passport.js implementation. You can override the
 link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[PassportAuth.setup] method to
+=======
+Passport.js requires developers to implement link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/interfaces/_src_user_userrepository_.userrepository.html++[UserRepository] that will be used by framework to
+fetch user data. UserRepository requires that users data will contain at least username and passwordHash.
+
+For end to end implementation of UserRepository please follow our example app:
+link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[example]
+
+== Strategy Customisation
+The link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/modules/_src_auth_defaultstrategy_.html++[default strategy] for the PassportAuth
+module implements the Passport.js local strategy. As a developer you may wish
+use a different security strategy with the passport.js implementation. You can override the
+link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/classes/_src_auth_passportauth_.passportauth.html#setup++[PassportAuth.setup] method to
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
 implement any strategy supported by Passport.js.
-
-
-
-== Implementation and Usage
-For implementation and usage see the
-link:{WFM-RC-Github-Core}{WFM-RC-PassportAuth-Example}[example] part
-of the PassportAuth module.

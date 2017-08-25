@@ -1,0 +1,70 @@
+[id='Security-Strategy-Passport.js-{chapter}']
+= Security Strategy for {WFM-RC-NameShort} PassportAuth
+
+== Session Management
+Session middleware is provided using the `express-session` module.
+Visit link:https://github.com/expressjs/session[express-session] to find more information about the available express
+session options.
+
+== Access Control
+The PassportAuth module allows role based access control. Routes are protected by role as shown in the example.
+<<<<<<< HEAD
+The authService is an implementation of the
+link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[passportAuth]
+=======
+See authService is an implementation of the
+link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/classes/_src_auth_passportauth_.passportauth.html++[passportAuth]
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
+in the reference application.
+
+[source,typescript]
+----
+app.get('/testAdminEndpoint', authService.protect('admin'), (req: express.Request, res: express.Response) => {
+  res.json({ routeName: '/testAdminEndpoint', msg: 'authorized to access admin endpoint' });
+});
+
+----
+Demo roles are defined as an array in link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/data/src/users.json[user.json].
+
+
+== Password Storage
+
+Passport module has build UserRepository interface that can be used to point to user data.
+Passwords are stored in datasource that is being configured by developers (possibly external service).
+To point Passport to user datasource you need to implement the
+<<<<<<< HEAD
+link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}#getuserbylogin++[user repository interface]
+=======
+link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/interfaces/_src_user_userrepository_.userrepository.html#getuserbylogin++[user repository interface]
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
+
+== Authentication
+From a development point of view {WFM-RC-NameShort} uses the Default Strategy for username/password authentication. Authentication is done on the cloud
+server. Passport authentication service is using a default custom strategy that is based on Passport.js local strategy.
+Passport's local strategy is agnostic about database type.
+
+Passports using
+<<<<<<< HEAD
+link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}#authenticate[authenticate]
+middleware for accepting user credentials and creates session entry that holds user.
+=======
+link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/interfaces/_src_auth_passportauth_.endpointsecurity.html#authenticate++[authenticate] middleware for accepting user credentials and creates session entry that holds user.
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
+To access routes user need to login using their credentials. Cookie containing user session key will be used to
+authenticate and authorize user requesting server endpoint.
+
+NOTE: For demo the login post route has an authenticate method that checks the userId and password
+against the stored user.json file it also checks the user role against the stored role on user.json.
+
+See link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[example]
+
+== Authorization
+Authorization is being supported thanks to
+<<<<<<< HEAD
+link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}#protect[protect]
+=======
+link:++../../../api/{WFM-RC-Api-Version}/auth-passport/docs/interfaces/_src_auth_passportauth_.endpointsecurity.html#protect++[protect]
+>>>>>>> 7298ea7e2a4974ac208bc7711de935cd5cc8efc9
+middleware that validates user session id against session and checks permissions.
+
+
