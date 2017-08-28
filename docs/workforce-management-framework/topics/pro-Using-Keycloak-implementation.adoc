@@ -1,15 +1,15 @@
 [id='enable-keycloak-integration-{chapter}']
-= Enable Keycloak Integration
+= Enable {WFM-RC-KeycloakName} Integration
 
 The {WFM-RC-NameLong} Demo Applications allow for Authentication and Access Management using
-link:http://www.keycloak.org/index.html[Keycloak].
-The {WFM-RC-NameLong} Keycloak integration is situated inside of the Demo Applications.
+link:http://www.keycloak.org/index.html[{WFM-RC-KeycloakName}].
+The {WFM-RC-NameLong} {WFM-RC-KeycloakName} integration is situated inside of the Demo Applications.
 
-By default, the Keycloak Authentication and Access Management is not setup with the Demo Applications.
-A {WFM-RC-NameLong} Keycloak Docker image has been created to allow easy deployment of a Keycloak server configured
+By default, the {WFM-RC-KeycloakName} Authentication and Access Management is not setup with the Demo Applications.
+A {WFM-RC-NameLong} {WFM-RC-KeycloakName} Docker image has been created to allow easy deployment of a {WFM-RC-KeycloakName} server configured
 with the {WFM-RC-NameLong} demo data.
 
-== Run Keycloak Docker image
+== Run {WFM-RC-KeycloakName} Docker image
 
 The image is published to docker hub
 
@@ -18,14 +18,14 @@ The image is published to docker hub
 For more information on this docker image see the docker image link:https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/{WFM-RC-Branch}/README.md[README.md].
 
 NOTE: This image is not production ready its for demonstration purpose only . If you wish to configure your own
-instance of Keycloak see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
+instance of {WFM-RC-KeycloakName} see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
 
 [[enabling-the-keycloak-demo-server]]
-== Enabling Keycloak on the Demo Server
+== Enabling {WFM-RC-KeycloakName} on the Demo Server
 
-The following steps are for using the pre-configured docker image but will work for any instance of Keycloak.
+The following steps are for using the pre-configured docker image but will work for any instance of {WFM-RC-KeycloakName}.
 
-- login into the Keycloak server via a browser using the following URL
+- login into the {WFM-RC-KeycloakName} server via a browser using the following URL
 
     http://localhost:8080/auth/
 
@@ -33,7 +33,7 @@ The following steps are for using the pre-configured docker image but will work 
 - Select raincatcher-cloud from the list
 - Select `installation` from the selection bar at the top of the screen
 - From the `Format Options` drop down select `Keycloak OIDC JSON`
-- JSON Data similar to below will render (this data depends on the configuration of the Keycloak server and can vary)
+- JSON Data similar to below will render (this data depends on the configuration of the {WFM-RC-KeycloakName} server and can vary)
 
     {
       "realm": "raincatcher",
@@ -53,7 +53,7 @@ link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Bran
 
 Note: There is partially implemented of the `keycloakConfig` object at `raincatcher-core/demo/server/config-prod.json` as an example.
 
-- Some small changes to code the mobile and and portal applications are required to disable passportAuth and enable Keycloak
+- Some small changes to code the mobile and and portal applications are required to disable passportAuth and enable {WFM-RC-KeycloakName}
 
 Change the following file link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/{WFM-RC-Branch}/demo/mobile/src/app/app.js[raincatcter-angularjs/demo/mobile/src/app/app.js]
 [source,javascript]
@@ -72,11 +72,11 @@ As above change the following file link:https://github.com/feedhenry-raincatcher
     // require('./keycloak');
 ----
 
-- Routes will now be protected with Keycloak
+- Routes will now be protected with {WFM-RC-KeycloakName}
 
-== Reference Keycloak
+== Reference {WFM-RC-KeycloakName}
 
-To login into Keycloak Docker image navigate to http://localhost:8080/auth/ login as the admin user using the following credentials:
+To login into {WFM-RC-KeycloakName} Docker image navigate to http://localhost:8080/auth/ login as the admin user using the following credentials:
 
     Username: admin
     Password: admin

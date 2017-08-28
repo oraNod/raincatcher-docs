@@ -1,27 +1,28 @@
 [id='Security-Strategy-Keycloak-{chapter}']
-= Security Strategy for {WFM-RC-NameShort} Keycloak
+= Security Strategy for {WFM-RC-NameShort} {WFM-RC-KeycloakName}
 
 == Session Management
-Keycloak uses the Express middleware `Express Sessions` module for the {WFM-RC-NameShort} cloud server.
+{WFM-RC-KeycloakName} uses the Express middleware `Express Sessions` module for the {WFM-RC-NameShort} cloud server.
 Visit link:https://github.com/expressjs/session[express-session] to find more information about the available express
 session options.
-One of the key functions of Keycloak is you can administer sessions on the
-link:https://keycloak.gitbooks.io/documentation/server_admin/topics/sessions/administering.html[Keycloak server]
+One of the key functions of {WFM-RC-KeycloakName} is you can administer sessions on the
+link:{WFM-RC-KeycloakURL}server_admin/topics/sessions/administering.html[Keycloak server]
 
 == Access Control
-Keycloak has role based access control. This can be configured on the Keycloak server see
-link:https://keycloak.gitbooks.io/documentation/server_admin/topics/roles.html[roles administration] for more information.
+Keycloak has role based access control. This can be configured on the {WFM-RC-KeycloakName} server see
+link:{WFM-RC-KeycloakURL}server_admin/topics/roles.html[roles administration] for more information.
 
 == Password Storage
-With the default configuration of Keycloak passwords are stored on the Keycloak server. Access to user passwords is restricted.
-Keycloak has a number of Password Policy available which are documented on the link:https://keycloak.gitbooks.io/documentation/server_admin/topics/authentication/password-policies.html[password policy documentation].
-Keycloak can be configured to use link:https://keycloak.gitbooks.io/documentation/server_admin/topics/identity-broker.html[external providers]
-like `OAuth/SAML/Open ID Connect` or link:https://keycloak.gitbooks.io/documentation/server_admin/topics/user-federation.html[user federation]
-with `ldap/Kerberous`. So it is not always the case that passwords are store on the Keycloak server.
+On {WFM-RC-KeycloakName} passwords are not stored as clear text. Instead they are hashed using standard hashing algorithms before they are stored or validated.
+{WFM-RC-KeycloakName} allows to control passwords implementation by link:{WFM-RC-KeycloakURL}server_admin/topics/authentication/password-policies.html[password policies].
+
+You may also look into related {WFM-RC-KeycloakName} documentation -
+link:{WFM-RC-KeycloakURL}server_admin/topics/identity-broker.html[identity-broker.html] and
+link:{WFM-RC-KeycloakURL}server_admin/topics/user-federation.html[user federation.html].
 
 == Authentication
-Keycloak has a wide variety of Authentication mechanisms available to it see the
-link:https://keycloak.gitbooks.io/documentation/server_admin/topics/authentication.html[authentication documentation].
+{WFM-RC-KeycloakName}  has a wide variety of Authentication mechanisms available to it see the
+link:{WFM-RC-KeycloakURL}server_admin/topics/authentication.html[authentication documentation].
 
 == Authorisation
-Authorisation is documented fully in the link:https://keycloak.gitbooks.io/documentation/authorization_services/index.html[authorisation documentation]
+Authorisation is documented fully in the link:{WFM-RC-KeycloakURL}authorization_services/index.html[authorisation documentation]
