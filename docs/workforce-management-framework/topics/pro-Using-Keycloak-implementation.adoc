@@ -17,13 +17,13 @@ The image is published to docker hub
 
 For more information on this docker image see the docker image link:https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/{WFM-RC-Branch}/README.md[README.md].
 
-NOTE: This image is not production ready its for demonstration purpose only
+NOTE: This image is not production ready its for demonstration purpose only . If you wish to configure your own
+instance of Keycloak see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
 
 [[enabling-the-keycloak-demo-server]]
 == Enabling Keycloak on the Demo Server
 
-The following steps are for using the pre-configured docker image. If you wish to configure your own
-instance of Keycloak see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
+The following steps are for using the pre-configured docker image but will work for any instance of Keycloak.
 
 - login into the Keycloak server via a browser using the following URL
 
