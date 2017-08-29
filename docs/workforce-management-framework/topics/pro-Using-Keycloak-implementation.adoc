@@ -38,12 +38,12 @@ provided you implement our Realm settings.
 - JSON Data similar to below will render (this data depends on the configuration of the {WFM-RC-KeycloakName} server and can vary)
 
     {
-      "realm": "raincatcher",
-      "auth-server-url": "http://localhost:8080/auth",
-      "ssl-required": "external",
-      "resource": "raincatcher-cloud",
-      "public-client": true,
-      "use-resource-role-mappings": true
+    "realm": "raincatcher",
+    "bearer-only": true,
+    "auth-server-url": "http://localhost:8080/auth",
+    "ssl-required": "external",
+    "resource": "raincatcher-cloud",
+    "use-resource-role-mappings": true
     }
 
 - Create a new field `"keycloakConfig":` with the data copied from the previous step

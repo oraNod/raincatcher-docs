@@ -19,6 +19,7 @@
 :WFM-RC-Version: 1.0.0
 :WFM-RC-NodeVersion: 6 LTS
 :WFM-RC-KeycloakName: Keycloak
+:WFM-RC-Branch: master
 
 :WFM-RC-KeycloakURL: https://keycloak.gitbooks.io/documentation/
 :WFM-RC-AngularJsURL: https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/

@@ -19,4 +19,3 @@ include::introducing-raincatcher.adoc[leveloffset=+2]
 == Getting Started with {WFM-RC-NameLong}
 include::running-the-demo-app.adoc[leveloffset=+2]
 
-
