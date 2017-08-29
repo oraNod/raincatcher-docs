@@ -15,15 +15,17 @@ The image is published to docker hub
 
     docker run -p 8080:8080 feedhenry/raincatcher-keycloak
 
-For more information on this docker image see the docker image link:https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/{WFM-RC-Branch}/README.md[README.md].
+For more information on this docker image see the docker image link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
 
-NOTE: This image is not production ready its for demonstration purpose only . If you wish to configure your own
-instance of {WFM-RC-KeycloakName} see the following link:https://keycloak.gitbooks.io/documentation/getting_started/topics/first-boot.html[getting started guide]
+NOTE: If you wish to configure your own instance of {WFM-RC-KeycloakName} see the following
+link:{WFM-RC-KeycloakURL}getting_started/topics/first-boot.html[getting started guide]. You will need to import our Realm
+settings by importing link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[/data_files/raincatcher-realm.json].
 
 [[enabling-the-keycloak-demo-server]]
 == Enabling {WFM-RC-KeycloakName} on the Demo Server
 
-The following steps are for using the pre-configured docker image but will work for any instance of {WFM-RC-KeycloakName}.
+The following steps are for using the pre-configured docker image but will work for any instance of {WFM-RC-KeycloakName}
+provided you implement our Realm settings.
 
 - login into the {WFM-RC-KeycloakName} server via a browser using the following URL
 
@@ -44,18 +46,18 @@ The following steps are for using the pre-configured docker image but will work 
       "use-resource-role-mappings": true
     }
 
-- Create a new JSON object `"keycloakConfig":` with the data copied from the previous step
+- Create a new field `"keycloakConfig":` with the data copied from the previous step
 - Add this object to your production or development environment by editing the relevant file in the Demo Application
 
-link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/config-dev.json[raincatcher-core/demo/server/config-dev.json]
+link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-dev.json[/demo/server/config-dev.json]
 
-link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/config-prod.json[raincatcher-core/demo/server/config-prod.json]
+link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-prod.json[/demo/server/config-prod.json]
 
-Note: There is partially implemented of the `keycloakConfig` object at `raincatcher-core/demo/server/config-prod.json` as an example.
+Note: There is partially implemented of the `keycloakConfig` object at `/demo/server/config-prod.json` as an example.
 
 - Some small changes to code the mobile and and portal applications are required to disable passportAuth and enable {WFM-RC-KeycloakName}
 
-Change the following file link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/{WFM-RC-Branch}/demo/mobile/src/app/app.js[raincatcter-angularjs/demo/mobile/src/app/app.js]
+Change the following file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/mobile/src/app/app.js[/demo/mobile/src/app/app.js]
 [source,javascript]
 ----
     // Comment to disable passport auth
@@ -63,7 +65,7 @@ Change the following file link:https://github.com/feedhenry-raincatcher/raincatc
     // Uncomment to enable Keycloak
     // require('../keycloak');
 ----
-As above change the following file link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/{WFM-RC-Branch}/demo/portal/src/app/main.js[raincatcher-angularjs/demo/portal/src/app/main.js]
+As above change the following file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/portal/src/app/main.js[/demo/portal/src/app/main.js]
 [source,javascript]
 ----
     // Comment to disable passport auth

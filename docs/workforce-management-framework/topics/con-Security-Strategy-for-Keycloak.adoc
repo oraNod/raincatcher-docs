@@ -5,7 +5,7 @@
 {WFM-RC-KeycloakName} uses the Express middleware `Express Sessions` module for the {WFM-RC-NameShort} cloud server.
 Visit link:https://github.com/expressjs/session[express-session] to find more information about the available express
 session options.
-One of the key functions of {WFM-RC-KeycloakName} is you can administer sessions on the
+One of the key functions of {WFM-RC-KeycloakName} is that you can administer sessions on the
 link:{WFM-RC-KeycloakURL}server_admin/topics/sessions/administering.html[Keycloak server]
 
 == Access Control
