@@ -11,15 +11,15 @@ with the {WFM-RC-NameLong} demo data.
 
 == Run {WFM-RC-KeycloakName} Docker image
 
-The image is published to docker hub
+The image is published to docker hub:
 
     docker run -p 8080:8080 feedhenry/raincatcher-keycloak
 
 For more information on this docker image see the docker image link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
 
 NOTE: If you wish to configure your own instance of {WFM-RC-KeycloakName} see the following
-link:{WFM-RC-KeycloakURL}getting_started/topics/first-boot.html[getting started guide]. You will need to import our Realm
-settings by importing link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[/data_files/raincatcher-realm.json].
+link:{WFM-RC-KeycloakURL}getting_started/topics/first-boot.html[getting started guide]. If you wish to use the demo application will need to import our Realm
+settings by importing link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[/data_files/raincatcher-realm.json] file.
 
 [[enabling-the-keycloak-demo-server]]
 == Enabling {WFM-RC-KeycloakName} on the Demo Server
@@ -27,27 +27,18 @@ settings by importing link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/
 The following steps are for using the pre-configured docker image but will work for any instance of {WFM-RC-KeycloakName}
 provided you implement our Realm settings.
 
-- login into the {WFM-RC-KeycloakName} server via a browser using the following URL
+- Create a new field `"keycloakConfig":` with the data below
 
-    http://localhost:8080/auth/
+    "keycloakConfig":{
+                        "realm": "raincatcher",
+                        "bearer-only": true,
+                        "auth-server-url": "http://localhost:8080/auth",
+                        "ssl-required": "external",
+                        "resource": "raincatcher-cloud",
+                        "use-resource-role-mappings": true
+                      }
 
-- Click on `client` on the left menu
-- Select raincatcher-cloud from the list
-- Select `installation` from the selection bar at the top of the screen
-- From the `Format Options` drop down select `Keycloak OIDC JSON`
-- JSON Data similar to below will render (this data depends on the configuration of the {WFM-RC-KeycloakName} server and can vary)
-
-    {
-    "realm": "raincatcher",
-    "bearer-only": true,
-    "auth-server-url": "http://localhost:8080/auth",
-    "ssl-required": "external",
-    "resource": "raincatcher-cloud",
-    "use-resource-role-mappings": true
-    }
-
-- Create a new field `"keycloakConfig":` with the data copied from the previous step
-- Add this object to your production or development environment by editing the relevant file in the Demo Application
+- Add this field to your production or development environment by editing the relevant file in the Demo Application
 
 link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-dev.json[/demo/server/config-dev.json]
 
@@ -78,7 +69,7 @@ As above change the following file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/dem
 
 == Reference {WFM-RC-KeycloakName}
 
-To login into {WFM-RC-KeycloakName} Docker image navigate to http://localhost:8080/auth/ login as the admin user using the following credentials:
+To login into {WFM-RC-KeycloakName} Admin Console, navigate to http://localhost:8080/auth/ and login as the admin user using the following credentials:
 
     Username: admin
     Password: admin
