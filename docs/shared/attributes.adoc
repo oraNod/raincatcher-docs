@@ -19,6 +19,7 @@
 :WFM-RC-Version: 1.0
 :WFM-RC-NodeVersion: 6 LTS
 :WFM-RC-Github-Core: https://github.com/feedhenry-raincatcher/raincatcher-core/tree/
+:WFM-RC-Github-CoreBlob: https://github.com/feedhenry-raincatcher/raincatcher-core/blob/
 :WFM-RC-Branch: master
 :WFM-RC-PassportAuth-Example: /cloud/passportauth/example
 //api url
