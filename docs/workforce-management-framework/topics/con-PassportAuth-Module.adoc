@@ -28,6 +28,9 @@ To use different source please follow guide bellow.
 {WFM-RC-NameShort}. Passport.js is a lightweight solution that offers all the
 functionality required to get started.
 
+NOTE: A new JSON Web Token secret needs to be generated to secure a production application. Add the token to jwtSecret field 
+of the link:{WFM-RC-Github-Core}{WFM-RC-Branch}/demo/server/config-prod.json [config-prod.json].
+
 == Implementing UserRepository
 
 Passport.js requires developers to implement the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[UserRepository]
