@@ -6,9 +6,9 @@ The {WFM-RC-NameLong} Logger Module is a logging facade for Node.js based applic
 == Developer usage
 
 The {WFM-RC-NameLong} Logger Module is contained in the `{WFM-RC-NameLong}-core` module. Developers can
-use there own loggers by wrapping them into provided interfaces. See link:{WFM-RC-CoreURL}{WFM-RC-Branch}/cloud/logger/src/Logger.ts[Logger.ts] for more information on interface structure.
+use there own loggers by wrapping them into provided interfaces. See link:{WFM-RC-Github-CoreBlob}{WFM-RC-Branch}/common/logger/src/Logger.ts[Logger.ts] for more information on interface structure.
 There are two implementations of the logger interface within the logger module for use with our Demo application.
-For usage of these implementation see the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/cloud/logger/example/index.ts[example]
+For usage of these implementation see the link:{WFM-RC-Github-CoreBlob}{WFM-RC-Branch}/common/logger/example/index.ts[example]
 
 
 
