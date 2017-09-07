@@ -12,14 +12,25 @@ image::https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/
 == Introducing {WFM-RC-NameLong}
 include::introducing-raincatcher.adoc[leveloffset=+2]
 
-//[[preparing-the-local-development-environment]]
-//== Preparing the Local Development Environment
-
 [[getting-started]]
 == Getting Started with {WFM-RC-NameLong}
 include::running-the-demo-app.adoc[leveloffset=+2]
 
 
+[[programming-a-raincatcher-project]]
+== Programming a {WFM-RC-NameShort} Project
+
+[[Security]]
+== Security
+include::security.adoc[leveloffset=+2]
+
+[[DataSync]]
+== DataSync
+include::topics/con-datasync-module.adoc[leveloffset=+2]
+
+[[Logging]]
+== Logging
+include::topics/con-logging.adoc[leveloffset=+2]
 
 
-
+include::topics/shared/templates/revision-info.adoc[]

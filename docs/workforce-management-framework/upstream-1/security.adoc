@@ -1,0 +1,15 @@
+include::topics/shared/attributes.adoc[]
+
+//':chapter:' is a vital parameter. See: http://asciidoctor.org/docs/user-manual/#include-multiple
+:chapter: Security
+
+//Concepts
+include::topics/con-security-introduction.adoc[leveloffset=+0]
+include::topics/con-PassportAuth-Module.adoc[leveloffset=+0]
+include::topics/pro-Using-Keycloak-implementation.adoc[leveloffset=+0]
+include::topics/pro-Keycloak-implementation.adoc[leveloffset=+0]
+include::topics/con-Security-Strategy-for-PassportAuth.adoc[leveloffset=+0]
+include::topics/con-Security-Strategy-for-Keycloak.adoc[leveloffset=+0]
+
+//References
+//include::topics/ref-introducing-raincatcher.adoc[leveloffset=+1]

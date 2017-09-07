@@ -1,0 +1,39 @@
+= {WFM-RC-NameLong} Datasync
+
+As with all synchronisation tasks Datasync is made up of a cloud and client sides. 
+The cloud is implemented with the Datasync cloud module and client is implemented with the Datasync client module. 
+These are a implementation of the Sync Framework for advanced usage see the 
+link:{WFM-RC-SyncFrameworkURL}{WFM-RC-Branch}/docs[sync framework documentation]. 
+The primary funtion of Datasync is to synchronise mobile data between mobile(client) and a backend server(cloud).
+The key features of Datasync are as follows:
+
+- Allows synchronisation of WFM workorder data between the {WFM-RC-NameLong} mobile client and the {WFM-RC-NameLong} cloud server.
+- Allows mobile apps to use and update data offline (local cache)
+- Provides a mechanism to manage bi-directional data synchronization from multiple Client Apps via the Cloud App and into back-end data stores
+- Allows data updates (that is, deltas) to be distributed from the Cloud App to connected clients
+- Provides facilities for managing data collisions from multiple updates in the cloud
+
+This service effectively allows Sync Apps to seamlessly continue working when the network connection is lost, and allow them to recover when the network connection is restored.
+
+== {WFM-RC-NameLong} Datasync cloud
+Datasync cloud has to be used in conjunction with the Datasync client applications.
+{WFM-RC-NameLong} Datasync cloud is a wrapper for the  link:https://github.com/feedhenry/fh-sync[Datasync server].
+This module creates server side service that allows mobile applications to sync offline data to preferred database.
+By default server connects and stores all client data in mongodb database. 
+
+=== Implementation of {WFM-RC-NameLong} Datasync cloud
+
+See the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/cloud/datasync/README.md[README.MD] for instructions on implementation of the Datasync cloud.
+
+See a usage at link:{WFM-RC-CoreUrl}{WFM-RC-Branch}/cloud/datasync/example/index.ts[example].
+
+
+== {WFM-RC-NameLong} Datasync client 
+Datasync client requres a Express web server running Datasync Cloud. Data synchonization Library can be used for offline storage 
+of mobile applications data.
+{WFM-RC-NameLong} Datasync client is based on link:https://github.com/feedhenry/fh-sync-js[sync.js client].
+
+== Implementation of {WFM-RC-NameLong} Datasync client 
+See the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/client/datasync-client/README.md[README.MD] for instructions on implementation of the Datasync client.
+
+See a usage at link:{WFM-RC-CoreUrl}{WFM-RC-Branch}/client/datasync-client/example/index.ts[example].

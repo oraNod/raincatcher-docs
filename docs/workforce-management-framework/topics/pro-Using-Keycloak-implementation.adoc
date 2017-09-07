@@ -1,0 +1,80 @@
+[id='enable-keycloak-integration-{chapter}']
+= Enable {WFM-RC-KeycloakName} Integration
+
+The {WFM-RC-NameLong} Demo Applications allow for Authentication and Access Management using
+link:http://www.keycloak.org/index.html[{WFM-RC-KeycloakName}].
+The {WFM-RC-NameLong} {WFM-RC-KeycloakName} integration is situated inside of the Demo Applications.
+
+By default, the {WFM-RC-KeycloakName} Authentication and Access Management is not setup with the Demo Applications.
+A {WFM-RC-NameLong} {WFM-RC-KeycloakName} Docker image has been created to allow easy deployment of a {WFM-RC-KeycloakName} server configured
+with the {WFM-RC-NameLong} demo data.
+
+== Run {WFM-RC-KeycloakName} Docker image
+
+The image is published to docker hub:
+
+    docker run -p 8080:8080 feedhenry/raincatcher-keycloak
+
+For more information on this docker image see the docker image link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
+
+NOTE: If you wish to configure your own instance of {WFM-RC-KeycloakName} see the following
+link:{WFM-RC-KeycloakURL}getting_started/topics/first-boot.html[getting started guide]. If you wish to use the demo application will need to import our Realm
+settings by importing link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[/data_files/raincatcher-realm.json] file.
+
+[[enabling-the-keycloak-demo-server]]
+== Enabling {WFM-RC-KeycloakName} on the Demo Server
+
+The following steps are for using the pre-configured docker image but will work for any instance of {WFM-RC-KeycloakName}
+provided you implement our Realm settings.
+
+- Create a new field `"keycloakConfig":` with the data below
+
+    "keycloakConfig":{
+                        "realm": "raincatcher",
+                        "bearer-only": true,
+                        "auth-server-url": "http://localhost:8080/auth",
+                        "ssl-required": "external",
+                        "resource": "raincatcher-cloud",
+                        "use-resource-role-mappings": true
+                      }
+
+- Add this field to your production or development environment by editing the relevant file in the Demo Application
+
+link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-dev.json[/demo/server/config-dev.json]
+
+link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-prod.json[/demo/server/config-prod.json]
+
+Note: There is partially implemented of the `keycloakConfig` object at `/demo/server/config-prod.json` as an example.
+
+- Some small changes to code the mobile and and portal applications are required to disable passportAuth and enable {WFM-RC-KeycloakName}
+
+Change the following file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/mobile/src/app/app.js[/demo/mobile/src/app/app.js]
+[source,javascript]
+----
+    // Comment to disable passport auth
+    require('@raincatcher/demo-auth-passport')('wfm-mobile'),
+    // Uncomment to enable Keycloak
+    // require('../keycloak');
+----
+As above change the following file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/portal/src/app/main.js[/demo/portal/src/app/main.js]
+[source,javascript]
+----
+    // Comment to disable passport auth
+    require('@raincatcher/demo-auth-passport')('app'),
+    // Uncomment to enable Keycloak
+    // require('./keycloak');
+----
+
+- Routes will now be protected with {WFM-RC-KeycloakName}
+
+== Reference {WFM-RC-KeycloakName}
+
+To login into {WFM-RC-KeycloakName} Admin Console, navigate to http://localhost:8080/auth/ and login as the admin user using the following credentials:
+
+    Username: admin
+    Password: admin
+
+
+
+
+

@@ -1,0 +1,55 @@
+[]
+= {WFM-RC-NameShort} Passport.js integration module (PassportAuth)
+Link to
+link:https://github.com/feedhenry-raincatcher/raincatcher-core/tree/{WFM-RC-Branch}/cloud/passportauth[passportAuth] module.
+
+{WFM-RC-NameShort} authentication and authorisation module using link:http://passportjs.org[Passport.js].
+The PassportAuth module is the default security module for {WFM-RC-NameShort}.
+
+Passport provides pluggable authentication using link:http://passportjs.org/docs/configure[strategies].
+Applications can choose which strategies to employ.
+Passport.js offers comprehensive set of strategies that support authentication using a username and password, Facebook,
+Twitter, and more.
+This module allows:
+
+- Access Control of Express routes
+- Authorisation insures access to routes based on currently authenticated user and role.
+- Authentication using the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategy}[default strategy]
+- Express session middleware using link:https://github.com/expressjs/session[express-session]
+
+
+== Configuration of PassportAuth module
+As the PassportAuth module is the default provider of authentication and authorisation, it is already integrated with
+the Demo applications.
+It is an out of the box security solution for default integration using static json files as user source.
+The sample users and access roles are defined in a JSON file for Demo purposes in the
+link:{WFM-RC-Github-CoreBlob}{WFM-RC-Branch}/demo/server/src/modules/wfm-user/users.json[Demo Data]
+To use different source please follow guide bellow.
+{WFM-RC-NameShort}. Passport.js is a lightweight solution that offers all the
+functionality required to get started.
+
+NOTE: A new JSON Web Token secret needs to be generated to secure a production application. Add the token to jwtSecret field 
+of the link:{WFM-RC-Github-Core}{WFM-RC-Branch}/demo/server/config-prod.json [config-prod.json].
+
+== Implementing UserRepository
+
+Passport.js requires developers to implement the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[UserRepository]
+interface that will be used by framework to fetch user data. UserRepository requires that users data will contain at least
+username and password.
+
+For end to end implementation of the UserRepository interface please follow our example app:
+link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[example]
+
+== Strategy Customisation
+The link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategy}[default strategy] for the PassportAuth
+module implements the Passport.js local strategy. As a developer you may wish to
+use a different security strategy with the passport.js implementation. You can override the
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[PassportAuth.setup] method to
+implement any strategy supported by Passport.js.
+
+
+
+== Implementation and Usage
+For implementation and usage see the
+link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[example] part
+of the PassportAuth module.

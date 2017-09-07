@@ -16,10 +16,27 @@
 //***NEW START***
 :WFM-RC-NameLong: RainCatcher
 :WFM-RC-NameShort: RainCatcher
-:WFM-RC-Version: 1.0
+:WFM-RC-Version: 1.0.0
 :WFM-RC-NodeVersion: 6 LTS
+:WFM-RC-KeycloakName: Keycloak
 :WFM-RC-MongoDBVersion: <latest version>
 :WFM-RC-RedisVersion: <latest version>
+:WFM-RC-Github-Core: https://github.com/feedhenry-raincatcher/raincatcher-core/tree/
+:WFM-RC-Github-CoreBlob: https://github.com/feedhenry-raincatcher/raincatcher-core/blob/
+:WFM-RC-Branch: master
+:WFM-RC-PassportAuth-Example: /cloud/passportauth/example
+//api url
+:WFM-RC-Api-Version: 0.0.1
+:WFM-RC-Api-Default-Strategy: /auth-passport/docs/modules/_src_auth_defaultstrategy_.html
+:WFM-RC-Api-Passport-Auth: /auth-passport/docs/classes/_src_auth_passportauth_.passportauth.html#setup
+:WFM-RC-Api-User-Repository: /auth-passport/docs/interfaces/_src_user_userrepository_.userrepository.html
+:WFM-RC-Api-Endpoint-Security: /auth-passport/docs/interfaces/_src_auth_passportauth_.endpointsecurity.html
+
+:WFM-RC-KeycloakURL: https://keycloak.gitbooks.io/documentation/
+:WFM-RC-AngularJsURL: https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/
+:WFM-RC-CoreURL: https://github.com/feedhenry-raincatcher/raincatcher-core/blob/
+:WFM-RC-KeycloakDockerURL: https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/
+:WFM-RC-SyncFrameworkURL: https://github.com/feedhenry/fh-sync/tree/
 //***NEW END***
 
 // Component Names

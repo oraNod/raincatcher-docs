@@ -1,0 +1,14 @@
+= Implementing {WFM-RC-KeycloakName}
+
+Using {WFM-RC-KeycloakName} to secure endpoints
+
+- Initialise {WFM-RC-KeycloakName} for use with express see example at link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/keycloak/index.ts[Keycloak].
+- Import the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/cloud/auth/src/EndpointSecurity.ts[EndpointSecurity interface] and apply it to a variable
+- Import the {WFM-RC-KeycloakName} init from link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/keycloak/index.ts[Keycloak].
+- Apply {WFM-RC-KeycloakName} init to securityMiddleware to enable {WFM-RC-KeycloakName} for route protection, see the function link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/index.ts[securitySetup] for an example.
+- Routes can be protected in the following fashion
+[source,typescript]
+----
+// This implementation supports role based authentication
+app.use('/test', securityMiddleware.protect(role));
+----

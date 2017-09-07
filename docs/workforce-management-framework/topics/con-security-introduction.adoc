@@ -1,0 +1,61 @@
+[]
+= Introduction to {WFM-RC-NameShort} security features
+
+{WFM-RC-NameShort} cloud server gives developers a choice one of the following authentication and authorisation providers
+link:http://www.keycloak.org/[Keycloak] or link:http://passportjs.org/[Passport.js].
+{WFM-RC-NameShort} is build around a security interface, which abstracts the developer away from any underlying
+authentication and authorisation libraries.
+Both implementations can be swapped at any time without breaking internal API of the {WFM-RC-NameShort} modules and reference applications.
+Users can also provide their own security implementation by implementing their own security interface.
+
+Other security measures are incorporated into our reference applications.
+Please note that all link:https://expressjs.com/[express] based routes outside WFM modules will also need to use these security interfaces.
+
+== How to Apply Access Control
+The Security modules interface can be implemented with both Keycloak and Passport.js.
+You need to import EndpointSecurity interface. Apply either
+link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/src/modules/keycloak/index.ts[Keycloak]
+implementation initialisation or link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/src/modules/passport-auth/index.ts[Passport.js]
+to the interface as show in our link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/src/modules/index.ts[cloud server].
+You can then use this security interface protect method to guard routes with roles.
+
+== Passport.js
+Passport.js is a lightweight authentication middleware for Node.js.
+Passport.js offers comprehensive set of link:http://passportjs.org/docs/configure[strategies] that support authentication
+using a username and password, Facebook, Twitter, and more.
+For more information see link:http://passportjs.org/[passport.org].
+
+- Can be bundled into existing node.js server
+- Available by default when running our reference server application
+- Covers authentication of express routes
+
+== Keycloak
+Keycloak is a full identity management solution with features that extend standard authorization and authentication scope.
+Keycloak will be suggested for solutions that require more comprehensive integration with company infrastructure and
+work as identify management solution. We recommend using Keycloak in Production to avail of the many features available for Enterprise Security including:
+
+- link:https://keycloak.gitbooks.io/documentation/server_admin/topics/sso-protocols.html[Single-Sign On]
+- link:https://keycloak.gitbooks.io/documentation/content/server_admin/topics/user-federation.html[User Federation]
+- link:https://keycloak.gitbooks.io/documentation/content/server_admin/topics/authentication/x509.html[Client Cert Authentication]
+- link:https://keycloak.gitbooks.io/documentation/content/server_admin/topics/authentication/otp-policies.html[2FA with OTP]
+- link:https://keycloak.gitbooks.io/documentation/content/server_admin/topics/sessions/administering.html[User Session Management]
+- link:https://keycloak.gitbooks.io/documentation/server_admin/topics/events.html[Auditing]
+- link:https://keycloak.gitbooks.io/documentation/content/server_admin/topics/threat/brute-force.html[Brute Force Detection]
+
+
+For a full feature list, see link:https://keycloak.gitbooks.io/documentation/server_admin/topics/overview/features.html[Keycloak]
+
+== Which to use?
+
+Both solutions have their benefits
+
+*Keycloak*
+
+If you are looking for a full identity management solution that can be tied into
+existing *saml/ldap/sso* solutions then Keycloak should be your choice. Keycloak is an separate
+identity management server with all the overheads involved in running a server.
+
+*Passport.js*
+
+If you are looking for a standalone Node.js based authentication solution that is ready out of the box then passport.js
+should be your choice.

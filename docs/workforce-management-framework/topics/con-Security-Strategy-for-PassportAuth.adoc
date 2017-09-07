@@ -1,0 +1,53 @@
+[id='Security-Strategy-Passport.js-{chapter}']
+= Security Strategy for {WFM-RC-NameShort} PassportAuth
+
+== Session Management
+Session middleware is provided using the `express-session` module.
+Visit link:https://github.com/expressjs/session[express-session] to find more information about the available express
+session options.
+
+== Access Control
+The PassportAuth module allows role based access control. Routes are protected by role as shown in the example.
+The authService is an implementation of the
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[passportAuth]
+in the reference application.
+
+[source,typescript]
+----
+app.get('/testAdminEndpoint', authService.protect('admin'), (req: express.Request, res: express.Response) => {
+  res.json({ routeName: '/testAdminEndpoint', msg: 'authorized to access admin endpoint' });
+});
+
+----
+Demo roles are defined as an array in link:{WFM-RC-Github-CoreBlob}{WFM-RC-Branch}/demo/server/src/modules/wfm-user/users.json[user.json].
+
+
+== Password Storage
+
+Passport module has build UserRepository interface that can be used to point to user data.
+Passwords are stored in datasource that is being configured by developers (possibly external service).
+To point Passport to user datasource you need to implement the
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}#getuserbylogin++[user repository interface]
+
+== Authentication
+From a development point of view {WFM-RC-NameShort} uses the Default Strategy for username/password authentication. Authentication is done on the cloud
+server. Passport authentication service is using a default custom strategy that is based on Passport.js local strategy.
+Passport's local strategy is agnostic about database type.
+
+Passports using
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}#authenticate[authenticate]
+middleware for accepting user credentials and creates session entry that holds user.
+To access routes user need to login using their credentials. Cookie containing user session key will be used to
+authenticate and authorize user requesting server endpoint.
+
+NOTE: For demo the login post route has an authenticate method that checks the userId and password
+against the stored user.json file it also checks the user role against the stored role on user.json.
+
+See link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[example]
+
+== Authorization
+Authorization is being supported thanks to
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}#protect[protect]
+middleware that validates user session id against session and checks permissions.
+
+
