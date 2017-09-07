@@ -36,6 +36,7 @@
 :WFM-RC-AngularJsURL: https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/
 :WFM-RC-CoreURL: https://github.com/feedhenry-raincatcher/raincatcher-core/blob/
 :WFM-RC-KeycloakDockerURL: https://github.com/feedhenry-raincatcher/raincatcher-keycloak/blob/
+:WFM-RC-SyncFrameworkURL: https://github.com/feedhenry/fh-sync/tree/
 //***NEW END***
 
 // Component Names
