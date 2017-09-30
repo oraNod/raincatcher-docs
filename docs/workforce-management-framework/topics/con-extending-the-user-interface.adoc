@@ -1,0 +1,57 @@
+[id='{context}-con-extending-the-user-interface']
+= Extending the User Interface
+
+{Feature} framework provides a set of extension points which allows a developer to modify an Angular User Interface (UI).
+All modifications are done by supplying additional modules which provide a set of the Angular.js directives and are used to extend the Mobile and Portal UI.
+The {Feature} Application is shipped with the example `angularjs-extensions` example that extends the Demo UI:
+
+ * https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-extensions
+
+This Module contains the example directives that are used for demo purposes and it can be used as a template to extend the existing {Feature} UI.
+
+== Extending Workorders
+
+By default, {Feature} provides a minimal set of defined fields for a _workorder_.
+Depending on the needs of the business, a developer can add additional data and UI elements, for example, gps location, an address or a description UI element.
+
+=== Building Workorders
+To extend a _workorder_, implement two Angular Directives:
+
+.Angular Directives for Extending a _workorder_
+|===
+|Angular Directive |Description
+
+|`workorder-data`
+|A Data directive used to implement static fields that display data.
+
+|`workorder-data-edit`
+|A Data-edit directive used to implement fields that allow modifications to be made to a _workorder's_ data.
+
+|===
+
+NOTE: Directives are to operate (with respect to existing fields) outside of a _workorder_ to avoid naming conflicts, for example, `workorder.data.yourcustomfield`
+
+== User Interface
+
+If the UI requires additional styles or libraries, they are included in the top level application.
+The Mobile and Portal Applications contain standard bootstrap and Angular material directives and are found in the top level of the application.
+For more information, see the link:https://material.angularjs.org/latest/api[Latest API].
+
+== Development of a template
+
+To build a template, use `grunt wfmTemplate:build`.
+To rebuild a template after making changes to it, use `grunt wfmTemplate:watch`.
+Each change to a template will require a distribution build.
+
+== Integration
+
+An _Entry File_ exposes a new implementation of an Angular module and this can be mounted into a root application module.
+A new NPM module should be integrated into both the Mobile and the Portal Application, so that the User can view the data belonging to the new _workorder_.
+
+NOTE: The {Feature} Application contains the `@raincatcher-examples/angularjs-extensions` module. If you add a new custom module, remove the {Feature} Application to avoid collisions.
+
+== Publishing
+
+For {Feature} to consume a module, ensure that it is published to the public or private NPM registry.
+When publishing a custom module, ensure that the package's name and the author's name are updated.
+If you choose not to publish a custom module, you can include all directives directly in the {Feature} application.
