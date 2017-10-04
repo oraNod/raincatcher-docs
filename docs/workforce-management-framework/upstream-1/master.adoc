@@ -21,9 +21,9 @@ image::https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/
 //[[preparing-the-local-development-environment]]
 //== Preparing the Local Development Environment
 
-//[[getting-started]]
-//== Getting Started with {PROJECT_NAME}
-//include::running-the-demo-app.adoc[leveloffset=+2]
+[[getting-started]]
+== Getting Started with {PROJECT_NAME}
+include::running-the-demo-app.adoc[leveloffset=+2]
 
 //[[programming-a-raincatcher-project]]
 //== Programming a {PROJECT_NAME} Project

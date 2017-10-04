@@ -25,7 +25,7 @@ include::topics/pro-configuring-logging.adoc[leveloffset=+1]
 include::topics/pro-keycloak-enablement.adoc[leveloffset=+1]
 include::topics/pro-keycloak-implementation.adoc[leveloffset=+1]
 include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+1]
-include::topics/pro-running-the-demo-app.adoc[leveloffset=+1]
+//include::topics/pro-running-the-demo-app.adoc[leveloffset=+1]
 include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
 //include::topics/pro-working-with-templates-on-rhmap.adoc[leveloffset=+1]
 
