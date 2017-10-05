@@ -24,6 +24,9 @@ Login using the following credentials:
 |`123`
 |===
 
+For complete list of users available by default see
+link:https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[gitub repository]
+
 [id='{context}-structure-for-the-mobile-and-portal-starter-applications']
 == Structure for the Mobile and Portal Starter Applications
 

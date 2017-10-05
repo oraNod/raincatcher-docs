@@ -40,6 +40,8 @@ function asciidocsHandler(argv) {
         console.log("Created documentation file");
         fse.moveSync(path.join(docRoot, "master.html"), pageRoot + '/docs/index.html',
             { overwrite: true });
+        fse.copySync(path.join(docRoot, "/topics/shared/images"), pageRoot + '/docs/images',
+            { overwrite: true });
         console.log("Documentation copied to website");
     });
 }

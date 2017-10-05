@@ -33,7 +33,7 @@
 :WFM-RC-Api-Endpoint-Security: /express-auth/docs/interfaces/_src_endpointsecurity_.endpointsecurity.html
 
 // git url
-:WFM-RC-images: https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/master/docs/shared/images/
+:WFM-RC-images: /docs/images/
 :WFM-RC-KeycloakURL: https://keycloak.gitbooks.io/documentation/
 :WFM-RC-AngularJsURL: https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/
 :WFM-RC-CoreTreeURL: https://github.com/feedhenry-raincatcher/raincatcher-core/tree/
