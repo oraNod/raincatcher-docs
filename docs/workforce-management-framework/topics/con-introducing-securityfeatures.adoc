@@ -13,11 +13,11 @@ If you build a custom security implementation, the endpoints are secured in the 
 
 If you choose to build a custom security implementation, you will need to:
 
- . Import the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[EndpointSecurity] interface from *Passport.js*
+ . Import the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}[EndpointSecurity] interface from *Passport.js*
  . Implement the interface in the custom security implementation
  . Use the _protect_ method to guard routes (the security permissions being role based)
 
-NOTE: All link:https://expressjs.com/[express] routes outside of {PROJECT_NAME} modules must implement the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[EndpointSecurity] Security Interface.
+NOTE: All link:https://expressjs.com/[express] routes outside of {PROJECT_NAME} modules must implement the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}[EndpointSecurity] Security Interface.
 
 == Introducing Passport.js
 
