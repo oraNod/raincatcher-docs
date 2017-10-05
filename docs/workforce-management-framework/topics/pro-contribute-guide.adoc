@@ -1,5 +1,7 @@
-[id='{context}-pro-running-the-demo-app']
-= Running the Demo App Locally
+[id='{context}-pro-contributing-guide']
+= Contributing Guide
+
+NOTE: Instructions are for developers who wish to Contribute to {PROJECT_NAME}
 
 This procedure will install the latest master branch.
 

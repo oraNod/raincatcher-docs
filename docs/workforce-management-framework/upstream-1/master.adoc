@@ -10,20 +10,67 @@ include::topics/shared/attributes.adoc[]
 
 image::https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/master/docs/shared/images/logo-blue.png[logo]
 
-//[[raincatcher]]
-//== Introducing Raincatcher
-//include::introducing-raincatcher.adoc[leveloffset=+2]
+NOTE: this is a draft of the documentation, files and render will change in the future. 
 
-//[[introducing-raincatcher-features]]
-//== Introducing {PROJECT_NAME} Features and Modules
-//include::introducing-features-and-modules.adoc[leveloffset=+2]
+[[raincatcher]]
+= WFM Overview
+include::topics/con-introducing-raincatcher.adoc[leveloffset=+1]
+include::topics/ref-introducing-raincatcher.adoc[leveloffset=+2]
+
+[[getting-started]]
+= Running the {PROJECT_NAME} Applications
+include::topics/pro-running-the-demo-repositories.adoc[leveloffset=+1]
+include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
+
+[[developer-getting-started]]
+= Developer Introduction
+test
+
+[[top-level-apps-overview]]
+= Top Level Applications Overview
+include::topics/con-wfm.adoc[leveloffset=+1]
+include::topics/con-supported-modules.adoc[leveloffset=+1]
+
+[[building-wfm-process]]
+= Building WFM Process in {PROJECT_NAME}
+include::topics/con-workflow-step.adoc[leveloffset=+1]
+include::topics/con-packaged-step.adoc[leveloffset=+1]
+
+
+[[Intergrations]]
+= {PROJECT_NAME} Intergrations
+== Sync
+include::topics/con-datasync-module.adoc[leveloffset=+2]
+
+== Security
+include::topics/con-introducing-securityfeatures.adoc[leveloffset=+2]
+include::topics/con-keycloak.adoc[leveloffset=+2]
+include::topics/ref-keycloak.adoc[leveloffset=+3]
+include::topics/pro-keycloak-enablement.adoc[leveloffset=+2]
+include::topics/pro-keycloak-implementation.adoc[leveloffset=+2]
+include::topics/con-keycloak-securitystrategy.adoc[leveloffset=+2]
+include::topics/ref-keycloak-securitystrategy.adoc[leveloffset=+3]
+
+
+include::topics/con-passportauth-module.adoc[leveloffset=+2]
+include::topics/con-passportauth-securitystrategy.adoc[leveloffset=+2]
+include::topics/ref-passportauth-securitystrategy.adoc[leveloffset=+2]
+include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+2]
+
+[[UI]]
+= {PROJECT_NAME} UI
+include::topics/con-wfm-extending-user-interface.adoc[leveloffset=+1]
+
+[[Contributing]]
+= Contributing
+include::topics/pro-contribute-guide.adoc[leveloffset=+1]
+include::topics/con-logging.adoc[leveloffset=+1]
+
+
 
 //[[preparing-the-local-development-environment]]
 //== Preparing the Local Development Environment
 
-[[getting-started]]
-== Getting Started with {PROJECT_NAME}
-include::running-the-demo-app.adoc[leveloffset=+2]
 
 //[[programming-a-raincatcher-project]]
 //== Programming a {PROJECT_NAME} Project
@@ -34,7 +81,36 @@ include::running-the-demo-app.adoc[leveloffset=+2]
 //== {PROJECT_NAME} Security
 //include::defining-raincatcher-security.adoc[leveloffset=+2]
 
-include::working-with-everything.adoc[leveloffset=+1]
+
+
+
+// Concepts 
+//= Concepts
+
+
+
+
+
+//include::topics/con-wfm.adoc[leveloffset=+1]
+
+//include::topics/con-workflow-step.adoc[leveloffset=+1]
+
+//= Procedures
+// Procedures
+//include::topics/pro-configuring-logging.adoc[leveloffset=+1]
+
+//include::topics/pro-running-the-demo-app.adoc[leveloffset=+1]
+//include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
+//include::topics/pro-working-with-templates-on-rhmap.adoc[leveloffset=+1]
+
+//= Reference
+// Reference
+//include::topics/ref-demo-app.adoc[leveloffset=+1]
+
+
+
+
+
 
 // **********************************
 // * Appendix: Revision Information *

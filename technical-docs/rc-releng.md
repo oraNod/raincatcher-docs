@@ -110,4 +110,4 @@ git push --tags
 > NOTE: THIS OPERATION WILL UPDATE PUBLIC WEBSITE.
 PLEASE TEST IF WEBSITE AND DOCUMENTATION WORK before release
 
-    npm run publish
+    npm run publishPage
