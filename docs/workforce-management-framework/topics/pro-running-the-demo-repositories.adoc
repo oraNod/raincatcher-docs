@@ -1,0 +1,87 @@
+[id='{context}-pro-running-the-demo-repositories']
+= Running the {PROJECT_NAME} Applications on a Local Machine
+
+The {PROJECT_NAME} {PROJECT_NAME} applications in this section are dependent on the _public NPM Registry_.
+
+This allows for a simpler setup of the {PROJECT_NAME} demo applications for users that only require the application to run, and will not engage in development.
+
+This section includes:
+. xref:{context}-published-repositories-cloning-the-git-repositories[Cloning the Git Repositories]
+. xref:{context}-published-repositories-installing-repository-dependencies[Installing Repository Dependencies]
+. xref:{context}-published-repositories-starting-mongodb-and-redis[Starting MongoDB and Redis]
+. xref:{context}-published-repositories-starting-the-core-server[Starting the Core Server]
+. xref:{context}-published-repositories-running-the-mobile-and-portal-applications[Running the Mobile and Portal {PROJECT_NAME} Applications]
+
+[discrete]
+== Prerequisites
+
+Ensure you have:
+
+* Node and npm installed (tested on Node {WFM-RC-NodeVersion})
+* git
+* access to `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
+* access to `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
+* access to `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
+* MongoDB (tested with version: {WFM-RC-MongoDBVersion})
+* Redis (tested with version: {WFM-RC-RedisVersion})
+
+[id='{context}-published-repositories-cloning-the-git-repositories']
+[discrete]
+== Cloning the Git Repositories
+
+The following commands will clone the `master` branch of each repository and they collectively contain the latest tagged release of the {PROJECT_NAME} project.
+
+[source,bash]
+----
+git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
+git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
+git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
+----
+
+Previous versions are available through branches named with the `release-\{semver\}` convention.
+For example, in order to checkout version `0.0.1` of `raincatcher-server`, run the following comands after the cloning:
+
+[source,bash]
+----
+cd raincatcher-server/
+git checkout release-0.0.1
+----
+
+[id='{context}-published-repositories-installing-repository-dependencies']
+[discrete]
+== Installing Repository Dependencies
+
+For each repository previously cloned, run `npm install` so regular NPM dependencies are downloaded.
+
+[id='{context}-published-repositories-starting-mongodb-and-redis']
+[discrete]
+== Starting MongoDB and Redis
+
+. Start MongoDB. For more information, see link:https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes].
+
+. Start Redis. For more information, see link:https://redis.io/topics/quickstart#starting-redis[Starting Redis].
+
+[id='{context}-published-repositories-starting-the-core-server']
+[discrete]
+== Starting the Core Server
+
+[source,bash]
+----
+cd raincatcher-server/
+npm run start
+----
+
+NOTE: The terminal is out of use while the Core Server is running.
+
+[id='{context}-published-repositories-running-the-mobile-and-portal-applications']
+[discrete]
+== Running the Mobile and Portal {PROJECT_NAME} Applications
+
+Open a new terminal and execute the following command in folder `raincatcher-portal/` and also in folder `raincatcher-mobile/`:
+
+[source,bash]
+----
+npm run start
+----
+
+Both the _Mobile_ and _Portal_ demo applications open automatically in a browser.
