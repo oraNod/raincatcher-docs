@@ -30,38 +30,46 @@ app.get('/testAdminEndpoint', authService.protect('admin'), (req: express.Reques
 });
 ----
 
-NOTE: Demo roles are defined in link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/wfm-user/users.json[user.json].
+NOTE: Demo roles are defined in link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/passport-auth/users.json[users.json].
 
 [id='{context}-defining-passportauth-password-storage']
 == Defining PassportAuth Password Storage
-The *PassportAuth* user data is stored in link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}#getuserbylogin[User Repository Interface].
-Make sure that the _User Repository Interface_ is implemented in order to point *PassportAuth* to a datasource.
+The *PassportAuth* user data is stored in a _User Repository_. Make sure that the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}#getuserbylogin[User Repository Interface]
+is implemented in order to point *PassportAuth* to a datasource.
 
 [id='{context}-passportauth-authentication']
 == PassportAuth Authentication
 {PROJECT_NAME} authentication is handled by the cloud server using users unique username and password combination.
-The *PassportAuth* service is a default authentication strategy as based on the local *Passport.js* implementation.
+The *PassportAuth* service is a default authentication strategy as based on the *Passport.js* local and JWT implementation.
 
-*PassportAuth* uses link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}#authenticate[authenticate]
+*PassportAuth* uses link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticate[authenticate]
 middleware for cookie based authentication.To access _express_ routes,
 a user must login using their credentials. A cookie containing a user session key is used to authenticate and
 authorize a user who is requesting a server endpoint.
 
-NOTE: In the demonstration application, the login post route has an authenticate() method that checks user credentials
-against the stored credentials in the _user.json_ file. It also checks the user's role against the role on _user.json_.
+NOTE: In the demonstration application, the cookie login post route has an authenticate() method that checks user credentials
+against the stored credentials in the _users.json_ file. It also checks the user's role against the role on _users.json_.
+
+*PassportAuth* uses link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticateWithToken[authenticateWithToken]
+for token based authentication. To access _express_ routes, a user must login using their credentials. A generated JSON web token (JWT)
+and the user's profile is sent to the client upon successful authentication.
+
+NOTE: The JWT token needs to be included in each subsequent requests after a successful login as part of the *Authorization* header
 
 For more information, see the link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[PassportAuth example].
 
 [id='{context}-passportauth-authorization']
 == PassportAuth Authorization
-Authorization is supported by link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}[protect middleware] that validates a _user session id_ against session.
+Authorization is supported by link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}[protect middleware] that validates a session or a JWT token depending on 
+the *Passport.js* strategy used and checks if the user has the required role.
 
 [id='{context}-customizing-a-strategy']
 == Customizing a Strategy
-The link:default strategy for the *PassportAuth* module implements the *Passport.js* local strategy.
-To use a different security strategy that is supported by {PROJECT_NAME}, override the
-link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[PassportAuth.setup] method.
+The default strategies for the *PassportAuth* module implements the *Passport.js* local and JWT strategy. 
+To customize the existing strategies, override the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#setupCookie[PassportAuth.setupCookie] or
+link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#setupToken[PassportAuth.setupToken] method.
+To use a different security strategy that is supported by *Passport.js*, override the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#init[PassportAuth.init] method.
 
 [id='{context}-passportAuth-demo-users-and-access-roles']
 == PassportAuth Demo Users and Access Roles
-*PassportAuth* is by default integrated with the Demo application and contains sample users and access roles which are defined in the link:https://github.com/feedhenry-raincatcher/raincatcher-core/blob/{WFM-RC-Branch}/demo/server/src/modules/wfm-user/users.json[Demo Data] JSON file.
+*PassportAuth* is by default integrated with the Demo application and contains sample users and access roles which are defined in the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/passport-auth/users.json[demo data] JSON file.
