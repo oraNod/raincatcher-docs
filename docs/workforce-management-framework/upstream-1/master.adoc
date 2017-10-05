@@ -24,7 +24,7 @@ include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
 
 [[developer-getting-started]]
 = Developer Introduction
-test
+-
 
 [[top-level-apps-overview]]
 = Top Level Applications Overview
@@ -60,6 +60,10 @@ include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+2]
 [[UI]]
 = {PROJECT_NAME} UI
 include::topics/con-wfm-extending-user-interface.adoc[leveloffset=+1]
+
+[[Performance]]
+= {PROJECT_NAME} Performance
+-
 
 [[Contributing]]
 = Contributing

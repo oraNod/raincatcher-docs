@@ -46,14 +46,24 @@ This section includes:
 |===
 |Repository |Description
 
-|link:https://github.com/feedhenry-raincatcher/raincatcher-core[raincatcher-core]
-|Contains all of the supported modules and demo server.
+|link:https://github.com/feedhenry-raincatcher/raincatcher-mobile[raincatcher-mobile]
+|Contains the Mobile application.
 
-|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs[raincatcher-angularjs]
-|Contains angularJS user interface for *{PROJECT_NAME}*
+|link:https://github.com/feedhenry-raincatcher/raincatcher-portal[raincatcher-portal]
+|Contains the Portal application.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-server[raincatcher-server]
+|Contains the Server application.
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-docs[raincatcher-docs]
 |Repository contains *{PROJECT_NAME}* documentation
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-core[raincatcher-core]
+|Contains the contribution repository of the supported modules and server.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs[raincatcher-angularjs]
+|Contains the contribution repository angularJS user interface for the mobile and portal
+
 |===
 
 [id='{context}-differentiating-raincatcher-from-tech-preview']
