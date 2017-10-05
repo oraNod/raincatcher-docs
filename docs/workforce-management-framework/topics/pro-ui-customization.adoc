@@ -1,0 +1,153 @@
+[id='{context}-pro-ui-customization']
+= {PROJECT_NAME} UI Starter App Customization
+
+Follow these procedures to start applying changes to the Mobile and Portal Starter Apps. Refer to the xref:{context}-ref-demo-app[{PROJECT_NAME} Starter Application Reference Material] for more information about their overall structure.
+
+[id='{context}-ref-ui-technology']
+== Adding UI elements
+
+[id='{context}-create-angularjs-module']
+=== Creating your own AngularJS module with routing
+
+In order to add new elements to the {PROJECT_NAME} UI, you must create your own AngularJS module and add it to the array of dependencies of the main application module.
+
+{PROJECT_NAME} utilizes link:https://ui-router.github.io/ng1/[UI-Router for AngularJS] to modularize the user interface components in separate routes that can be referenced by navigation links.
+
+The Starter Applications follow a 2-column module in the case of the Portal App, and a single column plus an optional toolbar section in the case of the Mobile App. The applications can provide the HTML ids of these container elements to the individual modules, allowing them to insert views into them through the UI-Router.
+
+The following is a tiny example of how a module can be structured:
+
+[source,javascript]
+----
+module.exports = function(config) {
+  var moduleName = 'my-module';
+  angular.module(moduleName, [])
+  .config(['$stateProvider', function($stateProvider) {
+    var views = {};
+    views[config.mainColumnViewId] = {
+      template: '<p>Hello from the custom module!</p>'
+    };
+
+    if (config.listColumnViewId) {
+      // optional for use in the portal app
+      views[config.listColumnViewId] = {
+        template: '<p>Hello from the list view for this route!</p>'
+      };
+    }
+    
+    if (config.toolbarViewId) {
+      // optional for use in the mobile app
+      views[config.toolbarViewId] = {
+        template: '<p>Hello from a toolbar for this route!</p>'
+      };
+    }
+    
+    $stateProvider.state('app.custom', {
+      url: '/custom',
+      views: views
+    });
+  }]);
+
+  return moduleName;
+};
+----
+
+Your module should:
+
+. Export a function that receives a configuration object and returns the name of the module for convenience;
+. Utilize the UI-Router's `$stateProvider` to include any new routes;
+. Define states that are nested states of `app` (`app.custom` in the above example), since otherwise the views in the custom state will replace the application's entire interface instead of inserting their content in the containers. See link:https://github.com/angular-ui/ui-router/wiki/Nested-States-&-Nested-Views[Nested States & Nested Views] for more information.
+
+Refer to the link:https://docs.angularjs.org/api/ng/function/angular.module[AngularJS Module documentation] for further information on creating new modules.
+
+[id='{context}-add-custom-module']
+=== Adding the new module to the main application config
+
+To configure the Starter Apps to utilize your module, add it to the array of dependencies of the main `app` module for the Starter App:
+
+[source,javascript]
+----
+angular.module('app', [
+  //...
+  require('./my-module')({
+    listColumnViewId: "column2",
+    mainColumnViewId: "content@app",
+  }),
+  //...
+]);
+----
+
+For the Mobile App, this is located at `src/app/app.js`.
+
+For the Portal App, this is located at `src/app/main.js`
+
+
+At this point, running the Starter App and navigating to `/custom` should navigate to the custom route and display the messages defined in the `template` keys in the xref:{context}-create-angularjs-module[previous section].
+
+=== New navigation option on the navigation sidebar
+
+To add a navigation link to the new custom route on the main navigation sidebar, edit the `main.tpl.html` file (present on both Apps), and add a new `md-list-item` that utilizes the `navigateTo()` method that's available on the main controllers.
+
+[source,html]
+----
+<md-list>
+  <!-- ... Other navigation items -->
+  <md-list-item ng-click="navigateTo('app.custom')" ng-class="{active: $state.includes('app.custom')}">
+    <md-icon md-font-set="material-icons">bookmark</md-icon>
+    <p>Custom link</p>
+  </md-list-item>
+  <md-divider></md-divider>
+  <!-- ... Other navigation items -->
+</md-list>
+----
+
+See the link:https://material.angularjs.org/latest/api/directive/mdIcon[mdIcon] documentation for the list of icons that you can utilize with the new navigation item.
+
+== Customizing SASS and Themes
+
+{PROJECT_NAME} utilizes link:http://sass-lang.com/[SASS] in order to supply extra features on top of standard CSS. These files are entry point to customizing and adding new styles to the App's interface.
+
+=== Adding extra Stylesheets
+
+In order to add new SASS files, simply include a new file in the `src/sass/` directory of your App and `@import` it from the App's main `.scss` file:
+
+[source,scss]
+----
+// In custom.scss
+.my-class {
+  color: #0000FF;
+}
+----
+
+[source,scss]
+----
+// In the main .scss file
+@import './custom.scss';
+----
+
+It's recommended to include custom rules in new files and even use namespaced or prefixed class names to avoid collisions with updates in the {PROJECT_NAME} codebase.
+
+=== Changing the theme of {PROJECT_NAME} components
+
+{PROJECT_NAME} components inherit their look and feel from global variables defined in the top section of main SASS file, by changing these values all elements will reflect the new values after the standard build process regenerates the compiled CSS files from them:
+
+[source,scss]
+----
+$secondary-text-color: rgba(0,0,0,.54);
+$divider-text-color: rgba(0,0,0,.12);
+
+$white-text-color: rgba(255,255,255,1);
+$white-secondary-text-color: rgba(255,255,255,.7);
+$white-divider-color: rgba(255,255,255,.3);
+
+$primary-color: #3F51B5;
+$secondary-color: #303F9F;
+
+$accent-color-1: #a63db8;
+$accent-color-2: #4d5bb3;
+$accent-color-3: #1aa094;
+$accent-color-4: #283593;
+
+$success: #388E3C;
+$danger: #F44336;
+----

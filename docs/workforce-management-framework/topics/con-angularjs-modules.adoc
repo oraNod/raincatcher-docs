@@ -1,0 +1,38 @@
+= {PROJECT_NAME} AngularJS modules
+
+This section describes *{PROJECT_NAME}'s* list of modules that are built to work with the link:https://angularjs.org/[AngularJS Framework].
+The latest list of modules is found at link:https://www.npmjs.com/org/raincatcher/[{PROJECT_NAME} Modules].
+
+.{PROJECT_NAME} AngularJS Modules
+|===
+|Module |Description
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-auth-keycloak[@raincatcher/angularjs-auth-keycloak]
+|The {PROJECT_NAME} client-side authentication module for use with a KeyCloak back-end.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-auth-passport[@raincatcher/angularjs-auth-passport]
+|The {PROJECT_NAME} client-side authentication module for use with a ExpressJS + link:passport.js[http://passportjs.org/].
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-auth[@raincatcher/angularjs-auth]
+|User Interface module for use with the authentication packages linked above.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-http[@raincatcher/angularjs-http]
+|Data acess module based on link:https://docs.angularjs.org/api/ng/service/$http[AngularJS's $http] module.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-workflow[@raincatcher/angularjs-workflow]
+|The {PROJECT_NAME} User Interface package for rendering Work Flows
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-workorder[@raincatcher/angularjs-workorder]
+|The {PROJECT_NAME} User Interface package for rendering Work Orders
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-extensions[@raincatcher/angularjs-extensions]
+|Extra AngularJS directives to attach and display extra data in Work Orders.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/steps/examples/step-accident[@raincatcher/step-accident]
+|Example {PROJECT_NAME} Step for an accidental crash with a motor vehicle scenario.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/steps/examples/step-vehicle-inspection[@raincatcher/step-vehicle-inspection]
+|Example {PROJECT_NAME} Step for a vehicle inspection scenario.
+
+|link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/steps/step-signature[@raincatcher/angularjs-signature]
+|Example {PROJECT_NAME} Step for capturing a user's signature as a bitmap.

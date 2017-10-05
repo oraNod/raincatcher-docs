@@ -4,13 +4,14 @@
 This section includes:
 
 . xref:{context}-credentials-for-the-mobile-and-portal-demo-application[Credentials for the Mobile and Portal Demo Application]
+. xref:{context}-structure-for-the-mobile-and-portal-starter-applications[Structure for the Mobile and Portal Starter Applications]
 
 [id='{context}-credentials-for-the-mobile-and-portal-demo-application']
 == Credentials for the Mobile and Portal Demo Application
 
 Login using the following credentials:
 
-.Credentials for the _Mobile_ and _Portal_ Demo Application
+.Credentials for the _Mobile_ and _Portal_ Starter Applications
 |===
 |Application |Username |Password
 
@@ -22,3 +23,31 @@ Login using the following credentials:
 |`max`
 |`123`
 |===
+
+[id='{context}-structure-for-the-mobile-and-portal-starter-applications']
+== Structure for the Mobile and Portal Starter Applications
+
+The UI Starter Applications present a consistent directory structure that can serve as a sensible base for customizations.
+
+The following list highlights the function of the main folders:
+
+`src/app`::
+Main folder containing the logic for the application. The app is mainly concerned in providing the setup and configuration values for the RainCatcher and angularjs modules that are used by it.
+
+`src/app/initialization`::
+Contains configuration values and initial bootstrapping code for the angularjs application.
+
+`src/app/services`::
+Contains AngularJS services that are utilized by the RainCatcher modules to retrieve data. The app has the opportunity to provide an implementation that utilizes any technology for data retrieval, including static fixtures for testing.
+
+`src/res`::
+Contains resource files (mostly bitmaps) that are used by the UI. These are also included in the various resolutions expected by the native apps.
+
+`src/sass`::
+Contains app-wide link:http://sass-lang.com/[SAAS] files that are compiled by the build pipeline.
+
+`scripts/`::
+Contains auxiliary scripts for the development environment.
+
+`www/`::
+Generated directory containing the output files of the local build process.
