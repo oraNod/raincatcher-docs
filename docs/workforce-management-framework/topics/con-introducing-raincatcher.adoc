@@ -1,43 +1,77 @@
 [id='{context}-con-introducing-raincatcher']
 ifdef::downstream[]
-= Introducing Workforce Management
+= Introducing WFM {WFM-RC-Version}
 
-Workforce Management is a Workforce Management Platform and is also referred to as {PROJECT_NAME}.
+WFM is a Workforce Management Platform and is also referred to as {PROJECT_NAME}.
 endif::downstream[]
 
 ifdef::upstream[]
-= Introducing {PROJECT_NAME}
+= {PROJECT_NAME} {WFM-RC-Version}
 
 {PROJECT_NAME} is a Workforce Management Platform.
 endif::upstream[]
 
-The latest version of {PROJECT_NAME} is {WFM-RC-Version}.
+{PROJECT_NAME} allows you to move from paper based forms and processes into complete mobile enabled solution
+{PROJECT_NAME} connects a business’ back-office with its fleet of mobilized employees by providing two fully customizable applications
 
-{PROJECT_NAME} connects a business’ back-office with its fleet of mobilized employees.
-{PROJECT_NAME} leverages commoditized mobile hardware, making use of each employee’s mobile phone.
+- Mobile worker (operator) application
+- Management Portal (Backoffice) application
 
-The primary goal of {PROJECT_NAME} is to ease mobile enablement efforts.
-It achieves that by providing set of modules that can be integrated into existing applications additionally
-{PROJECT_NAME} allows developers to leverage existing demo-solution by extending it to suit their business needs.
+Both applications are utilizing Node.js based server by utilizing restfull api.
 
-Main features in the latest {WFM-RC-Version}:
+== Goals
 
-* Workflow Management
-* Real-time Data Access
-* Data Synchronization
+The primary goal of {PROJECT_NAME} is to minimize development effort required to build WFM applications. It achieves that by providing set of modules that can be integrated into existing applications.
+Developers can effectively reuse them in their applications or base on {PROJECT_NAME} reference applications that integrate all modules into fully functional solution. {PROJECT_NAME} targets to satisfy requirements that each production website and mobile application needs.
+In particular:
 
-Roadmap:
+- Mobile development (using Apache Cordova plugins)
+- Real-time Data Access and synchronization
+- Authentication and Authorization (using multiple providers)
+- Security (using best patterns for mobile and website security)
+- Logging (tracing issues out of the box)
+- User interface (AngularJS based interface that can be customized)
 
-* Plugable authentication
-* Image capture
-* Geolocation
-* Internal Messaging and 3rd party Messaging
-* Mobile Forms
-* Real-time Data Access
-* Integration of sensor data
+It allows developers to leverage production hardened applications by extending them to suit their business needs. Each application can be customized by writing or reusing one of the available {PROJECT_NAME} modules.
 
-{PROJECT_NAME} {WFM-RC-Version} features:
+{PROJECT_NAME} separates modules into different categories:
 
-* Security
-* Logging
-* Data Synchronization
+* Core modules containing main functionality (@raincatcher/*)
+** Client modules used in mobile and portal applications
+** Server modules to be used only in server application
+* User interface modules  (@raincatcher/angularjs-*)
+* Step modules (@raincatcher/step-*)
+* Example modules (@raincatcher-examples/*)
+* External modules build by RainCatcher users and custom code in reference applications
+
+image::{WFM-RC-images}diagrams/customSolution.png[customSolution]
+
+== Process Management
+
+{PROJECT_NAME} focuses mainly on diginalizing business process
+by including set of the modules responsible for the process managment to the user applications. Process managment framework can be seen as simplified version of the BPMn solutions.
+
+Main features of the Process Managment modules:
+
+* Creating customizable processes (called workflows)
+* Creation of process instances called workorders
+* Definiting workflows using steps
+* Providing customizations to the process using step definitions
+* Integrating workflows and workorders into the mobile application
+* Providing number of predefined steps that can be used for any business needs
+
+Process Managment framework can be extended by _Step Definitions_ which are responsible for wraping business processes into single reusable units. For more technical information about _Step Definitions_ please refer to the Process Managment Guide.
+
+image::{WFM-RC-images}diagrams/referenceFlow.png[referenceFlow]
+
+=== Process Management overview
+
+Developers can extend {PROJECT_NAME} solution by providing _Step Definitions_. Are provided as one more more npm modules that needs to be added to both mobile and portal applications. All included steps will be available as library that can be accessed and used to build workflows in end user applications.
+
+Portal administrators can build `workflows` which containing ordered `Steps` that each mobile operator needs to complete.
+
+`Workflows` can be instanciated as `Workorders` which will contain specific details and be assigned one of the field operators.
+Once workorder is created it will be populated in the mobile field operator application.
+
+image::{WFM-RC-images}diagrams/overview.png[overview]
+
