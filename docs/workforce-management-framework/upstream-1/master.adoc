@@ -21,10 +21,14 @@ include::topics/ref-introducing-raincatcher.adoc[leveloffset=+2]
 = Running the {PROJECT_NAME} Applications
 include::topics/pro-running-the-demo-repositories.adoc[leveloffset=+1]
 include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
+include::topics/ref-demo-app.adoc[leveloffset=+2]
 
 [[developer-getting-started]]
 = Developer Introduction
--
+
+include::topics/ref-mobile.adoc[leveloffset=+1]
+include::topics/ref-portal.adoc[leveloffset=+1]
+include::topics/ref-server.adoc[leveloffset=+1]
 
 [[top-level-apps-overview]]
 = Top Level Applications Overview
@@ -36,9 +40,10 @@ include::topics/con-supported-modules.adoc[leveloffset=+1]
 include::topics/con-workflow-step.adoc[leveloffset=+1]
 include::topics/con-packaged-step.adoc[leveloffset=+1]
 
-
-[[Intergrations]]
+[[intergrations]]
 = {PROJECT_NAME} Intergrations
+include::topics/con-wfm-intergrations.adoc[leveloffset=+0]
+
 == Sync
 include::topics/con-datasync-module.adoc[leveloffset=+2]
 
@@ -54,21 +59,28 @@ include::topics/ref-keycloak-securitystrategy.adoc[leveloffset=+3]
 
 include::topics/con-passportauth-module.adoc[leveloffset=+2]
 include::topics/con-passportauth-securitystrategy.adoc[leveloffset=+2]
-include::topics/ref-passportauth-securitystrategy.adoc[leveloffset=+2]
+include::topics/ref-passportauth-securitystrategy.adoc[leveloffset=+3]
 include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+2]
 
-[[UI]]
-= {PROJECT_NAME} UI
+[[ui]]
+= Modifying the UI
+include::topics/con-ui-technology.adoc[leveloffset=+1]
 include::topics/con-wfm-extending-user-interface.adoc[leveloffset=+1]
+include::topics/pro-ui-customization.adoc[leveloffset=+1]
+include::topics/con-angularjs-modules.adoc[leveloffset=+1]
 
-[[Performance]]
-= {PROJECT_NAME} Performance
+[[performance]]
+= Performance 
 -
-
 [[Contributing]]
 = Contributing
 include::topics/pro-contribute-guide.adoc[leveloffset=+1]
 include::topics/con-logging.adoc[leveloffset=+1]
+
+
+
+
+
 
 
 
@@ -84,36 +96,6 @@ include::topics/con-logging.adoc[leveloffset=+1]
 //[[raincatcher-security]]
 //== {PROJECT_NAME} Security
 //include::defining-raincatcher-security.adoc[leveloffset=+2]
-
-
-
-
-// Concepts 
-//= Concepts
-
-
-
-
-
-//include::topics/con-wfm.adoc[leveloffset=+1]
-
-//include::topics/con-workflow-step.adoc[leveloffset=+1]
-
-//= Procedures
-// Procedures
-//include::topics/pro-configuring-logging.adoc[leveloffset=+1]
-
-//include::topics/pro-running-the-demo-app.adoc[leveloffset=+1]
-//include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
-//include::topics/pro-working-with-templates-on-rhmap.adoc[leveloffset=+1]
-
-//= Reference
-// Reference
-//include::topics/ref-demo-app.adoc[leveloffset=+1]
-
-
-
-
 
 
 // **********************************

@@ -36,3 +36,4 @@ The latest list of modules is found at link:https://www.npmjs.com/org/raincatche
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/steps/step-signature[@raincatcher/angularjs-signature]
 |Example {PROJECT_NAME} Step for capturing a user's signature as a bitmap.
+|===

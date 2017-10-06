@@ -1,13 +1,13 @@
 [id='{context}-ref-demo-app']
-= {PROJECT_NAME} Demo Application Reference Material
+= {PROJECT_NAME} Application Reference Material
 
 This section includes:
 
-. xref:{context}-credentials-for-the-mobile-and-portal-demo-application[Credentials for the Mobile and Portal Demo Application]
+. xref:{context}-credentials-for-the-mobile-and-portal-application[Credentials for the Mobile and Portal Application]
 . xref:{context}-structure-for-the-mobile-and-portal-starter-applications[Structure for the Mobile and Portal Starter Applications]
 
 [id='{context}-credentials-for-the-mobile-and-portal-demo-application']
-== Credentials for the Mobile and Portal Demo Application
+== Credentials for the Mobile and Portal Application
 
 Login using the following credentials:
 
