@@ -62,7 +62,7 @@ Main features of the Process Managment modules:
 
 Process Managment framework can be extended by _Step Definitions_ which are responsible for wraping business processes into single reusable units. For more technical information about _Step Definitions_ please refer to the Process Managment Guide.
 
-image::{WFM-RC-images}diagrams/referenceFlow.png[referenceFlow]
+image::{WFM-RC-images}diagrams/referenceflow.png[referenceFlow]
 
 === Process Management overview
 
