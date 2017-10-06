@@ -53,9 +53,9 @@ by including set of the modules responsible for the process managment to the use
 
 Main features of the Process Managment modules:
 
-* Creating customizable processes (called workflows)
+* Creation customizable processes (called workflows)
 * Creation of process instances called workorders
-* Definiting workflows using steps
+* Creation workflows using steps
 * Providing customizations to the process using step definitions
 * Integrating workflows and workorders into the mobile application
 * Providing number of predefined steps that can be used for any business needs
