@@ -1,8 +1,6 @@
 [id='{context}-pro-keycloak-enablement']
 = Enabling {Keycloak}
 
-The xref:{context}-adding-keycloak-configuration[Adding {Keycloak} Configuration] and xref:{context}-enabling-keycloak-on-the-demo-server[Enabling {Keycloak} on the Demo Server] headings below are valid for any instance of *{Keycloak}* provided you implement the _Realm settings_.
-
 IMPORTANT: Enabling *{Keycloak}* requires the disabling of *PassportAuth*.
 
 [discrete]
@@ -10,6 +8,12 @@ IMPORTANT: Enabling *{Keycloak}* requires the disabling of *PassportAuth*.
 
 . Ensure you have completed xref:getting-started[Getting Started]
 . Docker (tested with version: {WFM-RC-DockerVersion})
+
+NOTE: If you choose to run your own {Keycloak} instance, ensure that the  demo
+link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[raincatcher realm settings] is imported.
+For more information about importing realm settings in {Keycloak}, see the 
+xref:{context}-import-keycloak-realm-settings[Importing the {Keycloak} Realm Settings] section
+
 
 [id='{context}-run-keycloak-docker-image']
 [discrete]
@@ -24,10 +28,35 @@ docker run -p 8080:8080 feedhenry/raincatcher-keycloak
 
 For more information about the *{Keycloak}* Docker Image, see the *{Keycloak}* link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
 
+IMPORTANT: The {Keycloak} realm setup included in this docker image is for demo purposes only. Ensure that you provide proper client 
+configurations for production environments. For more information about client configurations, see the {Keycloak} link:http://www.keycloak.org/docs/latest/server_admin/topics/clients.html[clients documentation]
+
+[id='{context}-import-keycloak-realm-settings']
+[discrete]
+== Importing the {Keycloak} Realm Settings
+
+NOTE: This step should only be done if you choose to run your own {Keycloak} instance. The {Keycloak} Docker image
+comes with a demo RainCatcher realm setup therefore it does not need to be manually imported.
+
+. Download the link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[raincatcher realm settings]
+. Login to the {Keycloak} admin console. See xref:{context}-accessing-the-keycloak-admin-console[Accessing the {Keycloak} Admin Console] for more information.
+. Click 'Add Realm'
+. Import the link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[raincatcher realm settings] you downloaded
+. Click 'Create'
+
+This will create the demo RainCatcher realm which includes the setup for three different clients: raincatcher-portal, raincatcher-mobile and raincatcher-cloud.
+
+IMPORTANT: The provided link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/data_files/raincatcher-realm.json[raincatcher realm settings] is only used for
+demo purposes. Ensure that you provide proper client configurations for production environments. For more information 
+about client configurations, see the {Keycloak} link:http://www.keycloak.org/docs/latest/server_admin/topics/clients.html[clients documentation]
+
 [id={context}-adding-keycloak-configuration]
 [discrete]
 == Adding {Keycloak} Configuration
 
+[id={context}-adding-keycloak-configuration-demo-server]
+[discrete]
+=== Adding Keycloak Configuration in the Demo Server
 . Choose which _configuration file_ to edit:
 +
 .*{Keycloak}* Configuration File
@@ -35,18 +64,16 @@ For more information about the *{Keycloak}* Docker Image, see the *{Keycloak}* l
 |Area |File Name | File Location
 
 |Development
-|link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-dev.json[config-dev.json]
-|/demo/server/config-dev.json
+|link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-dev.js[config-dev.js]
+|/demo/server/config-dev.js
 
 |Production
-|link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-prod.json[config-prod.json]
-|/demo/server/config-prod.json
+|link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-prod.js[config-prod.js]
+|/demo/server/config-prod.js
 
 |===
 +
-NOTE: The `keycloakConfig` field is partially implemented in link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/config-prod.json[config-prod.json].
-+
-. Open the _configuration file_, create a new field called `keycloakConfig` and add the following data to `keycloakConfig`:
+. Open the configuration file and fill in the missing field values for realm, auth-server-url and resource:
 +
 [source,javascript]
 ----
@@ -59,36 +86,75 @@ NOTE: The `keycloakConfig` field is partially implemented in link:{WFM-RC-CoreUR
                     "use-resource-role-mappings": true
                   }
 ----
+NOTE: Ensure that these values corresponds to your client configuration within your realm. For more information,
+see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
 
+IMPORTANT: Filling in the values in the keycloakConfig also enables {Keycloak} in the demo server application
+
+[discrete]
+=== Keycloak Configuration in the Demo Mobile
+The _Keycloak Configuration_ for the demo mobile is already filled in. This may be customized by changing the contents of the
+application's link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/mobile/src/config.json[config.json]
+
+NOTE: Ensure that these values corresponds to your client configuration within your realm. For more information,
+see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/javascript-adapter.html[Javascript Adapter] documentation.
+
+[discrete]
+=== Keycloak Configuration in the Demo Portal
+The _Keycloak Configuration_ for the demo portal is already filled in. This may be customized by changing the contents of the
+application's link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/portal/src/config.json[config.json]
+
+NOTE: Ensure that these values corresponds to your client configuration within your realm. For more information,
+see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/javascript-adapter.html[Javascript Adapter] documentation.
 
 [id={context}-enabling-keycloak-on-the-demo-server]
 [discrete]
-== Enabling {Keycloak} on the Demo Server
+== Enabling {Keycloak} on the Demo Applications
 
+[discrete]
+=== Enabling {Keycloak} on the Demo Server
+. Fill in the Keycloak configuration in the demo server.
+. At this point, the routes are protected by {Keycloak}.
+
+See xref:{context}-enabling-keycloak-on-the-demo-server[Adding Keycloak Configuration in the Demo Server] for more information.
+
+[discrete]
+=== Enabling {Keycloak} on the Demo Mobile
 . Open the file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/mobile/src/app/app.js[app.js] in location _/demo/mobile/src/app/_ and change the contents to:
-+
+
 [source,javascript]
 ----
-    // Comment to disable passport auth
-    require('@raincatcher/demo-auth-passport')('wfm-mobile'),
-    // Uncomment to enable Keycloak
-    // require('../keycloak');
+    // Enables passport auth service to be used
+    // require('./passport'),
+    // require('@raincatcher/angularjs-auth')(),
+    // Enables keycloak auth service to be used
+    require('./keycloak'),
 ----
-+
+
+
+NOTE: Ensure that Passport.js is disabled by not requiring ./passport and @raincatcher/angularjs-auth module.
+
+[discrete]
+=== Enabling {Keycloak} on the Demo Portal
 . Open the file link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/demo/portal/src/app/main.js[main.js] in location _/demo/portal/src/app/_ and change the contents to:
-+
+
 [source,javascript]
 ----
-    // Comment to disable passport auth
-    require('@raincatcher/demo-auth-passport')('app'),
-    // Uncomment to enable Keycloak
-    // require('./keycloak');
+  // Enables passport auth service to be used
+  // require('./passport'),
+  // Enables keycloak auth service to be used
+  require('./keycloak'),
 ----
-+
-. At this point, the _Routes_ are protected by *{Keycloak}*.
+
+NOTE: Ensure that Passport.js is disabled by not requiring ./passport.
 
 [id={context}-accessing-the-keycloak-admin-console]
 [discrete]
 == Accessing the {Keycloak} Admin Console
 
 . To access the _{Keycloak} Admin Console_, navigate to _http://localhost:8080/auth/_
++
+See xref:{context}-credentials-for-the-demo-application[Credentials for the Admin Console] section
+to see the credentials used by the Keycloak docker image.
+
+For more information about the admin console, see {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/admin-console.html[admin console] documentation

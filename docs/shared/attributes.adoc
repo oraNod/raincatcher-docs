@@ -34,7 +34,7 @@
 
 // git url
 :WFM-RC-images: /docs/images/
-:WFM-RC-KeycloakURL: https://keycloak.gitbooks.io/documentation/
+:WFM-RC-KeycloakURL: http://www.keycloak.org/docs/latest/
 :WFM-RC-AngularJsURL: https://github.com/feedhenry-raincatcher/raincatcher-angularjs/blob/
 :WFM-RC-CoreTreeURL: https://github.com/feedhenry-raincatcher/raincatcher-core/tree/
 :WFM-RC-CoreURL: https://github.com/feedhenry-raincatcher/raincatcher-core/blob/

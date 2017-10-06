@@ -20,7 +20,8 @@ For more information on _express-session_, see link:https://github.com/expressjs
 *{Keycloak}* provides role based access control and is configured on the *{Keycloak}* server.
 For more information about role based access control, see link:{WFM-RC-KeycloakURL}server_admin/topics/roles.html[*{Keycloak}* Roles].
 
-For more information on how roles are protected, see the *{Keycloak}* link:./pro-Keycloak-implementaion.adoc[documentation].
+See the xref:{context}-protect-express-routes[Protect Express Routes] section on how routes are protected in the application.
+For more information on protecting express routes, see the *{Keycloak}* link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter].
 
 [id='{context}-defining-keycloak-password-storage']
 == Defining {Keycloak} Password Storage
