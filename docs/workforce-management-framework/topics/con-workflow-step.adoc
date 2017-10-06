@@ -1,14 +1,16 @@
 [id='{context}-con-workflow-step']
-= Building Your First Workflow Step by Reusing a Template
+= Building Your First Workflow Step
 
-A basic knowledge of Angular.js is required to build a *Workflow Step* in {PROJECT_NAME}.
+Steps are internal part of the {PROJECT_NAME}.
+Guide bellow describes structure of the step and some basic priciples required build it.
+A basic knowledge of AngularJS is required to build a Workflow Step.
 
 == Structure of a Step
 Steps are divided into two linked categories, the `module` and the `definition`.
 
 === Module
-Modules can contain one or more Angular.js directives for rendering _Steps_ in the Portal and Mobile applications.
-{PROJECT_NAME} _Steps_ use Angular.js directives to build a user interface as part of workflows.
+Modules can contain one or more AngularJS directives for rendering _Steps_ in the Portal and Mobile applications.
+{PROJECT_NAME} _Steps_ use AngularJS directives to build a user interface as part of workflows.
 Each _Step_ is divided into two directives:
 
 .A Step's Directive
@@ -62,7 +64,24 @@ module.exports = {
 };
 ----
 
-== Development
-When developing a custom _Step Package_, clone the link:https://github.com/feedhenry-raincatcher/step-template.git[step-template] repository and make modifications to the cloned repository or alternatively, use the link:https://www.npmjs.com/package/generator-rcstep[generator-rcstep] npm package to create a _Step_.
+== Creating new step
+
+A Step can be created manually from template or by using generator.
+
+=== Generator
+
+The Generator allows to generate step automatically by answering questions.
+Generated step will contain sample UI directives that needs to be modified for users needs.
+
+link:https://www.npmjs.com/package/generator-rcstep[generator-rcstep] npm package to create a _Step_.
+
+=== Template
+
+Alternatively developers can use provided step template:
+
+When developing a custom _Step Package_, clone the link:https://github.com/feedhenry-raincatcher/step-template.git[step-template] repository and make modifications to the cloned repository.
+
+=== Modifications
 
 For more information about modifying a _Step_ and importing a _Step_ into the Portal and Mobile applications, see the link:https://github.com/feedhenry-raincatcher/step-template.git[README.md]
+

@@ -85,3 +85,31 @@ npm run start
 ----
 
 Both the _Mobile_ and _Portal_ demo applications open automatically in a browser.
+
+== Credentials for the Mobile and Portal Demo Application
+
+Login using the following credentials:
+
+.Credentials for the _Mobile_ and _Portal_ Starter Applications
+
+NOTE: Users are valid for both passport and keycloak auth providers
+
+|===
+|Application |Username |Password
+
+|Mobile
+|`trever`
+|`123`
+
+|Portal
+|`max`
+|`123`
+|===
+
+For complete list of users available by default see
+link:https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[gitub repository]
+
+NOTE: Application will start with sample Steps, Workflows and Workorders.
+They are used only for demonstration purposes.
+If you wish to create your own business logic please refer to
+xref:building-wfm-process[WFM documentation].
