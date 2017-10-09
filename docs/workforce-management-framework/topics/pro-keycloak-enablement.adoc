@@ -1,15 +1,7 @@
 [id='{context}-pro-keycloak-enablement']
 = Enabling {Keycloak}
 
-This section includes:
-
-NOTE: Steps 3 and 4 are valid for any instance of *{Keycloak}* provided you implement the _Realm settings_.
-
-. xref:{context}-run-keycloak-docker-image[Running the {Keycloak} Docker Image]
-. xref:{context}-adding-keycloak-configuration[Importing the {Keycloak} Realm Settings]
-. xref:{context}-adding-keycloak-configuration[Adding {Keycloak} Configuration]
-. xref:{context}-enabling-keycloak-on-the-demo-server[Enabling {Keycloak} on the Demo Server]
-. xref:{context}-accessing-the-keycloak-admin-console[Accessing the {Keycloak} Admin Console]
+The xref:{context}-adding-keycloak-configuration[Adding {Keycloak} Configuration] and xref:{context}-enabling-keycloak-on-the-demo-server[Enabling {Keycloak} on the Demo Server] headings below are valid for any instance of *{Keycloak}* provided you implement the _Realm settings_.
 
 IMPORTANT: Enabling *{Keycloak}* requires the disabling of *PassportAuth*.
 
