@@ -1,90 +1,79 @@
 [id='{context}-ref-server']
 = {PROJECT_NAME} Server application
 
-Server node.js application that provides api for mobile and portal clients.
-Developers who base their solution on {PROJECT_NAME} can extend it by providing additional API and using custom plugins.
-
-Application has modular structure - all functionalities and integrations are brought in as modules which can be removed or replaced when not needed.
+The Server Application is a Node.js server that provides APIs for mobile and portal clients.
+A Developer can use {PROJECT_NAME} as a base solution and can extend it by providing additional API and using custom plugins.
+The Server Application has a modular structure, that is, all functionality and integrations are imported as modules and can be removed or replaced at a later point.
 
 == {PROJECT_NAME} Server
 
-1. Active release
+1. Active Release Version
 
-This version contains all resources including javascript and other build artifacts https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-server
+The Active Release version contains all resources including javascript and other build artifacts.
+https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-server master version always contains the most recent release.
 
-master version always contains the most recent release.
+NOTE: You can refer to a specific release version by using tag.
 
-> Note: You can also reference to specific relase version by using tag.
+2. Active Development Version
 
-2. Active development version
+The Active Development version is used by {PROJECT_NAME} contributors and contains only TypeScript source code.
+https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-core/blob/master/demo/server
 
-This version is used by {PROJECT_NAME} contributors and contains only TypeScript source code. https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-core/blob/master/demo/server
+== Server-side Application Development Guide
 
-== Server side application development guide
+To launch the Cloud Application, execute `npm run start`.
 
-Cloud application can be launched using
+To start debugging, execute `npm run startDebug`.
 
-    npm run start
+NOTE: Both commands use a tool called `ts-node` and this runs a process without compiling Typescript source code.
 
-For debugging use
+To run the code using Node.js, ensure you compile the code first:
 
-    npm run startDebug
+ * `npm run build`
+ * `node src/index.js`
 
-> Note: Both commands will use tool called `ts-node` that will run process without compiling typescript source code.
+When compiling source code, the `ts-node` command uses compiled Javascript files. To clean compiled Javascript files, execute `npm run clean`
 
-If you wish to run your code using node.js directly it's needs to be compiled first
+=== Prerequisites for a Local Environment
 
-    npm run build
-    node src/index.js
+NOTE: If you run the {PROJECT_NAME} solution as part of the RHMAP platform, this prerequisites does not apply.
 
-When compiling your source code ts-node command will use compiled javascript files
-To clean compiled javascript files use:
+. mongodb installed and running on port 27017 | URL controlled by `process.env.MONGO_CONNECTION_URL` and `config-{env}.json` file
+. redis installed and running on port 6379 | URL controlled by `process.env.REDIS_CONNECTION_URL` and `config-{env}.json` file
 
-    npm run clean
+=== Server-side Configuration
 
-=== Prerequisites for local environment
+The Server Application offers different configuration profiles depending on the target application deployment.
 
-- mongodb installed and running on port 27017
-URL controlled by `process.env.MONGO_CONNECTION_URL` and `config-{env}.json` file.
-- redis installed and running on port 6379
-URL controlled by `process.env.REDIS_CONNECTION_URL` and `config-{env}.json` file.
+* config-dev.js (for developer/local setup - used by default)
+* config-prod.js (for production uses)
 
-> Note: If you running {PROJECT_NAME} solution as part of RHMAP platform this requirements will be satisfied automatically and you do not need change any values in configuration.
+You can also add another profile name using the `config-profile-name.js` pattern.
 
-=== Server side configuration
+Profiles can be changed using `process.env.CONFIG_PROFILE` variable, for example:
 
-Server application offers different configuration profiles depending on target application deployment.
-
-- config-dev.js (for developer/local setup - used by default)
-- config-prod.js (for production uses)
-
-You can also add another profile names using `config-profile-name.js` pattern.
-
-Profiles can be changed using `process.env.CONFIG_PROFILE` variable.
-For example:
 ```
 // use production profile.
 process.env.CONFIG_PROFILE === 'prod'
 // it will load config-prod.js file in top level application
 ```
 
-By default server will load development profile.
-
-All configuration parameters are documented directly in javascript file.
-Developers building their solution on top of the {PROJECT_NAME} are free to extend configuration for their own needs.
+By default, the server will load a development profile.
+All configuration parameters are documented directly in Javascript file.
+Developers building their solution on top of the {PROJECT_NAME} are free to extend the configuration.
 
 === Structure
 
- `modules` - folder contains sample implementation for {PROJECT_NAME} integrations like sync, security. Developers are free to modify and tweak them.
+ * `modules` - this folder contains a sample implementation for {PROJECT_NAME} integrations, for example, sync or security. Developers are free to modify and tweak these.
+ * `user-routes` - contains custom routes (non {PROJECT_NAME} specific)
+ * `app.js` - the main application code that mounts express routes
 
- `user-routes` - contains custom routes (non {PROJECT_NAME} specific)
+=== Configuring Custom Query Parameters for Mobile Clients
 
- `app.js` - Main application code that mounts express routes
+A Mobile client that is based on the sync framework might not require all WorkOrders in order to operate.
 
-=== Configuring custom query parameters for mobile clients
+To save on local memory usage, data traffic and also to improve performance, additional filters can be added to limit those.
 
-Mobile clients based on the sync framework might not require to receive all WorkOrders in order to operate.
-
-To save on local memory usage, data traffic and improve performance, additional filters can be added to limit those.
-
-In this sample implementation, WorkOrders that are in a complete state stop being sent to mobile clients after two days of their completion. This can be configured via the `sync.daysToExcludeCompleteWorkorders` configuration key. It illustrates a way to include a relatively complex MongoDB query filter into the chain that is used by the list handler for the sync framework.
+In the sample implementation, WorkOrders whose status are complete are no longer sent to mobile clients after two days of their completion.
+This is configured via the `sync.daysToExcludeCompleteWorkorders` configuration key.
+It illustrates a way to include a relatively complex MongoDB query filter into the chain that is used by the list handler for the sync framework.
