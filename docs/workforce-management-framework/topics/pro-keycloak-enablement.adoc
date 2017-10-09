@@ -5,9 +5,7 @@ The xref:{context}-adding-keycloak-configuration[Adding {Keycloak} Configuration
 
 IMPORTANT: Enabling *{Keycloak}* requires the disabling of *PassportAuth*.
 
-ifdef::upstream[]
 [discrete]
-endif::upstream[]
 == Prerequisites
 
 . Ensure you have completed xref:getting-started[Getting Started]

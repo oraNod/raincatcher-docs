@@ -6,16 +6,7 @@ The *PassportAuth* module is an out of the box security solution for default int
 This user data contains sample users and access roles for demo purposes in the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/passport-auth/users.json[Demo Data].
 This section describes how to use a different user datasource.
 
-This section includes:
-
-//. xref:{context}-disabling-passportauth[Disabling PassportAuth]
-//. xref:{context}-enabling-passportauth[Enabling PassportAuth]
-. xref:{context}-pointing-passportauth-to-a-datasource[Pointing PassportAuth to a Datasource]
-
-
-ifdef::upstream[]
 [discrete]
-endif::upstream[]
 == Prerequisites
 
 Ensure you have completed:

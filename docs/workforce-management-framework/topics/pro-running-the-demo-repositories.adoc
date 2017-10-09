@@ -5,13 +5,6 @@ The {PROJECT_NAME} {PROJECT_NAME} applications in this section are dependent on 
 
 This allows for a simpler setup of the {PROJECT_NAME} demo applications for users that only require the application to run, and will not engage in development.
 
-This section includes:
-. xref:{context}-published-repositories-cloning-the-git-repositories[Cloning the Git Repositories]
-. xref:{context}-published-repositories-installing-repository-dependencies[Installing Repository Dependencies]
-. xref:{context}-published-repositories-starting-mongodb-and-redis[Starting MongoDB and Redis]
-. xref:{context}-published-repositories-starting-the-core-server[Starting the Core Server]
-. xref:{context}-published-repositories-running-the-mobile-and-portal-applications[Running the Mobile and Portal {PROJECT_NAME} Applications]
-
 [discrete]
 == Prerequisites
 

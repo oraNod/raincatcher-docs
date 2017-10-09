@@ -1,13 +1,6 @@
 [id='{context}-pro-working-with-templates-on-rhmap']
 = Working with {PROJECT_NAME} Templates in {ProductShortName}
 
-This section includes:
-
-. xref:{context}-creating-a-new-wfm-project-in-rhmap[Creating a new {PROJECT_NAME} Project in {ProductShortName}]
-. xref:{context}-setting-up-and-deploying-the-wfm-cloud-app[Setting Up and Deploying the {PROJECT_NAME} Cloud App]
-. xref:{context}-setting-up-and-deploying-the-wfm-portal-app[Setting Up and Deploying the {PROJECT_NAME} Portal App]
-. xref:{context}-setting-up-and-building-the-wfm-mobile-app[Setting Up and Building the {PROJECT_NAME} Mobile App App]
-
 [discrete]
 == Prerequisites
 

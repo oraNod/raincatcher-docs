@@ -1,17 +1,7 @@
 [id='{context}-pro-keycloak-implementation']
 = Implementing {Keycloak}
 
-This section includes:
-
-. xref:{context}-initializing-keycloak[Initializing {Keycloak}]
-. xref:{context}-importing-the-endpointsecurity-interface[Importing the EndpointSecurity Interface]
-. xref:{context}-importing-keycloak-init[Importing {Keycloak} _init_]
-. xref:{context}-applying-keycloak-init[Applying {Keycloak} _init_ ]
-. xref:{context}-enabling-keycloak-route-protection[Enabling {Keycloak} Route Protection]
-
-ifdef::upstream[]
 [discrete]
-endif::upstream[]
 == Prerequisites
 
 . Ensure you have completed xref:getting-started[Getting Started]

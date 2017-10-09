@@ -5,18 +5,7 @@ NOTE: Instructions are for developers who wish to Contribute to {PROJECT_NAME}
 
 This procedure will install the latest master branch.
 
-This section includes:
-
-. xref:{context}-cloning-the-git-repository[Cloning the Git Repository]
-. xref:{context}-installing-angular-dependencies[Installing Angular Dependencies]
-. xref:{context}-installing-core-dependencies[Installing Core Dependencies]
-. xref:{context}-starting-mongodb-and-redis[Starting MongoDB and Redis]
-. xref:{context}-starting-the-core-server[Starting the Core Server]
-. xref:{context}-running-the-mobile-and-portal-demo-applications[Running the Mobile and Portal Demo Applications]
-
-ifdef::upstream[]
 [discrete]
-endif::upstream[]
 == Prerequisites
 
 Ensure you have:
