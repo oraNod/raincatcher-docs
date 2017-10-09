@@ -23,7 +23,7 @@ For more information on how to run a server, see the xref::{context}-ref-server[
 
 == Repository Structure
 
-.{PROJECT_NAME} Repository Structure
+.{PROJECT_NAME} Portal Application Repository Structure
 |===
 |Folder |Description
 
