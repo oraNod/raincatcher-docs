@@ -1,7 +1,7 @@
 [id='{context}-pro-contributing-guide']
 = Contributing Guide
 
-NOTE: Instructions are for developers who wish to Contribute to {PROJECT_NAME}
+NOTE: The instructions in this section are for developers who want to contribute to {PROJECT_NAME}.
 
 This procedure will install the latest master branch.
 
