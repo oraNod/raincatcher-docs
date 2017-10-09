@@ -3,7 +3,7 @@
 
 The *PassportAuth* module is an out of the box security solution for default integration.
 *PassportAuth* uses JSON files that contain user data.
-This user data contains sample users and access roles for demo purposes in the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/passport-auth/users.json[Demo Data].
+This user data contains sample users and access roles for demo purposes, and is found in the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/passport-auth/users.json[Demo Data].
 This section describes how to use a different user datasource.
 
 [discrete]
