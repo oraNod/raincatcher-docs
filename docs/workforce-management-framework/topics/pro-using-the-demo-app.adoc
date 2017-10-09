@@ -74,14 +74,14 @@ image::{WFM-RC-images}portal-viewWorkorder.png[view Workorder]
 
 To update a _Workorder's_ title, assignee or _Workflow_, use the the *pencil* icon.
 The updates will sync to the end user's Mobile Application after `UPDATE Workorder` is clicked.
-To access the _Workorder_ screen, click on the *circle with a plus* icon on the bottom right side of the screen.
+To access the _Workorder_ screen, click the *circle with a plus* icon on the bottom right side of the screen.
 
 == Working with the Mobile Application
 
 The Mobile Application is used by an end user to interact with _Workorders_ that have been assigned to them.
 
 When an end user is logged in, they are presented with the _Workorders_ screen.
-To log out, click on the *menu* icon in the top left hand side of the screen.
+To log out, click the *menu* icon in the top left hand side of the screen.
 This will open a sidebar with options, one being the option to log out.
 
 This section includes:
@@ -105,14 +105,14 @@ Ensure you have:
 +
 image::{WFM-RC-images}workorder-overview.png[overview]
 +
-. To add data to the _Workorder_, click on *START WORKFLOW* and add the necessary data
+. To add data to the _Workorder_, click *START WORKFLOW* and add the necessary data
 . To move to the next _Step_, click *CONTINUE*
-. When all _Steps_ have been completed, click on *CONTINUE* on the bottom of the screen to proceed to the _Summary_ screen
+. When all _Steps_ have been completed, click *CONTINUE* on the bottom of the screen to proceed to the _Summary_ screen
 +
 image::{WFM-RC-images}workorder-summary.png[summary]
 +
 . Once you are on the _Summary_ screen, the _Workorder_ has been completed
-. To return to the _Workorder_ home screen and view the updated status of the _Workorder_, click on the *Menu* icon in the top left hand side and return to the Workorders screen.
+. To return to the _Workorder_ home screen and view the updated status of the _Workorder_, click the *Menu* icon in the top left hand side and return to the Workorders screen.
 . The _Workorder_ is now marked with a green tick which means it was successfully completed.
 
 Once the Mobile Application has synced with the Portal Application, a full summary of the completed _Workorder_ is available for viewing on the Portal Application.
