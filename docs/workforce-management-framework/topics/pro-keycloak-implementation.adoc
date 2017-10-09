@@ -8,8 +8,8 @@
 . A {Keycloak} server
 
 == Using {Keycloak} to secure Express endpoints
-NOTE: The demo server uses the {Keycloak} Node.js Adapter. For more information, see the
-link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
+NOTE: The {PROJECT_NAME} applications uses the {Keycloak} Node.js and Javascript Client Adapters. For more information,
+see xref:{context}-understanding-keycloak-client-adapters[Understanding {Keycloak} Client Adapters].
 
 [id='{context}-implement-endpointsecurity-interface']
 [discrete]

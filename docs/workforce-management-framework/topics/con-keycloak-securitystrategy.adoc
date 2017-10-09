@@ -3,6 +3,8 @@
 
 The *{PROJECT_NAME} {Keycloak}* Security Strategy describe the security aspects for *{Keycloak}* and cover areas such as:
 
+* Understanding {Keycloak} Terminologies
+* Understanding {Keycloak} Client Adapters
 * Understanding {Keycloak} Session Management
 * Defining {Keycloak} Access Control
 * Defining {Keycloak} Password Storage

@@ -1,11 +1,6 @@
 [id='{context}-ref-demo-app']
 = {Keycloak} Reference Material
 
-This section includes:
-
-. xref:{context}-credentials-for-the-demo-application[Credentials for the {Keycloak} Admin Console]
-. xref:{context}-con-keycloak-securitystrategy[Introducing the Security Strategy for Keycloak]
-
 [id='{context}-credentials-for-the-demo-application']
 == Credentials for the {Keycloak} Admin Console
 
@@ -17,7 +12,4 @@ This section includes:
 
 |admin
 |admin
-
 |===
-
-include::con-keycloak-securitystrategy.adoc[leveloffset=+1]

@@ -51,11 +51,10 @@ include::topics/con-datasync-module.adoc[leveloffset=+2]
 include::topics/con-introducing-securityfeatures.adoc[leveloffset=+2]
 include::topics/con-keycloak.adoc[leveloffset=+2]
 include::topics/ref-keycloak.adoc[leveloffset=+3]
-include::topics/pro-keycloak-enablement.adoc[leveloffset=+2]
-include::topics/pro-keycloak-implementation.adoc[leveloffset=+2]
 include::topics/con-keycloak-securitystrategy.adoc[leveloffset=+2]
 include::topics/ref-keycloak-securitystrategy.adoc[leveloffset=+3]
-
+include::topics/pro-keycloak-enablement.adoc[leveloffset=+2]
+include::topics/pro-keycloak-implementation.adoc[leveloffset=+2]
 
 include::topics/con-passportauth-module.adoc[leveloffset=+2]
 include::topics/con-passportauth-securitystrategy.adoc[leveloffset=+2]
