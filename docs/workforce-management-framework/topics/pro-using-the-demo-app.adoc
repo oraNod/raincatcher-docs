@@ -17,8 +17,8 @@ Ensure you have:
 === Creating a Workflow
 
 . Login as an administrator to the Portal Application
-. In the navigation panel on the left, click on *Workflow*
-. To create a new _Workflow_, click on *NEW Workflow*
+. In the navigation panel on the left, click *Workflow*
+. To create a new _Workflow_, click *NEW Workflow*
 .. This will bring you to the _Create Workflow screen_
 . Add a title to the _Workflow_
 . Click *CREATE Workflow* to navigate to the _Add Step screen_
@@ -56,15 +56,15 @@ The options presented for editing a _Workflow_ are the same for the creation of 
 A _Workorder_ is an individual instance of a _Workflow_ and it can be assigned to an end user.
 
 . Login as an administrator to the Portal Application
-. In the navigation panel on the left, click on *Workorder*
-. To create a new _Workorder_, click on *NEW Workorder* to open a form for completion
+. In the navigation panel on the left, click *Workorder*
+. To create a new _Workorder_, click *NEW Workorder* to open a form for completion
 +
 image::{WFM-RC-images}create-workorder.png[Creating a Workorder]
 +
 . Add data to the form and when complete, click `CREATE Workorder`
-.. Once the Workorder is created, it will sync with an end user's account and is now accessible on the Mobile Application
+.. Once the _Workorder_ is created, it will sync with an end user's account and is now accessible on the Mobile Application
 . The page will refresh and the new _Workorder_ will appear in the list on the middle panel
-. To edit a _Workorder_ assigned to an individual end user, click on the _Workorder_ from the center panel list
+. To edit a _Workorder_ assigned to an individual end user, select the _Workorder_ from the center panel list
 +
 image::{WFM-RC-images}portal-viewWorkorder.png[view Workorder]
 
