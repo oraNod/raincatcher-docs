@@ -15,8 +15,8 @@ Ensure you have:
 . Log on to the {ProductShortName} Studio
 . On the top navigation bar, select *Projects*
 . Select *New Project*
-. Look for the _WFM Project_ and click on *Choose*
-. Give the _WFM Project_ a name and click on *Create*
+. Look for the _WFM Project_ and click *Choose*
+. Give the _WFM Project_ a name and click *Create*
 .. You can rename the individual applications within the _WFM Project_
 . Once the _WFM Project_ is created, click *Finish*
 .. You are brought to the _WFM Project_ homepage
@@ -25,15 +25,15 @@ Ensure you have:
 [discrete]
 == Setting Up and Deploying the {PROJECT_NAME} Cloud App
 
-. On the _WFM Project_ homepage, click on the *WFM Cloud App*
-. In the left side navigation panel, click on *Data Browser*
+. On the _WFM Project_ homepage, click the *WFM Cloud App*
+. In the left side navigation panel, click *Data Browser*
 . If the database requires an update, select *Upgrade database*
-.. A warning message appears, click on *Upgrade Now* to proceed
+.. A warning message appears, click *Upgrade Now* to proceed
 . Once the upgrade is complete, click *Next*
 . Navigate to the deployment screen by clicking *Deploy*
 . On the deployment screen, select *{WFM-RC-NodeVersion}* from the *Choose a Runtime* list
-. To deploy the _WFM Cloud App_, click on the *Deploy Cloud App*
-. Once deployed, click on *Apps, Cloud Apps & Services* in the top navigation bar to return to the _WFM Project_ homepage
+. To deploy the _WFM Cloud App_, select the *Deploy Cloud App*
+. Once deployed, click *Apps, Cloud Apps & Services* in the top navigation bar to return to the _WFM Project_ homepage
 
 NOTE: If you makes changes to the WFM Cloud App, ensure you redeployed the WFM Cloud App.
 
@@ -41,11 +41,11 @@ NOTE: If you makes changes to the WFM Cloud App, ensure you redeployed the WFM C
 [discrete]
 == Setting Up and Deploying the {PROJECT_NAME} Portal App
 
-. On the _WFM Project_ homepage, click on the *WFM Portal App*
-. In the left side navigation panel, click on *Deploy* to navigate to the deployment screen
+. On the _WFM Project_ homepage, select the *WFM Portal App*
+. In the left side navigation panel, click *Deploy* to navigate to the deployment screen
 . On the deployment screen, select *{WFM-RC-NodeVersion}* from the *Choose a Runtime* list
-. To deploy the _WFM Portal App_, click on the *Deploy Cloud App*
-. Once deployed, click on *Apps, Cloud Apps & Services* in the top navigation bar to return to the _WFM Project_ homepage
+. To deploy the _WFM Portal App_, click *Deploy Cloud App*
+. Once deployed, click *Apps, Cloud Apps & Services* in the top navigation bar to return to the _WFM Project_ homepage
 
 NOTE: If you makes changes to the WFM Portal App, ensure you redeployed the WFM Cloud App.
 
@@ -53,8 +53,8 @@ NOTE: If you makes changes to the WFM Portal App, ensure you redeployed the WFM 
 [discrete]
 == Setting Up and Building the {PROJECT_NAME} Mobile App App
 
-. On the _WFM Project_ homepage, click on the *WFM Mobile App*
-. In the left side navigation panel, click on *Build* to navigate to the build screen
+. On the _WFM Project_ homepage, click *WFM Mobile App*
+. In the left side navigation panel, click *Build* to navigate to the build screen
 .. To build a mobile binary, see link:https://access.redhat.com/documentation/en-us/red_hat_mobile_application_platform/4.5/html-single/local_development_guide/#building-an-app-binary[Building an App Binary]
 .. To build a mobile binary on the platform, see link:https://access.redhat.com/documentation/en-us/red_hat_mobile_application_platform/4.5/html-single/getting_started/#run-the-client-app-on-a-mobile-device[Run the Client App on a Mobile Device]
 
