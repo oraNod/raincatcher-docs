@@ -60,6 +60,8 @@ The following code is an example of how to protect routes:
 app.use('/test', securityMiddleware.protect(role));
 ----
 
+The {PROJECT_NAME} server application includes configurable admin and user roles within its link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js#L13-L14[security configuration].
+This is used by the server application link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup].
 See the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup] as a reference on how routes can be protected.
 
 For more information on protecting express routes, see the link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
