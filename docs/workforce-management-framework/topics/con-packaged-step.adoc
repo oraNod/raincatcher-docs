@@ -6,7 +6,7 @@ A _Packaged-Step_ is designed to be versatile so that it can be used with a wide
 
 == The Signature Step
 
-The :{WFM-RC-AngularJsURL}{WFM-RC-Branch}/steps/step-signature/[Signature Step] is a _Packaged-Step_ and it is used to capture a signature.
+The link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/steps/step-signature/[Signature Step] is a _Packaged-Step_ and it is used to capture a signature.
 A user inputs their signature through the UI and it is stored as an image.
 A user uses their finger or stylus, for example, to input their signature on a mobile device (the mobile device must have a touch screen).
 The captured signature is displayed as part of a completed _Workorder_.
