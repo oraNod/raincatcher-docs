@@ -68,7 +68,7 @@ NOTE: The terminal is out of use while the Core Server is running.
 
 [id='{context}-published-repositories-running-the-mobile-and-portal-applications']
 [discrete]
-== Running the Mobile and Portal Starter Applications
+== Running the Mobile and Portal Applications
 
 Open a new terminal and execute the following command in folder `raincatcher-portal/` and also in folder `raincatcher-mobile/`:
 
@@ -77,13 +77,13 @@ Open a new terminal and execute the following command in folder `raincatcher-por
 npm run start
 ----
 
-Both the _Mobile_ and _Portal_ Starter Applications open automatically in a browser.
+Both the Mobile and Portal Applications open automatically in a browser.
 
 == Credentials for the Mobile and Portal Demo Application
 
 Login using the following credentials:
 
-.Credentials for the _Mobile_ and _Portal_ Starter Applications
+.Credentials for the Mobile and Portal Applications
 
 NOTE: Users are valid for both passport and {Keycloak} auth providers.
 
@@ -101,6 +101,6 @@ NOTE: Users are valid for both passport and {Keycloak} auth providers.
 
 For a complete list of available users, see the link:https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[gitub repository]
 
-NOTE: The _Mobile_ and _Portal_ Starter Applications contain sample Steps, Workflows and Workorders.
+NOTE: The Mobile and Portal Applications contain sample Steps, Workflows and Workorders.
 They are used only for demonstration purposes.
 To create your own business logic, see the xref:building-wfm-process[WFM documentation].
