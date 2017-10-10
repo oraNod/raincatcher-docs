@@ -40,9 +40,9 @@ include::topics/con-supported-modules.adoc[leveloffset=+1]
 include::topics/con-workflow-step.adoc[leveloffset=+1]
 include::topics/con-packaged-step.adoc[leveloffset=+1]
 
-[[intergrations]]
-= {PROJECT_NAME} Intergrations
-include::topics/con-wfm-intergrations.adoc[leveloffset=+0]
+[[integrations]]
+= {PROJECT_NAME} Integrations
+include::topics/con-wfm-integrations.adoc[leveloffset=+0]
 
 == Sync
 include::topics/con-datasync-module.adoc[leveloffset=+2]

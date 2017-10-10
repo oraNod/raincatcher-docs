@@ -1,7 +1,6 @@
 [id='{context}-pro-keycloak-implementation']
 = Implementing {Keycloak}
 
-[discrete]
 == Prerequisites
 
 . Ensure you have completed xref:getting-started[Getting Started]
@@ -12,10 +11,9 @@ NOTE: The {PROJECT_NAME} applications uses the {Keycloak} Node.js and Javascript
 see xref:{context}-understanding-keycloak-client-adapters[Understanding {Keycloak} Client Adapters].
 
 [id='{context}-implement-endpointsecurity-interface']
-[discrete]
 == Implement the EndpointSecurity Interface
 
-. Import the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/cloud/auth/src/EndpointSecurity.ts[EndpointSecurity Interface].
+. Import the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Endpoint-Security}[EndpointSecurity Interface].
 +
 [source,typescript]
 ----
@@ -24,15 +22,14 @@ import { EndpointSecurity } from '@raincatcher/express-auth';
 +
 . Implement the EndpointSecurity interface
 +
-See the sample link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/keycloak/index.ts[Keycloak implementation] of
+See the sample link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/keycloak/index.ts[Keycloak implementation] of
 the EndpointSecurity interface as a reference on how this can be implemented.
 
 [id='{context}-enable-keycloak-security-middleware']
-[discrete]
 == Enable {Keycloak} Security Middleware for Route Protection
 . Instantiate {Keycloak} and install the {Keycloak} middleware to your express app.
 +
-This is implemented in the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/keycloak/index.ts[Keycloak implementation]
+This is implemented in the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/keycloak/index.ts[Keycloak implementation]
 within the init function. 
 
 +
@@ -47,13 +44,12 @@ const securityMiddleware = initKeycloak(app);
 ----
 
 +
-See the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/index.ts[security setup] as a reference on how this can be applied.
+See the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup] as a reference on how this can be applied.
 
 For more information on how to setup the {Keycloak} Node.js Adapter, see the link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
 
 
 [id='{context}-protect-express-routes']
-[discrete]
 == Protect Express Routes
 
 The following code is an example of how to protect routes:
@@ -64,6 +60,6 @@ The following code is an example of how to protect routes:
 app.use('/test', securityMiddleware.protect(role));
 ----
 
-See the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/demo/server/src/modules/index.ts[security setup] as a reference on how routes can be protected.
+See the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup] as a reference on how routes can be protected.
 
 For more information on protecting express routes, see the link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
