@@ -80,4 +80,4 @@ Open a new terminal and navigate to the folder containing _raincatcher-angularjs
 npm run start
 ----
 
-Both the _Mobile_ and _Portal_ demo applications open automatically in a browser.
+Both the Mobile and Portal demo applications open automatically in a browser.

@@ -1,17 +1,16 @@
 [id='{context}-ref-portal']
-= {PROJECT_NAME} Portal application
+= {PROJECT_NAME} Portal Application
 
-Portal angular.js based application that provides interface for process management. Developers who base their solution on {PROJECT_NAME} can extend it by providing additional UI elements, themes and functionalities.
+The Portal Application is Angular.js based and it provides an interface for process management.
+A solution based on {PROJECT_NAME} can be extended by providing additional UI elements, themes and functionality.
 
-== Local development
+== Local Development
 
-Installation
+To install the Portal Application, execute `npm install`.
 
-    npm install
+== Running on a Browser
 
-== Running on a browser
-
-After installing all dependencies, run these commands to test this application on a local browser:
+Install all project dependencies and run the following commands to test the application in a local browser:
 
 `npm start`
 
@@ -19,22 +18,28 @@ or
 
 `grunt serve:local --url=http://localhost:8001`
 
-The `url` parameter should be the root of the API server application running the api endpoints. See xref::{context}-ref-server[server side documenation] for information how to run server
+Ensure the `url` parameter is the root of the API server application running the API endpoints.
+For more information on how to run a server, see the xref::{context}-ref-server[server side documentation].
 
-== Repository structure
+== Repository Structure
 
-===== src/app
-Main folder containing the logic for the application. The app is mainly concerned in providing the setup and configuration values for the {PROJECT_NAME} and AngularJS modules that are used by it.
+.{PROJECT_NAME} Portal Application Repository Structure
+|===
+|Folder |Description
 
-===== `src/app/services`
-Contains AngularJS services that are utilized by the {PROJECT_NAME} modules to retrieve data. The app has the opportunity to provide an implementation that utilizes any technology for data retrieval, including static fixtures for testing.
+|src/app
+|Main folder containing the logic for the application. The app is mainly concerned in providing the setup and configuration values for the {PROJECT_NAME} and AngularJS modules that are used by it.
 
-===== `src/app/home`
-Has a small AngularJS controller for displaying a temporary template before data is loaded from the backend server.
+|`src/app/services`
+|Contains AngularJS services that are utilized by the {PROJECT_NAME} modules to retrieve data. The app can utilize any technology for data retrieval, including static fixtures for testing.
 
-===== `src/app/sass`
-Contains app-wide [Sass](http://sass-lang.com/) files that are compiled by the build pipeline.
+|`src/app/home`
+|Has a small AngularJS controller for displaying a temporary template before data is loaded from the backend server.
 
-===== `www/`
-Generated directory containing the output files of the local build process.
-This directory's contents are what is served by the local development web server.
+|`src/app/sass`
+|Contains app-wide [Sass](http://sass-lang.com/) files that are compiled by the build pipeline.
+
+|`www/`
+|Generated directory containing the output files of the local build process. This directories contents are what is served by the local development web server.
+
+|===
