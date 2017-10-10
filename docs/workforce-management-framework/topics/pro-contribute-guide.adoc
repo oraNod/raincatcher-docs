@@ -69,9 +69,9 @@ npm run start
 
 NOTE: The terminal is out of use while the Core Server is running.
 
-[id='{context}-running-the-mobile-and-portal-demo-applications']
+[id='{context}-running-the-mobile-and-portal-applications']
 [discrete]
-== Running the Mobile and Portal Demo Applications
+== Running the Mobile and Portal Applications
 
 Open a new terminal and navigate to the folder containing _raincatcher-angularjs_, and execute:
 
@@ -80,4 +80,4 @@ Open a new terminal and navigate to the folder containing _raincatcher-angularjs
 npm run start
 ----
 
-Both the Mobile and Portal demo applications open automatically in a browser.
+Both the Mobile and Portal applications open automatically in a browser.
