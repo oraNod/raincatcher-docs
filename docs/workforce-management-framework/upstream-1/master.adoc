@@ -21,22 +21,18 @@ include::topics/pro-running-the-demo-repositories.adoc[leveloffset=+1]
 include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
 include::topics/ref-demo-app.adoc[leveloffset=+2]
 
-[[developer-getting-started]]
-= Developer Introduction
-
-include::topics/ref-mobile.adoc[leveloffset=+1]
-include::topics/ref-portal.adoc[leveloffset=+1]
-include::topics/ref-server.adoc[leveloffset=+1]
+[[building-wfm-process]]
+= Building WFM Process in {PROJECT_NAME}
+include::topics/con-workflow-step.adoc[leveloffset=+1]
+include::topics/con-packaged-step.adoc[leveloffset=+1]
 
 [[top-level-apps-overview]]
 = Top Level Applications Overview
 include::topics/con-wfm.adoc[leveloffset=+1]
 include::topics/con-supported-modules.adoc[leveloffset=+1]
-
-[[building-wfm-process]]
-= Building WFM Process in {PROJECT_NAME}
-include::topics/con-workflow-step.adoc[leveloffset=+1]
-include::topics/con-packaged-step.adoc[leveloffset=+1]
+include::topics/ref-mobile.adoc[leveloffset=+1]
+include::topics/ref-portal.adoc[leveloffset=+1]
+include::topics/ref-server.adoc[leveloffset=+1]
 
 [[integrations]]
 = {PROJECT_NAME} Integrations
@@ -45,8 +41,10 @@ include::topics/con-wfm-integrations.adoc[leveloffset=+0]
 == Sync
 include::topics/con-datasync-module.adoc[leveloffset=+2]
 
-== Security
+== Security introduction
 include::topics/con-introducing-securityfeatures.adoc[leveloffset=+2]
+
+== Using {Keycloak}
 include::topics/con-keycloak.adoc[leveloffset=+2]
 include::topics/ref-keycloak.adoc[leveloffset=+3]
 include::topics/con-keycloak-securitystrategy.adoc[leveloffset=+2]
@@ -54,10 +52,14 @@ include::topics/ref-keycloak-securitystrategy.adoc[leveloffset=+3]
 include::topics/pro-keycloak-enablement.adoc[leveloffset=+2]
 include::topics/pro-keycloak-implementation.adoc[leveloffset=+2]
 
+== Using Passport.js
 include::topics/con-passportauth-module.adoc[leveloffset=+2]
 include::topics/con-passportauth-securitystrategy.adoc[leveloffset=+2]
 include::topics/ref-passportauth-securitystrategy.adoc[leveloffset=+3]
 include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+2]
+
+= Logging
+include::topics/con-logging.adoc[leveloffset=+1]
 
 [[ui]]
 = Modifying the UI
@@ -78,7 +80,7 @@ include::topics/con-release-notes.adoc[leveloffset=+1]
 [[Contributing]]
 = Contributing
 include::topics/pro-contribute-guide.adoc[leveloffset=+1]
-include::topics/con-logging.adoc[leveloffset=+1]
+
 
 // Appendix: Revision Information
 include::topics/shared/templates/revision-info.adoc[]

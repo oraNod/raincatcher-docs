@@ -1,5 +1,5 @@
 [id='{context}-ref-portal']
-= {PROJECT_NAME} Portal Application
+= Portal Application
 
 Portal AngularJS based application that provides interface for process management. Developers who base their solution on {PROJECT_NAME} can extend it by providing additional UI elements, themes and functionalities.
 

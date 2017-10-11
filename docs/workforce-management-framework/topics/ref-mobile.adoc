@@ -1,5 +1,5 @@
 [id='{context}-ref-mobile']
-= {PROJECT_NAME} Mobile Application
+= Mobile Application
 
 Mobile AngularJS based application that provides interface for field operators.
 Developers who base their solution on {PROJECT_NAME} can extend it by providing additional UI elements, themes and functionalities.

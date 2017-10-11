@@ -1,17 +1,16 @@
-= {PROJECT_NAME} {WFM-RC-Version} Release Notes
 
 == Overview
 
 {PROJECT_NAME} allows you to move from paper based forms and processes into complete mobile solution.
-{PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile application. 
+{PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile application.
 Both mobile and portal applications are fully customizable.
 
-== About This Release
+== About {WFM-RC-Version} Release
 {PROJECT_NAME} {WFM-RC-Version} is a new produce was previously in tech preview. The Features are listed below.
 
 === Workflows
-The ability to create customizable processes (called workflows). Workflows are made up of steps which can be the packaged steps 
-or can be custom steps developed for a particular use case. 
+The ability to create customizable processes (called workflows). Workflows are made up of steps which can be the packaged steps
+or can be custom steps developed for a particular use case.
 
 === Workorders
 The ability to process instances called workorders. Workorder are a instance of a individual workflow.

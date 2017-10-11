@@ -1,5 +1,5 @@
 [id='{context}-ref-server']
-= {PROJECT_NAME} Server application
+= Server Application
 
 The Server Application is a Node.js server that provides APIs for mobile and portal clients.
 A Developer can use {PROJECT_NAME} as a base solution and can extend it by providing additional API and using custom plugins.

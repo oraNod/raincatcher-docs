@@ -1,5 +1,4 @@
 [id='{context}-con-logging']
-= Introducing {PROJECT_NAME} Logging
 
 *{PROJECT_NAME} Logging* is a facade for link:https://nodejs.org[Node.js] based applications and it is used by all {PROJECT_NAME} modules.
 *{PROJECT_NAME} Logging* is contained in the `{PROJECT_NAME}-core` module.
