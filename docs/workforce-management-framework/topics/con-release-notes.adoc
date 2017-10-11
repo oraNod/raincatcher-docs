@@ -3,22 +3,22 @@
 == Overview
 
 {PROJECT_NAME} allows you to move from paper based forms and processes into complete mobile solution.
-{PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile appliction. 
-Both mobile and portal applciations are fully customizable.
+{PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile application. 
+Both mobile and portal applications are fully customizable.
 
 == About This Release
-{PROJECT_NAME} {WFM-RC-Version} is a new produce was previosly in tech preview. The Features are listed below.
+{PROJECT_NAME} {WFM-RC-Version} is a new produce was previously in tech preview. The Features are listed below.
 
 === Workflows
-The ablity to create customizable processes (called workflows). Workflows are made up of steps which can be the packaged steps 
-or can be custom steps developed for a paticular use case. 
+The ability to create customizable processes (called workflows). Workflows are made up of steps which can be the packaged steps 
+or can be custom steps developed for a particular use case. 
 
 === Workorders
-The ablity to process instances called workorders. Workorder are a instance of a individual workflow.
+The ability to process instances called workorders. Workorder are a instance of a individual workflow.
 Workorder can be assigned via the portal to individual employees as a job for completion.
 
 === Step Generator
-Generates a step via cli, the step can be customised to meet a use case.
+Generates a step via cli, the step can be customized to meet a use case.
 
 === Packaged Step
 Providing predefined signature step that can be used for any business needs.
