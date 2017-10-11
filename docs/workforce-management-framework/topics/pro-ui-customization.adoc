@@ -1,7 +1,7 @@
 [id='{context}-pro-ui-customization']
-= {PROJECT_NAME} UI Starter App Customization
+= {PROJECT_NAME} UI App Customization
 
-Follow these procedures to start applying changes to the Mobile and Portal Starter Apps. Refer to the xref:{context}-ref-demo-app[{PROJECT_NAME} Starter Application Reference Material] for more information about their overall structure.
+Follow these procedures to start applying changes to the Mobile and Portal Apps. Refer to the xref:{context}-ref-demo-app[{PROJECT_NAME} Application Reference Material] for more information about their overall structure.
 
 [id='{context}-ref-ui-technology']
 == Adding UI elements
@@ -13,7 +13,7 @@ In order to add new elements to the {PROJECT_NAME} UI, you must create your own 
 
 {PROJECT_NAME} utilizes link:https://ui-router.github.io/ng1/[UI-Router for AngularJS] to modularize the user interface components in separate routes that can be referenced by navigation links.
 
-The Starter Applications follow a 2-column module in the case of the Portal App, and a single column plus an optional toolbar section in the case of the Mobile App. The applications can provide the HTML ids of these container elements to the individual modules, allowing them to insert views into them through the UI-Router.
+The Applications follow a 2-column module in the case of the Portal App, and a single column plus an optional toolbar section in the case of the Mobile App. The applications can provide the HTML ids of these container elements to the individual modules, allowing them to insert views into them through the UI-Router.
 
 The following is a tiny example of how a module can be structured:
 
@@ -63,7 +63,7 @@ Refer to the link:https://docs.angularjs.org/api/ng/function/angular.module[Angu
 [id='{context}-add-custom-module']
 === Adding the new module to the main application config
 
-To configure the Starter Apps to utilize your module, add it to the array of dependencies of the main `app` module for the Starter App:
+To configure the Apps to utilize your module, add it to the array of dependencies of the main `app` module for the App:
 
 [source,javascript]
 ----
@@ -82,7 +82,7 @@ For the Mobile App, this is located at `src/app/app.js`.
 For the Portal App, this is located at `src/app/main.js`
 
 
-At this point, running the Starter App and navigating to `/custom` should navigate to the custom route and display the messages defined in the `template` keys in the xref:{context}-create-angularjs-module[previous section].
+At this point, running the App and navigating to `/custom` should navigate to the custom route and display the messages defined in the `template` keys in the xref:{context}-create-angularjs-module[previous section].
 
 === New navigation option on the navigation sidebar
 
