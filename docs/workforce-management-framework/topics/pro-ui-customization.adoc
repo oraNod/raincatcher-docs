@@ -3,7 +3,7 @@
 
 Follow these procedures to start applying changes to the Mobile and Portal Apps. Refer to the xref:{context}-ref-demo-app[{PROJECT_NAME} Application Reference Material] for more information about their overall structure.
 
-[id='{context}-ref-ui-technology']
+[id='{context}-adding-ui-elements']
 == Adding UI elements
 
 [id='{context}-create-angularjs-module']
@@ -151,3 +151,49 @@ $accent-color-4: #283593;
 $success: #388E3C;
 $danger: #F44336;
 ----
+
+== Customizing {PROJECT_NAME} Login UI
+
+=== Customizing PassportAuth Login UI
+
+[discrete]
+==== Customizing the PassportAuth Login Page for the Portal Application
+The login page for PassportAuth in the portal application is served by the server application. It can be rendered like the following example below:
+[source,typescript]
+----
+res.render('login', {
+  title: 'Your Title',
+  message: 'Your Invalid Credentials Message'
+})
+----
+
+The PassportAuth portal login page is fully customizable by configuring the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/views/login.hbs[login.hbs]
+within the server application.
+
+==== Customizing the PassportAuth Login Page for the Mobile Application
+The link:{WFM-RC-AngularJsTreeURL}{WFM-RC-Branch}/packages/angularjs-auth[@raincatcher/angularjs-auth]
+package contains the AngularJS implementation of the PassportAuth login page. This is used with the PassportAuth 
+module for the mobile application. 
+
+The package needs to be enabled along with the PassportAuth module within the mobile application. The title of the
+login page can be specified by adding the title as a parameter to the module.
+
+[source,javascript]
+----
+require('./passport'),
+require('@raincatcher/angularjs-auth')({
+  title: 'Your Title Here'
+})
+----
+
+The PassportAuth mobile login page can be customized by customizing the link:{WFM-RC-AngularJsURL}{WFM-RC-Branch}/packages/angularjs-auth/lib/template/login.tpl.html[login page template]
+in the link:{WFM-RC-AngularJsTreeURL}{WFM-RC-Branch}/packages/angularjs-auth[@raincatcher/angularjs-auth] module. Ensure that the templates are built by running the following command
+[source,bash]
+----
+grunt build
+----
+
+=== Customizing {Keycloak} Login UI
+The {Keycloak} login page can be customized by providing a custom theme for {Keycloak}. For more information on
+how to provide your own custom theme for {Keycloak}, see the link:https://medium.com/@auscunningham/create-a-custom-theme-for-keycloak-8781207be604[Create a custom theme for {Keycloak}]
+article.
