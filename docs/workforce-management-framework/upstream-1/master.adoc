@@ -10,8 +10,6 @@ include::topics/shared/attributes.adoc[]
 
 image::https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/master/docs/shared/images/logo-blue.png[logo]
 
-NOTE: this is a draft of the documentation, files and render will change in the future. 
-
 [[raincatcher]]
 = WFM Overview
 include::topics/con-introducing-raincatcher.adoc[leveloffset=+1]
@@ -69,42 +67,20 @@ include::topics/pro-ui-customization.adoc[leveloffset=+1]
 include::topics/con-angularjs-modules.adoc[leveloffset=+1]
 
 [[performance]]
-= Performance 
--
+= Production setup
+include::topics/con-production-checklist.adoc[leveloffset=+1]
+include::topics/con-performance-guidelines.adoc[leveloffset=+1]
 
 [[release-notes]]
 = Release notes
-include::topics/con-release-notes[leveloffset=+1]
+include::topics/con-release-notes.adoc[leveloffset=+1]
 
 [[Contributing]]
 = Contributing
 include::topics/pro-contribute-guide.adoc[leveloffset=+1]
 include::topics/con-logging.adoc[leveloffset=+1]
 
-
-
-
-
-
-
-
-//[[preparing-the-local-development-environment]]
-//== Preparing the Local Development Environment
-
-
-//[[programming-a-raincatcher-project]]
-//== Programming a {PROJECT_NAME} Project
-//include::working-with-passportauth.adoc[leveloffset=+2]
-//include::working-with-keycloak.adoc[leveloffset=+2]
-
-//[[raincatcher-security]]
-//== {PROJECT_NAME} Security
-//include::defining-raincatcher-security.adoc[leveloffset=+2]
-
-
-// **********************************
-// * Appendix: Revision Information *
-// **********************************
+// Appendix: Revision Information
 include::topics/shared/templates/revision-info.adoc[]
 
 

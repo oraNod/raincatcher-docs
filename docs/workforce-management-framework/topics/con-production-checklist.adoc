@@ -1,0 +1,73 @@
+[id='{context}-production-checklist']
+= Production checklist
+
+Following guide provides set of guidance and actions that needs to be verified before releasing ${PRODUCT_NAME} to production.
+
+== Server configuration
+
+Server application provides abstraction for configuration that allows users to create profiles.
+Application is created with 2 default profiles:
+
+- development (link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js[config-dev.js])
+- production (link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod.js])
+
+For more information about profiles go to link:{context}-ref-server[Server side reference]
+
+When moving to production developers should review their configuration to make sure that a
+
+Most important areas to review:
+
+- MongoDB configuration pooling
+- Redis configuration
+- Session
+- Security tokens
+- Application logging
+
+Most important values
+
+- `seedDemoData` (disable demo data by false)
+- `passportjs.jwtSecret`: secret value used with Passportjs
+- `session.secret`: secret value for the session
+
+NOTE: Configuration contains critical elements for application security.
+Please make sure that you not going to use any default values from the profile provided with server application.
+
+Please follow integrations documentation for more details about specific sections of the configuration
+
+== Mobile application
+
+Mobile configuration should be adjusted before building mobile application.
+Configuration can be found link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.json[config.json file]
+
+Developers can adjust sync options improve overall performance.
+For more information see link:con-performance-guidelines.adoc[Performance Guide]
+Additionally Keycloak configuration can be changed.
+
+Most important values
+
+- `sync_frequency`: can be used to adjust time sync framework will pool the server)
+
+=== Cordova configuration
+
+Apache Cordova configuration needs to be adjusted before doing release.
+Configuration can be found in link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.xml[Cordova config.xml file]
+Developers should review Cordova file by removing permissions and plugins that aren't used.
+Additionally developers should restrict and remove any origins that aren't used in the application
+
+[source,xml]
+----
+<!--Remove wildcard-->
+<access origin="*" />
+----
+
+== Portal configuration
+
+Portal configuration can be found link:{WFM-RC-PortalURL}{WFM-RC-Release-Tag}/src/config.json[config.json file]
+
+== Remove redundant code from all applications
+
+{PROJECT_NAME} reference applications including all npm modules that are available as part of the solution.
+Depending on use case developers can choose to use different technologies.
+Before moving to production any redundant code and npm modules should be removed from `package.json`
+
+Please follow individual application documentation to see what elements can be removed.

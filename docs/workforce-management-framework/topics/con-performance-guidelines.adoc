@@ -1,0 +1,84 @@
+[id='{context}-performance-guidelines']
+= Performance Guidelines
+
+{PROJECT_NAME} integrates multiple technologies and frameworks into single solution. Developers can build on top of the provided applications and use technologies that aren't part of the standard applications.
+
+Node.js based server can rely on customer preferred database or external API. This  may have significant impact on overall application performance. {PROJECT_NAME} was designed to expose all configuration into single files.
+Thanks to that developers can move applications to production by changing configuration in one place.
+
+Server side application supports profiles (by default development and production) that will also help to differentiate between production and development configuration. This will ensure that application will be secure and perform to growing number of users.
+
+== Purpose of this guide
+
+In document provide guidelines for RainCatcher integrations by exposing common parameters and documenting performance guidelines for integrations.
+
+== Server application
+
+Server exposes number of parameters that can be changed by adjusting server configuration. For more information see configuration
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod.js]
+
+=== MongoDB
+
+MongoDB connection options should be configured to properly maintain connection pooling. See server side configuration.
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod.js]
+
+=== Indexes on the mongodb data
+
+If MongoDB is being used as storage for sync data, developers needs to create indexes to improve performance.
+
+Workorder:
+
+- id
+- assignee
+
+Workflow
+
+- id
+
+=== Redis Cache
+
+{PROJECT_NAME} using redis indirectly to store user sessions.
+Please refer to official redis client options.
+Redis configuration can be changed in link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod.js] file.
+
+=== Passport.js
+
+When designing authentication service on top of the Passport.js developers can choose their own user source. Passport.js integration performance will mostly depend on `Repository` implementation.
+Implementation abstract from the any database layer. Developers will need to make sure that link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[Repository] implementation will return results without significant delays. Additional network timeouts can be provided. To provide best performance please make sure that no external network requests are made.
+
+=== FeedHenry Sync
+
+FeedHenry Sync is being used by default in the mobile application to synchronize data between mobile device and server. {PROJECT_NAME} provides thin layer on top of the sync framework with number of helpers that are {PROJECT_NAME} specific.
+
+Sync documentation:
+
+- link:https://developers.redhat.com/blog/2017/06/01/scaling-sync[Scaling sync blog]
+- link:https://access.redhat.com/documentation/en-us/red_hat_mobile_application_platform/4.4/html/server-side_developer_guide/server-side-developer-guide-using-rhmap-data-sync-framework#sync_configuration_guide[Sync configuration guide]
+- link:https://access.redhat.com/documentation/en-us/red_hat_mobile_application_platform/4.4/html/server-side_developer_guide/server-side-developer-guide-using-rhmap-data-sync-framework#sync-performance-scaling[Sync performance guide]
+
+==== Changing sync frequency
+
+Mobile application allows developers to change client sync frequency by modifying link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.json[config.json file]
+
+WFM implementation using only single `workorders` dataset.
+We can change frequency as bellow:
+[source,json]
+----
+{
+  "workorders": {
+    "sync_frequency": 60
+  }
+}
+----
+
+NOTE: default 10 seconds frequency is being used on the server.
+If you wish to change server frequency please follow sync documentation.
+
+NOTE: For best performance users should keep the same frequency on the server and client.
+
+== Keycloak/SSO authentication
+
+{PROJECT_NAME} integrates with Keycloak/SSO using official clients.
+Developers can install and configure Keycloak server for their own needs and capabilities.Application performance may depend on number of users and realms used in the solution. For more information about performance of Keycloak/SSO please refer to official documentation and blog.
+
+
