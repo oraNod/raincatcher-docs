@@ -1,13 +1,6 @@
 [id='{context}-ref-introducing-raincatcher']
 = {PROJECT_NAME} Reference Material
 
-This section includes:
-
-. xref:{context}-highlighting-raincatcher-areas-of-focus[Highlighting {PROJECT_NAME} Areas of Focus]
-. xref:{context}-raincatcher-at-a-technical-level[{PROJECT_NAME} at a Technical Level]
-. xref:{context}-identifying-raincatcher-repositories[Identifying {PROJECT_NAME} Repositories]
-. xref:{context}-differentiating-raincatcher-from-tech-preview[Differentiating {PROJECT_NAME} from 'Tech Preview']
-
 [id='{context}-highlighting-raincatcher-areas-of-focus']
 == Highlighting {PROJECT_NAME} Areas of Focus
 

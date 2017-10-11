@@ -1,16 +1,6 @@
 [id='{context}-ref-passportauth-securitystrategy']
 = Defining the Security Strategy for {PROJECT_NAME} PassportAuth
 
-This section includes:
-
-. xref:{context}-understanding-passportauth-session-management[Understanding PassportAuth Session Management]
-. xref:{context}-defining-passportauth-access-control[Defining PassportAuth Access Control]
-. xref:{context}-defining-passportauth-password-storage[Defining PassportAuth Password Storage]
-. xref:{context}-passportauth-authentication[PassportAuth Authentication]
-. xref:{context}-passportauth-authorization[PassportAuth Authorization]
-. xref:{context}-customizing-a-strategy[Customizing a Strategy]
-. xref:{context}-passportAuth-demo-users-and-access-roles[PassportAuth Demo Users and Access Roles]
-
 [id='{context}-understanding-passportauth-session-management']
 == Understanding PassportAuth Session Management
 

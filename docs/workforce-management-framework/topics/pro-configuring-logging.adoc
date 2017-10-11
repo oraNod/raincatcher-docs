@@ -1,10 +1,6 @@
 [id='{context}-pro-configuring-logging']
 = Introduction
 
-This section includes:
-
-//. xref:{context}-cloning-the-git-repository[Cloning the Git Repository]
-
 = Prerequisites
 
 //* Redis (tested with version: {WFM-RC-RedisVersion})

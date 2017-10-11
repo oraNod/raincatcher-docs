@@ -84,9 +84,6 @@ When an end user is logged in, they are presented with the _Workorders_ screen.
 To log out, click the *menu* icon in the top left hand side of the screen.
 This will open a sidebar with options, one being the option to log out.
 
-This section includes:
-
-. xref:{context}-completing-a-workorder[Completing a Workorder]
 
 [discrete]
 === Prerequisites
