@@ -1,7 +1,7 @@
 [id='{context}-con-passportauth-securitystrategy']
 = Introducing the Security Strategy for PassportAuth
 
-The *{PROJECT_NAME} PassportAuth* Security Strategy describe the security aspects for *PassportAuth* and cover areas such as:
+The *{PROJECT_NAME} PassportAuth* Security Strategy describes the security aspects for *PassportAuth* and covers areas such as:
 
 * Understanding Session Management
 * Defining Access Control

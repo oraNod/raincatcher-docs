@@ -4,8 +4,8 @@
 [id='{context}-understanding-keycloak-terminologies']
 [discrete]
 == Understanding {Keycloak} Terminologies
-There are some key concepts and terminologies that you need to be aware of before attempting to use {Keycloak}. For more
-information on these key concepts and terminologies, see {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/overview/concepts.html[core concepts] documentation.
+There are some key concepts and terminologies to be aware of before using {Keycloak}. For more
+information on these key concepts and terminologies, see the link:{WFM-RC-KeycloakURL}server_admin/topics/overview/concepts.html[{Keycloak} Core Concepts] documentation.
 
 [id='{context}-understanding-keycloak-client-adapters']
 [discrete]
@@ -20,32 +20,32 @@ For more information on the Javascript Client Adapter, see the link:{WFM-RC-Keyc
 [discrete]
 == Understanding {Keycloak} Session Management
 The _express-session_ module provides session management functionality and
-the management of sessions is performed on the link:{WFM-RC-KeycloakURL}server_admin/topics/sessions/administering.html[*{Keycloak}* server]
+the management of sessions is performed on the link:{WFM-RC-KeycloakURL}server_admin/topics/sessions/administering.html[{Keycloak} server]
 For more information on _express-session_, see link:https://github.com/expressjs/session[express-session].
 
 [id='{context}-defining-keycloak-access-control']
 [discrete]
 == Defining {Keycloak} Access Control
-*{Keycloak}* provides role based access control and is configured on the *{Keycloak}* server.
-For more information about role based access control, see link:{WFM-RC-KeycloakURL}server_admin/topics/roles.html[*{Keycloak}* Roles].
+{Keycloak} provides role-based access control and is configured on the {Keycloak} server.
+For more information about role-based access control, see link:{WFM-RC-KeycloakURL}server_admin/topics/roles.html[{Keycloak} Roles].
 
 See the xref:{context}-protect-express-routes[Protect Express Routes] section on how routes are protected in the application.
-For more information on protecting express routes, see the *{Keycloak}* link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter].
+For more information on protecting express routes, see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter].
 
 [id='{context}-defining-keycloak-password-storage']
 [discrete]
 == Defining {Keycloak} Password Storage
-*{Keycloak}* uses the link:https://en.wikipedia.org/wiki/PBKDF2[BKDF2 algorithm] for password hashing by default.
-*{Keycloak}* also provides enforced link:{WFM-RC-KeycloakURL}server_admin/topics/authentication/password-policies.html[password policies] from the server.
+{Keycloak} uses the link:https://en.wikipedia.org/wiki/PBKDF2[PBKDF2 algorithm] for password hashing by default.
+{Keycloak} also provides enforced link:{WFM-RC-KeycloakURL}server_admin/topics/authentication/password-policies.html[password policies] from the server.
 
 For more information on server administration topics, see link:{WFM-RC-KeycloakURL}server_admin/topics/identity-broker.html[identity-broker] and link:{WFM-RC-KeycloakURL}server_admin/topics/user-federation.html[user federation].
 
 [id='{context}-keycloak-authentication']
 [discrete]
-== *{Keycloak}* Authentication
-*{Keycloak}* has a wide variety of authentication mechanisms available. For more information, see the link:{WFM-RC-KeycloakURL}server_admin/topics/authentication.html[*{Keycloak}* Authentication Documentation].
+== {Keycloak} Authentication
+{Keycloak} has a wide variety of authentication mechanisms available. For more information, see the link:{WFM-RC-KeycloakURL}server_admin/topics/authentication.html[{Keycloak} Authentication Documentation].
 
 [id='{context}-keycloak-authorization']
 [discrete]
-== *{Keycloak}* Authorization
-Authorization is fully documented in the link:{WFM-RC-KeycloakURL}authorization_services/index.html[*{Keycloak}* Authorization Documentation].
+== {Keycloak} Authorization
+Authorization is fully documented in the link:{WFM-RC-KeycloakURL}authorization_services/index.html[{Keycloak} Authorization Documentation].

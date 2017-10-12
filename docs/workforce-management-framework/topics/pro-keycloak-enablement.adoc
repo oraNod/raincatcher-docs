@@ -1,28 +1,28 @@
 [id='{context}-pro-keycloak-enablement']
 = Enabling {Keycloak}
 
-IMPORTANT: Enabling *{Keycloak}* requires the disabling of *PassportAuth*.
+IMPORTANT: Enabling {Keycloak} requires the disabling of *PassportAuth*.
 
 == Prerequisites
 
 . Ensure you have completed xref:getting-started[Getting Started]
-. Docker (tested with version: {WFM-RC-DockerVersion})
-. Knowledge of {Keycloak} terminologies. See xref:{context}-understanding-keycloak-terminologies[Understanding {Keycloak} Terminologies] section for more information.
+. A link:https://www.docker.com/[Docker] installation (tested with version: {WFM-RC-DockerVersion})
+. Knowledge of {Keycloak} terminologies. See the xref:{context}-understanding-keycloak-terminologies[Understanding {Keycloak} Terminologies] section for more information.
 
-NOTE: If you choose to run your own {Keycloak} instance, ensure that a realm is setup for the {PROJECT_NAME} applications
+NOTE: If you choose to run your own {Keycloak} instance, ensure that a {Keycloak} realm is setup for the {PROJECT_NAME} applications
 to use. For more information, see xref:{context}-setup-keycloak-realm[Setting up a {Keycloak} Realm] section. 
 
 [id='{context}-run-keycloak-docker-image']
 == Running the {Keycloak} Docker Image
 
-. Open a terminal and run the *{Keycloak}* Docker image
+. Open a terminal and run the {Keycloak} Docker image
 
 [source,bash]
 ----
 docker run -p 8080:8080 feedhenry/raincatcher-keycloak
 ----
 
-For more information about the *{Keycloak}* Docker Image, see the *{Keycloak}* link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
+For more information about the {Keycloak} Docker Image, see the {Keycloak} link:{WFM-RC-KeycloakDockerURL}{WFM-RC-Branch}/README.md[README.md].
 
 IMPORTANT: The {Keycloak} realm setup included in this docker image is configured for local development only. Ensure that you provide proper client 
 configurations for production environments. See xref:{context}-keycloak-configuration-production[{Keycloak} Configuration for Production Environments] for more information.
@@ -57,12 +57,12 @@ See xref:{context}-keycloak-configuration-production[{Keycloak} Configuration fo
 [id='{context}-create-own-keycloak-realm']
 [discrete]
 === Creating your own {Keycloak} Realm
-IMPORTANT: Ensure that you have a deep understanding of {Keycloak}, Node.js and Javascript Adapters before attempting to change any of the configurations below.
 
-See the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/realms/create.html[realm] documentation for more information on how to
-create a new realm within a {Keycloak} instance.
+WARNING: Creating your own {Keycloak} Realm requireds an advanced understanding of {Keycloak} and its Node.js and Javascript Adapters.
 
-The realm must adhere to the following configurations in order to use it with the {PROJECT_NAME} applications
+See the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/realms/create.html[realm] documentation for more information on how to create a new realm within a {Keycloak} instance.
+
+The realm must adhere to the following configurations in order to use it with the {PROJECT_NAME} applications:
 
 * Realm settings
 +
@@ -120,7 +120,7 @@ Web Origins: *
 === Adding Keycloak Configuration in the Server Application
 . Choose which _configuration file_ to edit:
 +
-.*{Keycloak}* Configuration File
+.{Keycloak} Configuration File
 |===
 |Area |File Name | File Location
 
@@ -138,17 +138,17 @@ Web Origins: *
 +
 [source,javascript]
 ----
-"keycloakConfig":{
-                    "realm": "raincatcher",
-                    "bearer-only": true,
-                    "auth-server-url": "http://localhost:8080/auth",
-                    "ssl-required": "external",
-                    "resource": "raincatcher-cloud",
-                    "use-resource-role-mappings": true
-                  }
+"keycloakConfig": {
+  "realm": "raincatcher",
+  "bearer-only": true,
+  "auth-server-url": "http://localhost:8080/auth",
+  "ssl-required": "external",
+  "resource": "raincatcher-cloud",
+  "use-resource-role-mappings": true
+}
 ----
-NOTE: Ensure that the realm, auth-server-url and resource values corresponds to your client configuration within your 
-realm. Ensure that the values for the fields bearer-only, ssl-required and use-resource-role-mappings are not changed.
+NOTE: Ensure that the realm, auth-server-url and resource values correspond to your client configuration within your 
+realm. Ensure that the values for the fields *bearer-only*, *ssl-required* and *use-resource-role-mappings* are not changed.
 For more information, see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
 
 IMPORTANT: Filling in the realm, auth-server-url and resource fields in the keycloakConfig also enables {Keycloak} in the server application
@@ -165,7 +165,7 @@ see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/javascript
 
 [discrete]
 === Keycloak Configuration in the Portal Application
-The _Keycloak Configuration_ for the portal application is already filled in. This may be customized by changing the realm, url and clientId fields
+The _Keycloak Configuration_ for the portal application is already filled in. This may be customized by changing the *realm*, *url* and *clientId* fields
 within the application's link:{WFM-RC-PortalURL}{WFM-RC-Release-Tag}/src/config.json[config.json] to values which corresponds to your own client configuration.
 
 NOTE: Ensure that the values for the rest of the fields apart from the realm, url and clientId are not changed.

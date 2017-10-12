@@ -29,22 +29,22 @@ is implemented in order to point *PassportAuth* to a datasource.
 
 [id='{context}-passportauth-authentication']
 == PassportAuth Authentication
-{PROJECT_NAME} authentication is handled by the cloud server using users unique username and password combination.
-The *PassportAuth* service is a default authentication strategy as based on the *Passport.js* local and JWT implementation.
+{PROJECT_NAME} authentication is handled by the server using the user's unique username and password combination.
+The *PassportAuth* service has a default authentication strategy based on *Passport.js*'s local and JWT strategies.
 
 *PassportAuth* uses link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticate[authenticate]
-middleware for cookie based authentication.To access _express_ routes,
+middleware for cookie based authentication. To access _express_ routes,
 a user must login using their credentials. A cookie containing a user session key is used to authenticate and
-authorize a user who is requesting a server endpoint.
+authorize a user upon each request to the server.
 
-NOTE: In the demonstration application, the cookie login post route has an authenticate() method that checks user credentials
+NOTE: In the Demo Applications, the cookie login route has an *authenticate()* method that checks user credentials
 against the stored credentials in the _users.json_ file. It also checks the user's role against the role on _users.json_.
 
 *PassportAuth* uses link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticateWithToken[authenticateWithToken]
 for token based authentication. To access _express_ routes, a user must login using their credentials. A generated JSON web token (JWT)
 and the user's profile is sent to the client upon successful authentication.
 
-NOTE: The JWT token needs to be included in each subsequent requests after a successful login as part of the *Authorization* header
+NOTE: The JWT token needs to be included in every subsequent request after a successful login as part of the *Authorization* header
 
 For more information, see the link:{WFM-RC-Github-Core}{WFM-RC-Branch}{WFM-RC-PassportAuth-Example}[PassportAuth example].
 
@@ -55,7 +55,7 @@ the *Passport.js* strategy used and checks if the user has the required role.
 
 [id='{context}-customizing-a-strategy']
 == Customizing a Strategy
-The default strategies for the *PassportAuth* module implements the *Passport.js* local and JWT strategy. 
+The default strategies for the *PassportAuth* module implement the *Passport.js* local and JWT strategies.
 To customize the existing strategies, override the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#setupCookie[PassportAuth.setupCookie] or
 link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#setupToken[PassportAuth.setupToken] method.
 To use a different security strategy that is supported by *Passport.js*, override the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#init[PassportAuth.init] method.

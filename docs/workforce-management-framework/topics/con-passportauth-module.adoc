@@ -4,8 +4,8 @@
 The *{PROJECT_NAME} link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/cloud/passportauth[PassportAuth]* module is *{PROJECT_NAME}'s* implementation of *Passport.js*.
 It is the default authentication and authorization module for *{PROJECT_NAME}*.
 
-*PassportAuth* provides plugable authentication using link:http://passportjs.org/docs/configure[strategies].
-*Passport.js* offers a comprehensive set of strategies that support authentication using a username and password, Facebook logon, Twitter logon, and more.
+*PassportAuth* provides pluggable authentication using link:http://passportjs.org/docs/configure[strategies].
+*Passport.js* offers a comprehensive set of strategies that support authentication using a username and password, existing social media and other 3rd party accounts, and more.
 
 *PassportAuth* provides:
 
