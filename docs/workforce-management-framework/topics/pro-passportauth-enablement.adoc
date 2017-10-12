@@ -1,0 +1,64 @@
+[id='{context}pro-passportauth-enablement']
+= Enabling PassportAuth
+
+== Prerequisites
+. Ensure you have completed xref:getting-started[Getting Started]
+
+== Enabling PassportAuth on the {PROJECT_NAME} Applications
+IMPORTANT: In order to enable PassportAuth in the {PROJECT_NAME} applications, {Keycloak} must be disabled.
+
+NOTE: Passport.js is the default auth provider for the {PROJECT_NAME} applications and is enabled by default
+in all of the {PROJECT_NAME} applications. The following steps are only valid if PassportAuth has been disabled
+manually to enable {Keycloak}.
+
+[discrete]
+=== Enabling PassportAuth on the Server Application
+
+. Ensure that the {Keycloak} configuration in the server application is not filled in.
++
+There are two configuration files available in the server application: 
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js[config-dev] and
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod].
++
+Ensure that the values for realm, auth-server-url and resource properties are empty within the {Keycloak} configuration.
++
+[source,javascript]
+----
+  "keycloak": {
+    "realm": "",
+    "bearer-only": true,
+    "auth-server-url": "",
+    "ssl-required": "external",
+    "resource": "",
+    "use-resource-role-mappings": true
+  }
+----
+
+[discrete]
+=== Enabling PassportAuth on the Portal Application
+. Open the file link:{WFM-RC-PortalURL}{WFM-RC-Release-Tag}/src/app/main.js[main.js] in location _/src/app/_
+. Disable {Keycloak} and require PassportAuth
++
+[source,javascript]
+----
+  require('./passport')
+----
+
+NOTE: The login page used by PassportAuth in the portal application is served by the server application. For more infromation
+on how to customize this login page, see the xref:{context}-customizing-passportauth-login-ui[Customizing PassportAuth Login UI] section.
+
+[discrete]
+=== Enabling PassportAuth on the Mobile Application
+. Open the file link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/app/app.js[app.js] in location _/src/app/_
+. Disable {Keycloak} and require PassportAuth
++
+[source,javascript]
+----
+  require('./passport'),
+  require('@raincatcher/angularjs-auth')()
+----
++
+NOTE: Ensure to enable the link:{WFM-RC-AngularJsTreeURL}{WFM-RC-Branch}/packages/angularjs-auth[@raincatcher/angularjs-auth] module
+along with the PassportAuth module. This package contains the AngularJS implementation of the login page used by PassportAuth
+for the mobile application. For more information on how to customize the PassportAuth login page used by the mobile
+application, see the xref:{context}-customizing-passportauth-login-ui[Customizing PassportAuth Login UI] section.

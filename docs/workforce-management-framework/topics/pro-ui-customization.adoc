@@ -154,6 +154,7 @@ $danger: #F44336;
 
 == Customizing {PROJECT_NAME} Login UI
 
+[id='{context}-customizing-passportauth-login-ui']
 === Customizing PassportAuth Login UI
 
 [discrete]
@@ -170,6 +171,7 @@ res.render('login', {
 The PassportAuth portal login page is fully customizable by configuring the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/views/login.hbs[login.hbs]
 within the server application.
 
+[discrete]
 ==== Customizing the PassportAuth Login Page for the Mobile Application
 The link:{WFM-RC-AngularJsTreeURL}{WFM-RC-Branch}/packages/angularjs-auth[@raincatcher/angularjs-auth]
 package contains the AngularJS implementation of the PassportAuth login page. This is used with the PassportAuth 
