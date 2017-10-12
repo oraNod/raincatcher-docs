@@ -20,12 +20,12 @@ The repository also includes a set of commands for publishing both the standalon
 3. Select the appropriate version bump when prompted via the console. If the operation is aborted at this point, only `lerna publish` is needed to be run again to continue.
 4. The core packages should be published to the public NPM registry and internal references should be updated. Note: By default, `lerna publish` will create a git tag that points to this branch, so in a later step we must regenerate this tag to point to the release commit on master.
 5. Run `npm run publish:demo-server` to publish the demo application to the template repository, it will be published under a branch called `release-{semver in lerna.json}`
-6. If alignment with a platform release is necessary, clone the https://github.com/feedhenry-raincatcher/raincatcher-server repository and copy the new branch to one with the required name:
+6. Clone the https://github.com/feedhenry-raincatcher/raincatcher-server repository and copy the new branch to one with the required name:
 
 ```
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
 cd raincatcher-server/
-git push origin release-{semver}:FH-{RHMAP version}
+git push origin +release-{semver}:master
 ```
 
 7. Open a PR against https://github.com/feedhenry-raincatcher/raincatcher-core `master` from the new release branch
@@ -57,16 +57,16 @@ This procedure is very similar to the one for Core, except it currently involves
 6. The packages should be published to the public NPM registry and internal references should be updated. Note: By default, `lerna publish` will create a git tag that points to this branch, so in a later step we must regenerate this tag to point to the release commit on master.
 8. Run `npm run publish:demo-mobile` to publish the demo application to the template repository, it will be published under a branch called `release-{semver in lerna.json}`
 7. Run `npm run publish:demo-portal` to publish the demo application to the template repository, it will be published under a branch called `release-{semver in lerna.json}`
-9. If alignment with a platform release is necessary, clone the https://github.com/feedhenry-raincatcher/raincatcher-server and `mobile` repositories and copy the new branch to one with the required name:
+9. Clone the https://github.com/feedhenry-raincatcher/raincatcher-server and `mobile` repositories and copy the new branch to one with the required name:
 
 ```
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
 cd raincatcher-server/
-git push origin release-{semver}:FH-{RHMAP version}
+git push origin +release-{semver}:master
 
 git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
 cd raincatcher-mobile/
-git push origin release-{semver}:FH-{RHMAP version}
+git push origin +release-{semver}:master
 ```
 
 10. Open a PR against https://github.com/feedhenry-raincatcher/raincatcher-angularjs `master` from the new release branch
@@ -108,6 +108,7 @@ git push --tags
 6. Publish to page:
 
 > NOTE: THIS OPERATION WILL UPDATE PUBLIC WEBSITE.
-PLEASE TEST IF WEBSITE AND DOCUMENTATION WORK before release
+PLEASE TEST IF WEBSITE AND DOCUMENTATION WORK before release.
+PLEASE DO NOT DO THAT WITHOUT RELEASING APPLICATION
 
     npm run publishPage
