@@ -17,7 +17,7 @@ The latest list of modules is found at link:https://www.npmjs.com/org/raincatche
 |User Interface module for use with the authentication packages linked above.
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-http[@raincatcher/angularjs-http]
-|Data acess module based on link:https://docs.angularjs.org/api/ng/service/$http[AngularJS's $http] module.
+|Data access module based on link:https://docs.angularjs.org/api/ng/service/$http[AngularJS's $http] module.
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-workflow[@raincatcher/angularjs-workflow]
 |The {PROJECT_NAME} User Interface package for rendering Work Flows

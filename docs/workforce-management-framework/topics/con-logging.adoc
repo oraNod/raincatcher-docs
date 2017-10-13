@@ -1,10 +1,16 @@
 [id='{context}-con-logging']
 
-*{PROJECT_NAME} Logging* is a facade for link:https://nodejs.org[Node.js] based applications and it is used by all {PROJECT_NAME} modules.
-*{PROJECT_NAME} Logging* is contained in the `{PROJECT_NAME}-core` module.
+*{PROJECT_NAME} Logger* creates logging facade for JavaScript based applications that
+is used by all {PROJECT_NAME} modules. Developers can use custom loggers by wrapping their implementation into the provided logger interface..
 
-Developers can use their own loggers by wrapping their implementation into the provided _logger interfaces_.
-For more information about the _logger interface_ structure, see link:{WFM-RC-CoreURL}{WFM-RC-Branch}/common/logger/src/Logger.ts[Logger.ts]
+For more information about the _logger interface_ structure, see link:../../../api/{WFM-RC-Api-Version}/logger/docs/index.html[logger api documentation]
 
-The *{PROJECT_NAME}* demo application contains two implementations of the _logger interface_ and are found in the `{PROJECT_NAME}-core` module.
+The *{PROJECT_NAME}* demo application contains two implementations of the _logger interface_ a
+
+- `BunyanLogger`
+Implements link:https://www.npmjs.com/package/bunyan[Bunyan]. Used for server side logging.
+
+- `ClientLogger`
+Implements link:Lhttps://github.com/pimterry/loglevel[LogLevel]. Used for client (web and mobile) logging.
+
 To see a logging example, see the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/common/logger/example/index.ts[Cloud Logger example].

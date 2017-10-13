@@ -49,7 +49,7 @@ The `url` parameter should be the root of the API server application running the
 
 To run this application on a device emulator, setup the appropriate native SDKs and run the app through the following commands:
 
-1. Change config.xml content field to point to runing application server
+1. Change config.xml content field to point to running application server
    Provide valid url value.
 
 `<content src="index.html?url=http://localhost:8001" />`

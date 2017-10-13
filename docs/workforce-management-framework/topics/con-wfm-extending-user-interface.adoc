@@ -52,6 +52,6 @@ NOTE: The {PROJECT_NAME} Application contains the `@raincatcher-examples/angular
 
 == Publishing
 
-For {PROJECT_NAME} to consume a module, best practise is to ensure that the module is published to the public or private NPM registry.
+For {PROJECT_NAME} to consume a module, best practice is to ensure that the module is published to the public or private NPM registry.
 When publishing a custom module, ensure that the package's name and the author's name are updated.
 If you choose not to publish a custom module, you can include all directives directly in the {PROJECT_NAME} application.

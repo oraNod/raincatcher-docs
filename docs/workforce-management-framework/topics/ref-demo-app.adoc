@@ -30,10 +30,10 @@ The UI Starter Applications present a consistent directory structure that can se
 The following list highlights the function of the main folders:
 
 `src/app`::
-Main folder containing the logic for the application. The app is mainly concerned in providing the setup and configuration values for the RainCatcher and angularjs modules that are used by it.
+Main folder containing the logic for the application. The app is mainly concerned in providing the setup and configuration values for the RainCatcher and AngularJS modules that are used by it.
 
 `src/app/initialization`::
-Contains configuration values and initial bootstrapping code for the angularjs application.
+Contains configuration values and initial bootstrapping code for the AngularJS application.
 
 `src/app/services`::
 Contains AngularJS services that are utilized by the RainCatcher modules to retrieve data. The app has the opportunity to provide an implementation that utilizes any technology for data retrieval, including static fixtures for testing.

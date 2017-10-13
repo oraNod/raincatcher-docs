@@ -1,8 +1,0 @@
-[id='{context}-pro-configuring-logging']
-= Introduction
-
-= Prerequisites
-
-//* Redis (tested with version: {WFM-RC-RedisVersion})
-
-= Configuring Logging

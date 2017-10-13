@@ -28,7 +28,7 @@
 * Hybrid mobile development using https://cordova.apache.org/[Cordova]
 * Object Oriented approach (classes and interfaces)
 * Focus on module reuse and flexibility
-* Incorporates open-source technologies: MongoDb, Keycloak, Passport.js and others.
+* Incorporates open-source technologies: MongoDb, {Keycloak}, Passport.js and others.
 
 [id='{context}-identifying-raincatcher-repositories']
 == Identifying {PROJECT_NAME} Repositories
