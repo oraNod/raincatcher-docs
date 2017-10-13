@@ -49,7 +49,8 @@ function asciidocsHandler(argv) {
 function publishWebsite() {
     var options = {
         branch: 'gh-pages',
-        remote: 'origin'
+        remote: 'origin',
+        dotfiles: 'true'
     }
     ghpages.publish(pageRoot, options, function(err) {
         if (err) {
