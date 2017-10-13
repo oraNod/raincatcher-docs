@@ -1,5 +1,5 @@
 
-== Overview
+= Overview
 
 {PROJECT_NAME} allows you to move from paper based forms and processes into complete mobile solution.
 {PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile application.
