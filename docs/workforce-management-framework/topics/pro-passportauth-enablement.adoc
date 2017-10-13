@@ -1,15 +1,14 @@
 [id='{context}pro-passportauth-enablement']
 = Enabling PassportAuth
 
+IMPORTANT: Passport.js is the default auth provider for the {PROJECT_NAME} applications and is enabled by default
+in all of the {PROJECT_NAME} applications. The following steps are only valid if PassportAuth has been disabled to enable {Keycloak}.
+
 == Prerequisites
 . Ensure you have completed xref:getting-started[Getting Started]
 
 == Enabling PassportAuth on the {PROJECT_NAME} Applications
 IMPORTANT: In order to enable PassportAuth in the {PROJECT_NAME} applications, {Keycloak} must be disabled.
-
-NOTE: Passport.js is the default auth provider for the {PROJECT_NAME} applications and is enabled by default
-in all of the {PROJECT_NAME} applications. The following steps are only valid if PassportAuth has been disabled
-manually to enable {Keycloak}.
 
 [discrete]
 === Enabling PassportAuth on the Server Application

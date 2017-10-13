@@ -83,7 +83,7 @@ link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#init[init()] doc
 [discrete]
 ==== Initialize PassportAuth to use the Local Strategy
 Passport.js link:https://github.com/jaredhanson/passport-local[local strategy] is used for authenticating with a username and password.
-In {PROJECT_NAME}, this strategy is used to authenticate users in the portal application.
+In {PROJECT_NAME}, this strategy is used to authenticate users in the portal application by default.
 
 In order to configure PassportAuth to use the local strategy, the following steps needs to be completed:
 
@@ -114,7 +114,7 @@ link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategies}#webstrategy
 ==== Initialize PassportAuth to use the JWT Strategy
 Passport.js link:https://github.com/themikenicholson/passport-jwt[JWT strategy] is used to authenticate a user
 with a link:https://jwt.io/[JSON Web Token]. In {PROJECT_NAME}, this strategy is used to authenticate users
-in the mobile application.
+in the mobile application by default.
 
 In order to configure PassportAuth to use the JWT strategy, the following steps needs to be completed:
 
