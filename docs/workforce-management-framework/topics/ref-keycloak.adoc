@@ -1,4 +1,4 @@
-[id='{context}-ref-demo-app']
+[id='{context}-ref-keycloak-material']
 = {Keycloak} Reference Material
 
 [id='{context}-credentials-for-the-demo-application']

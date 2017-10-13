@@ -7,15 +7,15 @@ The Server Application has a modular structure, that is, all functionality and i
 
 == {PROJECT_NAME} Server
 
-1. Active Release Version
-
+. Active Release Version
++
 The Active Release version contains all resources including javascript and other build artifacts.
 https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-server master version always contains the most recent release.
-
++
 NOTE: You can refer to a specific release version by using tag.
 
-2. Active Development Version
-
+. Active Development Version
++
 The Active Development version is used by {PROJECT_NAME} contributors and contains only TypeScript source code.
 https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-core/blob/master/demo/server
 

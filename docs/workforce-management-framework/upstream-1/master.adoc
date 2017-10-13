@@ -1,6 +1,7 @@
 include::topics/shared/attributes.adoc[]
 
 :docinfo: shared
+:doctype: book
 :sectnums:
 :toc: left
 :toclevels: 3
