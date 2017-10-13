@@ -9,7 +9,8 @@ include::topics/shared/attributes.adoc[]
 include::topics/con-passportauth-module.adoc[leveloffset=+1]
 
 //Procedures
-include::topics/pro-passportauth-pointing-to-a-datasource.adoc[leveloffset=+1]
+include::topics/pro-passportauth-enablement.adoc[leveloffset=+1]
+include::topics/pro-passportauth-implementation.adoc[leveloffset=+1]
 
 //Reference Material
 == PassportAuth Reference Material

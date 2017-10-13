@@ -1,0 +1,204 @@
+[id='{context}-pro-passportauth-implementation']
+= Implementing PassportAuth
+
+== Prerequisites
+. Ensure you have completed xref:getting-started[Getting Started]
+
+[id='{context}-pro-passportauth-pointing-to-a-datasource']
+== Pointing PassportAuth to a Datasource
+The default PassportAuth implementation uses a JSON file which contains a set of 
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/passport-auth/users.json[sample users] for demo purposes. 
+The following steps describes how to replace the current set of users by pointing to a different user datasource.
+
+[discrete]
+=== Implement the UserRepository Interface
+The link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[UserRepository Interface] needs to be
+implemented in order to retrieve user related data from a data source.
+
+. Import the link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Repository}[UserRepository Interface].
++
+[source, typescript]
+----
+import { UserRepository } from '@raincatcher/auth-passport';
+----
+
+. Implement the UserRepository Interface.
++
+See the sample link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/passport-auth/DemoUserRepository.ts[UserRepository implementation]
+as a reference on how this can be implemented.
+
+[discrete]
+=== Implement the UserService Interface
+The link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Service}[UserService Interface] defines a set of requirements
+for mapping specific fields from the user data that is returned from the UserRepository.
+
+. Import the link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Service}[UserService Interface].
++
+[source, typescript]
+----
+import { UserService } from '@raincatcher/auth-passport';
+----
+
+. Implement the UserService Interface
++
+IMPORTANT: The UserService Interface contains a link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-User-Service}#getprofile[getProfile()] function,
+which is used to retrieve the user's profile data. Ensure that any sensitive data is filtered out before returning
+the user's profile data.
+
++
+See the sample link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/passport-auth/DemoUserRepository.ts[UserService implementation]
+as a reference on how this can be implemented.
+
+[id='{context}-enable-passportauth']
+== Enable PassportAuth for Route Protection
+
+[discrete]
+=== Prerequisites
+. Ensure you have the xref:{context}-pro-passportauth-pointing-to-a-datasource[Pointing to a Datasource] step completed
+
+[discrete]
+=== Set up a PassportAuth Service
+. Instantiate a UserRepository and UserService to be used by PassportAuth
++
+[source, typescript]
+----
+  const userRepo: UserRepository = new YourUserRepository();
+  const userService: UserService = new YourUserService();
+----
+
+. Instantiate PassportAuth to be used for Route Protection
++
+[source, typescript]
+----
+  const authService: PassportAuth = new PassportAuth(userRepo, userService);
+----
+
+[discrete]
+=== Initialize a PassportAuth Service
+PassportAuth can be initialized in two different ways depending on what Passport.js strategy you would like to use.
+
+For more information on PassportAuth init function, see PassportAuth
+link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#init[init()] documentation.
+
+[discrete]
+==== Initialize PassportAuth to use the Local Strategy
+Passport.js link:https://github.com/jaredhanson/passport-local[local strategy] is used for authenticating with a username and password.
+In {PROJECT_NAME}, this strategy is used to authenticate users in the portal application by default.
+
+In order to configure PassportAuth to use the local strategy, the following steps needs to be completed:
+
+. Define express session options to be used with PassportAuth for session management
++
+Express session is used to provide session support for PassportAuth. In {PROJECT_NAME}, the session options are
+defined in the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js[config-dev] and the
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod] configuration files in the server application.
++
+For more information on express session options, see the link:https://github.com/expressjs/session[express-session] documentation. 
+
+. Initialize PassportAuth
++
+PassportAuth needs to be initialized with an express router and the express session options you have 
+defined in the previous step.
+
++
+[source, typescript]
+----
+  authService.init(expressRouter, yourSessionOptions);
+----
+
++
+For more information on PassportAuth local strategy implementation, see PassportAuth
+link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategies}#webstrategy[web strategy] documentation.
+
+[discrete]
+==== Initialize PassportAuth to use the JWT Strategy
+Passport.js link:https://github.com/themikenicholson/passport-jwt[JWT strategy] is used to authenticate a user
+with a link:https://jwt.io/[JSON Web Token]. In {PROJECT_NAME}, this strategy is used to authenticate users
+in the mobile application by default.
+
+In order to configure PassportAuth to use the JWT strategy, the following steps needs to be completed:
+
+. Generate a secret to be used for signing the JSON Web Token.
++
+IMPORTANT: The secret is used to sign a JSON Web Token. Ensure to provide a secure secret in order to prevent 
+attackers from carrying out unauthorized actions.
+
++
+In {PROJECT_NAME}, the secret used for the JWT strategy is defined in the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js[config-dev] and the
+link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod] configuration files in the server application.
+
+. Initialize PassportAuth
++
+NOTE: Passport.js JWT Strategy does not require session support, therefore it should not pass any session options.
+
++
+PassportAuth needs to be initialized with an express router and the secret you have defined in the previous step.
+
++
+[source, typescript]
+----
+  authService.init(expressRouter, undefined, yourSecret);
+----
+
++
+For more information on PassportAuth JWT strategy implementation, see PassportAuth
+link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Default-Strategies}#jwtstrategy[JWT strategy] documentation.
+
+[id='{context}-passportauth-protect-routes']
+== Using the PassportAuth Middleware for Route Protection
+
+[discrete]
+=== Prerequisites
+. Ensure you have the xref:{context}-enable-passportauth[Enable PassportAuth for Route Protection] step completed.
+
+[discrete]
+=== PassportAuth Authentication
+Authentication with PassportAuth can be done in two different ways depending on the strategy used. For more information
+on Authenticating with PassportAuth, see xref:{context}-passportauth-authentication[PassportAuth Authentication] section.
+
+[discrete]
+==== Authenticate using Local Strategy
+PassportAuth wraps the Passport.js link:http://passportjs.org/docs/authenticate[authenticate] middleware in
+PassportAuth's authenticate() function.
+
+The following code is an example of how to authenticate using PassportAuth local strategy:
+[source, typescript]
+----
+  router.post('/login', authService.authenticate('local', {
+    successReturnToOrRedirect: '/',
+    failureRedirect: '/loginError'
+  }));
+----
+
+For more information on PassportAuth authenticate() functionality, see PassportAuth link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticate[authenticate()]
+documentation.
+
+[discrete]
+==== Authenticate using JWT Strategy
+PassportAuth provides an authentication middleware for authenticating with the Passport.js JWT strategy. The
+following code is an example of how to authenticate using PassportAuth JWT strategy:
+
+[source, typescript]
+----
+  router.post('/login', authService.authenticateWithToken(yourSecret, userService, userRepo));
+----
+
+NOTE: The JWT token needs to be included in each subsequent requests after a successful login as part of the Authorization header
+
+For more information on PassportAuth authenticateWithToken() functionality, see PassportAuth 
+link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#authenticatewithtoken[authenticateWithToken()] documentation.
+
+[discrete]
+=== Protecting Express Routes
+PassportAuth provides a protect middleware for protecting routes from unauthenticated and unauthorized
+requests. The following code is an example of how to protect express routes using PassportAuth:
+
+[source,typescript]
+----
+  // This implementation supports role based authentication
+  app.use('/test', securityMiddleware.protect(role));
+----
+
+For more information on PassportAuth protect() functionality, see PassportAuth 
+link:./../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}#protect[protect()] documentation.
+
