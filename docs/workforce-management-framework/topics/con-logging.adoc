@@ -1,7 +1,7 @@
 [id='{context}-con-logging']
 
 *{PROJECT_NAME} Logger* creates logging facade for JavaScript based applications that
-is used by all {PROJECT_NAME} modules. Developers can use custom loggers by wrapping their implementation into the provided logger interface..
+is used by all {PROJECT_NAME} modules. Developers can use custom loggers by wrapping their implementation into the provided logger interface.
 
 For more information about the _logger interface_ structure, see link:../../../api/{WFM-RC-Api-Version}/logger/docs/index.html[logger api documentation]
 
@@ -11,6 +11,6 @@ The *{PROJECT_NAME}* demo application contains two implementations of the _logge
 Implements link:https://www.npmjs.com/package/bunyan[Bunyan]. Used for server side logging.
 
 - `ClientLogger`
-Implements link:Lhttps://github.com/pimterry/loglevel[LogLevel]. Used for client (web and mobile) logging.
+Implements link:https://github.com/pimterry/loglevel[LogLevel]. Used for client (web and mobile) logging.
 
 To see a logging example, see the link:{WFM-RC-CoreURL}{WFM-RC-Branch}/common/logger/example/index.ts[Cloud Logger example].

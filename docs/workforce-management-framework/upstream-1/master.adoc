@@ -39,7 +39,7 @@ include::topics/ref-server.adoc[leveloffset=+1]
 include::topics/con-wfm-integrations.adoc[leveloffset=+0]
 
 == Sync
-include::topics/con-datasync-module.adoc[leveloffset=+2]
+include::topics/con-datasync.adoc[leveloffset=+2]
 
 == Security introduction
 include::topics/con-introducing-securityfeatures.adoc[leveloffset=+2]

@@ -19,4 +19,4 @@ For more information, see xref:defining-raincatcher-security-ref-keycloak-securi
 = {PROJECT_NAME} Modules
 include::topics/con-supported-modules.adoc[leveloffset=+1]
 include::topics/con-passportauth-module.adoc[leveloffset=+1]
-include::topics/con-datasync-module.adoc[leveloffset=+1]
+include::topics/con-datasync.adoc[leveloffset=+1]
