@@ -1,5 +1,5 @@
 [id='{context}-pro-running-the-demo-repositories']
-= Running the {PROJECT_NAME} Demonstration Environment
+= Running the {PROJECT_NAME} Applications on a Local Machine
 
 Get started by running a demonstration environment on your local machine. Follow these steps and use the _public NPM Registry_ to set up the {PROJECT_NAME} applications that contain sample Steps, Workflows, and Workorders.
 
@@ -9,14 +9,10 @@ Get started by running a demonstration environment on your local machine. Follow
 The following must be installed on your system:
 * Node and npm (tested version: {WFM-RC-NodeVersion})
 * git
-* MongoDB (tested version: {WFM-RC-MongoDBVersion})
-* Redis (tested version: {WFM-RC-RedisVersion})
+* MongoDB
+* Redis
 
-You must also have access to:
-
-* `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
-* `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
-* `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
+You must have access to GitHub.
 
 [discrete]
 == Installing and Running the {PROJECT_NAME} Applications
@@ -25,11 +21,17 @@ You must also have access to:
 [source,bash]
 ----
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
-git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
+git clone git@github.com/feedhenry-raincatcher/raincatcher-mobile.git
 git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
 ----
 
-Tip: Cloning the repositories provides the latest version. You can use the `git checkout `release-\{semver\}` command if you want a previous version. For example, `git checkout `release-0.0.1`.
+The master branch of each Git repository provides the latest version. Previous versions have the `release-*` tag. For example, run the following command to checkout version `1.0.0`:
+
+[source,bash]
+----
+cd /raincatcher-server
+git checkout release-1.0.0
+----
 
 2&#46; Download the NPM dependencies for each Git repostory.
 [source,bash]
@@ -51,23 +53,25 @@ cd raincatcher-server/
 npm run start
 ----
 
-Note: After you start each {PROJECT_NAME} application, it continues to run in the terminal. Closing the terminal stops the application. You must start the Mobile and Portal applications from separate terminals.
+NOTE: After you start each {PROJECT_NAME} application, it continues to run in the terminal. Closing the terminal stops the application. You must start the Mobile and Portal applications from separate terminals.
 
-5&#46; Start the Mobile application.
-[source,bash]
-----
-cd raincatcher-mobile/
-npm run start
-----
-
-6&#46; Start the Portal application.
+5&#46; Start the Portal application.
 [source,bash]
 ----
 cd raincatcher-portal/
 npm run start
 ----
 
-The Mobile and Portal applications automatically open in a browser.
+6&#46; Start the Mobile application.
+[source,bash]
+----
+cd raincatcher-mobile/
+npm run start
+----
+
+The Portal and Mobile applications automatically open in a browser at the following URLs:
+. Portal application: `http://localhost:8001/cookie-login`
+. Mobile application: `http://localhost:9002/?url=http://localhost:8001#!/workorders/list`
 
 7&#46; Log in to the Mobile and Portal applications with the following credentials:
 

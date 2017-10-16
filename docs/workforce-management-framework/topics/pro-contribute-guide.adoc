@@ -13,8 +13,8 @@ Ensure you have:
 * Node and npm installed (tested on Node {WFM-RC-NodeVersion})
 * git
 * access to `git@github.com:feedhenry-raincatcher/raincatcher-angularjs.git`
-* MongoDB (tested with version: {WFM-RC-MongoDBVersion})
-* Redis (tested with version: {WFM-RC-RedisVersion})
+* MongoDB
+* Redis
 
 [id='{context}-cloning-the-git-repository']
 [discrete]
