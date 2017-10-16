@@ -1,29 +1,27 @@
 [id='{context}-pro-running-the-demo-repositories']
-= Running the {PROJECT_NAME} Applications on a Local Machine
+= Running the {PROJECT_NAME} Demonstration Environment
 
-The {PROJECT_NAME} {PROJECT_NAME} applications in this section are dependent on the _public NPM Registry_.
-
-This allows for a simpler setup of the {PROJECT_NAME} applications for users that only require the application to run, and will not engage in development.
+Get started by running a demonstration environment on your local machine. Follow these steps and use the _public NPM Registry_ to set up the {PROJECT_NAME} applications that contain sample Steps, Workflows, and Workorders.
 
 [discrete]
-== Prerequisites
+== Requirements
 
-Ensure you have:
-
-* Node and npm installed (tested on Node {WFM-RC-NodeVersion})
+The following must be installed on your system:
+* Node and npm (tested version: {WFM-RC-NodeVersion})
 * git
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
-* MongoDB (tested with version: {WFM-RC-MongoDBVersion})
-* Redis (tested with version: {WFM-RC-RedisVersion})
+* MongoDB (tested version: {WFM-RC-MongoDBVersion})
+* Redis (tested version: {WFM-RC-RedisVersion})
 
-[id='{context}-published-repositories-cloning-the-git-repositories']
+You must also have access to:
+
+* `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
+* `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
+* `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
+
 [discrete]
-== Cloning the Git Repositories
+== Installing and Running the {PROJECT_NAME} Applications
 
-The following commands will clone the `master` branch of each repository and they collectively contain the latest tagged release of the {PROJECT_NAME} project.
-
+1&#46; Clone the Git repositories.
 [source,bash]
 ----
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
@@ -31,61 +29,47 @@ git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
 git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
 ----
 
-Previous versions are available through branches named with the `release-\{semver\}` convention.
-For example, in order to checkout version `0.0.1` of `raincatcher-server`, run the following commands after the cloning:
+Tip: Cloning the repositories provides the latest version. You can use the `git checkout `release-\{semver\}` command if you want a previous version. For example, `git checkout `release-0.0.1`.
 
+2&#46; Download the NPM dependencies for each Git repostory.
 [source,bash]
 ----
-cd raincatcher-server/
-git checkout release-0.0.1
+cd /raincatcher-server
+npm install
 ----
 
-[id='{context}-published-repositories-installing-repository-dependencies']
-[discrete]
-== Installing Repository Dependencies
+3&#46; Ensure MongoDB and Redis are running.
 
-For each repository previously cloned, run `npm install` so regular NPM dependencies are downloaded.
+For more information, see:
+. MongoDB: https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes]
+. Redis: https://redis.io/topics/quickstart#starting-redis[Starting Redis]
 
-[id='{context}-published-repositories-starting-mongodb-and-redis']
-[discrete]
-== Starting MongoDB and Redis
-
-. Start MongoDB. For more information, see link:https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes].
-
-. Start Redis. For more information, see link:https://redis.io/topics/quickstart#starting-redis[Starting Redis].
-
-[id='{context}-published-repositories-starting-the-core-server']
-[discrete]
-== Starting the Core Server
-
+4&#46; Start the Core server.
 [source,bash]
 ----
 cd raincatcher-server/
 npm run start
 ----
 
-NOTE: The terminal is out of use while the Core Server is running.
+Note: After you start each {PROJECT_NAME} application, it continues to run in the terminal. Closing the terminal stops the application. You must start the Mobile and Portal applications from separate terminals.
 
-[id='{context}-published-repositories-running-the-mobile-and-portal-applications']
-[discrete]
-== Running the Mobile and Portal Applications
-
-Open a new terminal and execute the following command in folder `raincatcher-portal/` and also in folder `raincatcher-mobile/`:
-
+5&#46; Start the Mobile application.
 [source,bash]
 ----
+cd raincatcher-mobile/
 npm run start
 ----
 
-Both the Mobile and Portal Applications open automatically in a browser.
+6&#46; Start the Portal application.
+[source,bash]
+----
+cd raincatcher-portal/
+npm run start
+----
 
-== Credentials for the Mobile and Portal Demo Application
+The Mobile and Portal applications automatically open in a browser.
 
-Login using the following credentials:
-
-.Credentials for the Mobile and Portal Applications
-
-NOTE: Users are valid for both passport and {Keycloak} auth providers.
+7&#46; Log in to the Mobile and Portal applications with the following credentials:
 
 |===
 |Application |Username |Password
@@ -99,8 +83,6 @@ NOTE: Users are valid for both passport and {Keycloak} auth providers.
 |`123`
 |===
 
-For a complete list of available users, see the link:https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[gitub repository]
+For all available users, see: https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[users.json]
 
-NOTE: The Mobile and Portal Applications contain sample Steps, Workflows and Workorders.
-They are used only for demonstration purposes.
-To create your own business logic, see the xref:building-wfm-process[WFM documentation].
+NOTE: Users are valid for both passport and {Keycloak} auth providers.
