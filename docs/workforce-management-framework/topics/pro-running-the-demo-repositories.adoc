@@ -21,7 +21,7 @@ You must have access to GitHub.
 [source,bash]
 ----
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
-git clone git@github.com/feedhenry-raincatcher/raincatcher-mobile.git
+git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
 git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
 ----
 
