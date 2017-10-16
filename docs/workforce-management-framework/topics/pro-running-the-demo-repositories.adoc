@@ -1,7 +1,9 @@
 [id='{context}-pro-running-the-demo-repositories']
 = Running the {PROJECT_NAME} Applications on a Local Machine
 
-Get started by running a demonstration environment on your local machine. Follow these steps and use the _public NPM Registry_ to set up the {PROJECT_NAME} applications that contain sample Steps, Workflows, and Workorders.
+Get started by running {PROJECT_NAME} applications on your local machine. Follow
+these steps and use the _public NPM Registry_ to set up the {PROJECT_NAME}
+applications that contain sample Steps, Workflows, and Workorders.
 
 [discrete]
 == Requirements
@@ -25,7 +27,9 @@ git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
 git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
 ----
 
-The master branch of each Git repository provides the latest version. Previous versions have the `release-*` tag. For example, run the following command to checkout version `1.0.0`:
+The master branch of each Git repository provides the latest version. Previous
+versions have the `release-*` tag. For example, run the following command to
+checkout version `1.0.0`:
 
 [source,bash]
 ----
@@ -43,8 +47,8 @@ npm install
 3&#46; Ensure MongoDB and Redis are running.
 
 For more information, see:
-. MongoDB: https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes]
-. Redis: https://redis.io/topics/quickstart#starting-redis[Starting Redis]
+* MongoDB: https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes]
+* Redis: https://redis.io/topics/quickstart#starting-redis[Starting Redis]
 
 4&#46; Start the Core server.
 [source,bash]
@@ -70,8 +74,8 @@ npm run start
 ----
 
 The Portal and Mobile applications automatically open in a browser at the following URLs:
-. Portal application: `http://localhost:8001/cookie-login`
-. Mobile application: `http://localhost:9002/?url=http://localhost:8001#!/workorders/list`
+* Portal application: `http://localhost:8001/cookie-login`
+* Mobile application: `http://localhost:9002/?url=http://localhost:8001#!/workorders/list`
 
 7&#46; Log in to the Mobile and Portal applications with the following credentials:
 
