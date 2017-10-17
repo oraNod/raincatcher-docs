@@ -5,19 +5,26 @@
 {PROJECT_NAME} connects a business back-office portal application with its fleet of mobilized employees via a mobile application.
 Both mobile and portal applications are fully customizable.
 
-== About {WFM-RC-Version} Release
-{PROJECT_NAME} {WFM-RC-Version} is a new produce was previously in tech preview. The Features are listed below.
+== 1.1.0 Release
+
+=== Starting the applications
+The `npm run start` command now runs the compiled JavaScript code as opposed to utilizing link:https://github.com/TypeStrong/ts-node[TypeScript Node] to run everything from the TypeScript sources.
+
+The previous behavior is still achievable via `npm run start:ts`.
+
+== 1.0.0 Release
+{PROJECT_NAME} 1.0.0 is a new product that was previously in tech preview. The Features are listed below.
 
 === Workflows
-The ability to create customizable processes (called workflows). Workflows are made up of steps which can be the packaged steps
-or can be custom steps developed for a particular use case.
+The ability to create customizable processes (called Workflows). Workflows are made up of Steps which can be the Packaged Steps
+or can be custom Steps developed for a particular use case.
 
 === Workorders
-The ability to process instances called workorders. Workorder are a instance of a individual workflow.
-Workorder can be assigned via the portal to individual employees as a job for completion.
+The ability to process instances called Workorders. Workorders are a instance of an individual workflow.
+Workorder can be assigned via the Portal Application to individual employees as a job for completion.
 
 === Step Generator
-Generates a step via cli, the step can be customized to meet a use case.
+Generates a Step via a CLI, the step can be customized to meet a use case.
 
 === Packaged Step
-Providing predefined signature step that can be used for any business needs.
+Providing predefined signature Step that can be used for any business needs.

@@ -21,16 +21,16 @@ https://github.com/feedhenry-{PROJECT_NAME}/{PROJECT_NAME}-core/blob/master/demo
 
 == Server-side Application Development Guide
 
-To launch the Cloud Application, execute `npm run start`.
+To launch the Cloud Application, execute `npm run start:ts`, this runs the Server Application from its TypeScript sources.
 
 To start debugging, execute `npm run startDebug`.
 
 NOTE: Both commands use a tool called `ts-node` and this runs a process without compiling Typescript source code.
 
-To run the code using Node.js, ensure you compile the code first:
+To run the code using Node.JS, ensure you compile the code first:
 
  * `npm run build`
- * `node src/index.js`
+ * `npm run start`
 
 When compiling source code, the `ts-node` command uses compiled Javascript files. To clean compiled Javascript files, execute `npm run clean`
 

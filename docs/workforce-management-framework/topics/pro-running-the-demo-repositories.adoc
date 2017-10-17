@@ -61,7 +61,7 @@ For each repository previously cloned, run `npm install` so regular NPM dependen
 [source,bash]
 ----
 cd raincatcher-server/
-npm run start
+npm run start:ts
 ----
 
 NOTE: The terminal is out of use while the Core Server is running.

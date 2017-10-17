@@ -62,8 +62,18 @@ NOTE: The Core repository is automatically cloned by the command `npm run bootst
 [discrete]
 == Starting the Core Server
 
+The following line runs the server application and the internal dependencies from their TypeScript sources:
+
 [source,bash]
 ----
+npm run start:ts
+----
+
+To compile and run from JavaScript:
+
+[source,bash]
+----
+npm run build
 npm run start
 ----
 
