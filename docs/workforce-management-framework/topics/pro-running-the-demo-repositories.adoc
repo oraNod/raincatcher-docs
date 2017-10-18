@@ -9,17 +9,19 @@ applications that contain sample Steps, Workflows, and Workorders.
 == Requirements
 
 The following must be installed on your system:
+
 * Node and npm (tested version: {WFM-RC-NodeVersion})
 * git
 * MongoDB
 * Redis
 
-You must have access to GitHub.
+You must have access to GitHub to install the {PROJECT_NAME} applications.
 
+[id='{context}-published-repositories-cloning-the-git-repositories']
 [discrete]
-== Installing and Running the {PROJECT_NAME} Applications
+== Clone the Git Repositories
 
-1&#46; Clone the Git repositories.
+Clone the Git repositories as follows:
 [source,bash]
 ----
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
@@ -33,24 +35,37 @@ checkout version `1.0.0`:
 
 [source,bash]
 ----
-cd /raincatcher-server
+cd raincatcher-server/
 git checkout release-1.0.0
 ----
 
-2&#46; Download the NPM dependencies for each Git repostory.
+[id='{context}-published-repositories-installing-repository-dependencies']
+[discrete]
+== Install the Dependencies for Each Repository
+
+Run the `npm install` command in each repository to download the dependencies.
+For example, download dependencies for the Core server as follows:
 [source,bash]
 ----
-cd /raincatcher-server
+cd raincatcher-server/
 npm install
 ----
 
-3&#46; Ensure MongoDB and Redis are running.
+[id='{context}-published-repositories-starting-mongodb-and-redis']
+[discrete]
+== Start MongoDB and Redis
 
-For more information, see:
+Ensure MongoDB and Redis are running on your local machine. For more
+information, see:
+
 * MongoDB: https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes]
 * Redis: https://redis.io/topics/quickstart#starting-redis[Starting Redis]
 
-4&#46; Start the Core server.
+[id='{context}-published-repositories-starting-the-core-server']
+[discrete]
+== Start the Core Server
+
+Run the `npm run start` command to start the Core server as follows:
 [source,bash]
 ----
 cd raincatcher-server/
@@ -59,25 +74,34 @@ npm run start
 
 NOTE: After you start each {PROJECT_NAME} application, it continues to run in the terminal. Closing the terminal stops the application. You must start the Mobile and Portal applications from separate terminals.
 
-5&#46; Start the Portal application.
+[id='{context}-published-repositories-running-the-mobile-and-portal-applications']
+[discrete]
+== Start the Portal and Mobile Applications
+
+1&#46; Start the Portal application as follows:
 [source,bash]
 ----
 cd raincatcher-portal/
 npm run start
 ----
 
-6&#46; Start the Mobile application.
+2&#46; Start the Mobile application as follows:
 [source,bash]
 ----
 cd raincatcher-mobile/
 npm run start
 ----
 
-The Portal and Mobile applications automatically open in a browser at the following URLs:
+The Portal and Mobile applications automatically open in a browser at the
+following URLs:
+
 * Portal application: `http://localhost:8001/cookie-login`
 * Mobile application: `http://localhost:9002/?url=http://localhost:8001#!/workorders/list`
 
-7&#46; Log in to the Mobile and Portal applications with the following credentials:
+== Credentials for the Portal and Mobile Applications
+
+You can log in to the Portal and Mobile applications with the following
+credentials:
 
 |===
 |Application |Username |Password
