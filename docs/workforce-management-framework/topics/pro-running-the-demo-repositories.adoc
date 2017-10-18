@@ -1,7 +1,7 @@
 [id='{context}-pro-running-the-demo-repositories']
 = Running the {PROJECT_NAME} Applications on a Local Machine
 
-The {PROJECT_NAME} {PROJECT_NAME} applications in this section are dependent on the _public NPM Registry_.
+The {PROJECT_NAME} applications in this section are dependent on the _public NPM Registry_.
 
 This allows for a simpler setup of the {PROJECT_NAME} applications for users that only require the application to run, and will not engage in development.
 
