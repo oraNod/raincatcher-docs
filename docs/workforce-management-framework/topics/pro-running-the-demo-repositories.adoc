@@ -15,8 +15,8 @@ Ensure you have:
 * access to `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
 * access to `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
 * access to `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
-* MongoDB (tested with version: {WFM-RC-MongoDBVersion})
-* Redis (tested with version: {WFM-RC-RedisVersion})
+* MongoDB
+* Redis
 
 [id='{context}-published-repositories-cloning-the-git-repositories']
 [discrete]
