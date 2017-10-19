@@ -49,7 +49,7 @@ image::{WFM-RC-images}diagrams/customSolution.png[customSolution]
 == Process Management
 
 {PROJECT_NAME} focuses mainly on digitalizing business process
-by including set of the modules responsible for the process management to the user applications. Process management framework can be seen as simplified version of the BPMn solutions.
+by including set of the modules responsible for the process management to the user applications.
 
 Main features of the Process Management modules:
 
