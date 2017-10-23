@@ -57,13 +57,17 @@ For each repository previously cloned, run `npm install` so regular NPM dependen
 [discrete]
 == Starting the Core Server
 
+Run the `npm run start` command to start the Core server as follows:
+
 [source,bash]
 ----
 cd raincatcher-server/
-npm run start:ts
+npm run start
 ----
 
-NOTE: The terminal is out of use while the Core Server is running.
+NOTE: After you start each {PROJECT_NAME} application, it continues to run in
+the terminal. Closing the terminal stops the application. You must start the
+Portal and Mobile applications from separate terminals.
 
 [id='{context}-published-repositories-running-the-mobile-and-portal-applications']
 [discrete]
