@@ -12,18 +12,18 @@ include::topics/shared/attributes.adoc[]
 image::https://raw.githubusercontent.com/feedhenry-raincatcher/raincatcher-docs/master/docs/shared/images/logo-blue.png[logo]
 
 [[raincatcher]]
-= WFM Overview
+= Raincatcher Introduction
 include::topics/con-introducing-raincatcher.adoc[leveloffset=+1]
 include::topics/ref-introducing-raincatcher.adoc[leveloffset=+2]
 
 [[getting-started]]
-= Running the {PROJECT_NAME} Applications
+= Getting Started with the {PROJECT_NAME} Applications
 include::topics/pro-running-the-demo-repositories.adoc[leveloffset=+1]
 include::topics/pro-using-the-demo-app.adoc[leveloffset=+1]
 include::topics/ref-demo-app.adoc[leveloffset=+2]
 
 [[building-wfm-process]]
-= Building WFM Process in {PROJECT_NAME}
+= Building a Workflow
 include::topics/con-workflow-step.adoc[leveloffset=+1]
 include::topics/con-packaged-step.adoc[leveloffset=+1]
 
@@ -86,6 +86,3 @@ include::topics/pro-contribute-guide.adoc[leveloffset=+1]
 
 // Appendix: Revision Information
 include::topics/shared/templates/revision-info.adoc[]
-
-
-
