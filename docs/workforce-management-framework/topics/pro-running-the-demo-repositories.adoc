@@ -21,8 +21,7 @@ You must have access to GitHub to install the {PROJECT_NAME} applications.
 [discrete]
 == Cloning the Git Repositories
 
-The following commands will clone the `master` branch of each repository and they collectively contain the latest tagged release of the {PROJECT_NAME} project.
-
+Clone the Git repositories as follows:
 [source,bash]
 ----
 git clone git@github.com:feedhenry-raincatcher/raincatcher-server.git
@@ -30,13 +29,14 @@ git clone git@github.com:feedhenry-raincatcher/raincatcher-mobile.git
 git clone git@github.com:feedhenry-raincatcher/raincatcher-portal.git
 ----
 
-Previous versions are available through branches named with the `release-\{semver\}` convention.
-For example, in order to checkout version `0.0.1` of `raincatcher-server`, run the following commands after the cloning:
+The master branch of each Git repository provides the latest version. Previous
+versions have the `release-*` tag. For example, run the following command to
+checkout version `1.0.0`:
 
 [source,bash]
 ----
 cd raincatcher-server/
-git checkout release-0.0.1
+git checkout release-1.0.0
 ----
 
 [id='{context}-published-repositories-installing-repository-dependencies']
