@@ -1,22 +1,21 @@
 [id='{context}-pro-running-the-demo-repositories']
 = Running the {PROJECT_NAME} Applications on a Local Machine
 
-The {PROJECT_NAME} applications in this section are dependent on the _public NPM Registry_.
-
-This allows for a simpler setup of the {PROJECT_NAME} applications for users that only require the application to run, and will not engage in development.
+Get started by running {PROJECT_NAME} applications on your local machine. Follow
+these steps and use the _public NPM Registry_ to set up the {PROJECT_NAME}
+applications that contain sample Steps, Workflows, and Workorders.
 
 [discrete]
 == Prerequisites
 
-Ensure you have:
+The following must be installed on your system:
 
-* Node and npm installed (tested on Node {WFM-RC-NodeVersion})
+* Node and npm (tested version: {WFM-RC-NodeVersion})
 * git
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-server.git`
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-mobile.git`
-* access to `git@github.com:feedhenry-raincatcher/raincatcher-portal.git`
 * MongoDB
 * Redis
+
+You must have access to GitHub to install the {PROJECT_NAME} applications.
 
 [id='{context}-published-repositories-cloning-the-git-repositories']
 [discrete]
