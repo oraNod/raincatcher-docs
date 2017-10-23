@@ -43,7 +43,14 @@ git checkout release-1.0.0
 [discrete]
 == Installing Repository Dependencies
 
-For each repository previously cloned, run `npm install` so regular NPM dependencies are downloaded.
+Run the `npm install` command in each repository to download the dependencies.
+For example, download dependencies for the Core server as follows:
+
+[source,bash]
+----
+cd raincatcher-server/
+npm install
+----
 
 [id='{context}-published-repositories-starting-mongodb-and-redis']
 [discrete]
