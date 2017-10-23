@@ -78,28 +78,23 @@ npm run start
 
 Both the Mobile and Portal Applications open automatically in a browser.
 
-== Credentials for the Mobile and Portal Demo Application
+== Credentials for the Portal and Mobile Applications
 
-Login using the following credentials:
-
-.Credentials for the Mobile and Portal Applications
-
-NOTE: Users are valid for both passport and {Keycloak} auth providers.
+You can log in to the Portal and Mobile applications with the following
+credentials:
 
 |===
 |Application |Username |Password
 
-|Mobile
-|`trever`
-|`123`
-
 |Portal
 |`max`
 |`123`
+
+|Mobile
+|`trever`
+|`123`
 |===
 
-For a complete list of available users, see the link:https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[gitub repository]
+For all available users, see: https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[users.json]
 
-NOTE: The Mobile and Portal Applications contain sample Steps, Workflows and Workorders.
-They are used only for demonstration purposes.
-To create your own business logic, see the xref:building-wfm-process[WFM documentation].
+NOTE: Users are valid for both passport and {Keycloak} auth providers.
