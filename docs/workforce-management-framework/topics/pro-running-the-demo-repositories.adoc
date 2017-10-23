@@ -49,9 +49,11 @@ For each repository previously cloned, run `npm install` so regular NPM dependen
 [discrete]
 == Starting MongoDB and Redis
 
-. Start MongoDB. For more information, see link:https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes].
+Ensure MongoDB and Redis are running on your local machine. For more
+information, see:
 
-. Start Redis. For more information, see link:https://redis.io/topics/quickstart#starting-redis[Starting Redis].
+* MongoDB: https://docs.mongodb.com/manual/tutorial/manage-mongodb-processes/#start-mongod-processes[Start MongoDB Processes]
+* Redis: https://redis.io/topics/quickstart#starting-redis[Starting Redis]
 
 [id='{context}-published-repositories-starting-the-core-server']
 [discrete]
