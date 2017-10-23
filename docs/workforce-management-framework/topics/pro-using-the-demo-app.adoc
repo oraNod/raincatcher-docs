@@ -1,5 +1,17 @@
 [id='{context}-pro-using-the-demo-app']
-= Working with the Portal Application and Mobile Application
+= Learning to Use Workflows and Workorders
+
+{PROJECT_NAME} applications streamline process management with reusable objects
+called _Workflows_ and _Workorders_.
+
+* A _Workflow_ is a set of steps that end users follow to complete a process.
+Administrators create _Workflows_ with the Portal application.
+* A _Workorder_ is an instantiation of a _Workflow_ that contains specific details.
+Administrators can assign _Workorders_ to end users. End users access
+_Workorders_ in the Mobile application.
+
+In the following section, you can use the sample content in the {PROJECT_NAME}
+applications running on your local machine.
 
 == Working with the Portal Application
 
