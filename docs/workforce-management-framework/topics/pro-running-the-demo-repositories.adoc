@@ -69,7 +69,7 @@ NOTE: The terminal is out of use while the Core Server is running.
 [discrete]
 == Starting the Portal and Mobile Applications
 
-1&#46; Start the Portal application as follows:
+Start the Portal application first, as follows:
 
 [source,bash]
 ----
@@ -77,7 +77,7 @@ cd raincatcher-portal/
 npm run start
 ----
 
-2&#46; Start the Mobile application as follows:
+Next, start the Mobile application as follows:
 
 [source,bash]
 ----
@@ -85,11 +85,11 @@ cd raincatcher-mobile/
 npm run start
 ----
 
-The Portal and Mobile applications automatically open in a browser at the
-following URLs:
+The Portal and Mobile applications automatically open in a browser. If they do
+not open automatically, access them at the following URLs:
 
-* Portal application: `http://localhost:8001/cookie-login`
-* Mobile application: `http://localhost:9002/?url=http://localhost:8001#!/workorders/list`
+* Portal application: `http://localhost:9002/?url=http://localhost:8001`
+* Mobile application: `http://localhost:9003/?url=http://localhost:8001`
 
 == Credentials for the Mobile and Portal Demo Application
 
