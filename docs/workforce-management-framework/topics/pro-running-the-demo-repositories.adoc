@@ -80,8 +80,11 @@ Both the Mobile and Portal Applications open automatically in a browser.
 
 == Credentials for the Portal and Mobile Applications
 
-You can log in to the Portal and Mobile applications with the following
-credentials:
+The Portal and Mobile applications contain sample Steps, Workflows, and
+Workorders that you can use to evaluate workforce management processes.
+
+Log in to the Portal and Mobile applications with the following credentials to
+access the sample content:
 
 |===
 |Application |Username |Password
@@ -98,3 +101,8 @@ credentials:
 For all available users, see: https://github.com/feedhenry-raincatcher/raincatcher-server/blob/master/src/modules/passport-auth/users.json[users.json]
 
 NOTE: Users are valid for both passport and {Keycloak} auth providers.
+
+As a next step, you can:
+
+* Use the sample Workflows and Workorders. See xref:{context}-pro-using-the-demo-app[Learn to Use Workflows and Workorders].
+* Create your own business logic. See xref:building-wfm-process[Building a Workflow].
