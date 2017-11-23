@@ -18,7 +18,7 @@ To run project using typescript source code use
 === File storage and Camera integration
 
 {PROJECT_NAME} steps can now capture and store photos using underlying file storage server.
-For more information please refer to link:con-file-storage.adoc[File storage documentation].
+For more information please refer to link:#{context}-con-file-storage[File storage documentation].
 
 == 1.0.0 Release
 {PROJECT_NAME} 1.0.0 is a new product that was previously in tech preview. The Features are listed below.
