@@ -63,6 +63,9 @@ include::topics/pro-passportauth-implementation.adoc[leveloffset=+2]
 = Logging
 include::topics/con-logging.adoc[leveloffset=+1]
 
+= Storage
+include::topics/con-file-storage.adoc[leveloffset=+1]
+
 [[ui]]
 = Modifying the UI
 include::topics/con-ui-technology.adoc[leveloffset=+1]

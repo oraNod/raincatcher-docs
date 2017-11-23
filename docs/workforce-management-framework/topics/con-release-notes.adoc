@@ -7,10 +7,18 @@ Both mobile and portal applications are fully customizable.
 
 == 1.1.0 Release
 
-=== Starting the applications
+=== Starting the server application
+
 The `npm run start` command now runs the compiled JavaScript code as opposed to utilizing link:https://github.com/TypeStrong/ts-node[TypeScript Node] to run everything from the TypeScript sources.
 
-The previous behavior is still achievable via `npm run start:ts`.
+To run project using typescript source code use
+
+`npm run start:ts`.
+
+=== File storage and Camera integration
+
+{PROJECT_NAME} steps can now capture and store photos using underlying file storage server.
+For more information please refer to link:con-file-storage.adoc[File storage documentation].
 
 == 1.0.0 Release
 {PROJECT_NAME} 1.0.0 is a new product that was previously in tech preview. The Features are listed below.

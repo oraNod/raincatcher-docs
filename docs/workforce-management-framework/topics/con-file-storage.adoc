@@ -1,0 +1,32 @@
+[id='{context}-con-file-storage']
+= File storage
+
+File storage allows step developers to manage files like photos and documents directly in the steps.
+
+File storage implementation provides:
+
+- server module with multiple storage implementations.
+- client module that can be used to store and retrieve files from the server
+- optional camera wrapper for capturing photos using phone camera
+
+Main functionalities:
+
+- Ability to store and retrieve files
+- Offline queue for uploading, downloading files when device is offline
+- Multiple storage implementations available
+
+link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/client/camera[Camera module] provides wrapper around Apache Cordova camera plugin for seamless image capture and file integration.
+
+=== File storage modules
+
+To use file storage functionality new modules should be added
+
+* link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/cloud/filestore[File storage server]
+
+* link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/client/filestore-client[File storage client]
+
+== Example Gallery step
+
+Storage and camera modules are integrated together as part of the example link:{WFM-RC-AngularJsTreeURL}{WFM-RC-Branch}/steps/examples/step-gallery[Gallery step]
+
+
