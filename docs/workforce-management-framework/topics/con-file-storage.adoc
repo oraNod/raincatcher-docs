@@ -17,7 +17,7 @@ Main functionalities:
 
 link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/client/camera[Camera module] provides wrapper around Apache Cordova camera plugin for seamless image capture and file integration.
 
-=== File storage modules
+== File storage modules
 
 To use file storage functionality new modules should be added
 

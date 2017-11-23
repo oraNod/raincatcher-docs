@@ -60,10 +60,9 @@ include::topics/ref-passportauth-securitystrategy.adoc[leveloffset=+3]
 include::topics/pro-passportauth-enablement.adoc[leveloffset=+2]
 include::topics/pro-passportauth-implementation.adoc[leveloffset=+2]
 
-= Logging
+== Logging
 include::topics/con-logging.adoc[leveloffset=+1]
 
-= Storage
 include::topics/con-file-storage.adoc[leveloffset=+1]
 
 [[ui]]
