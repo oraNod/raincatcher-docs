@@ -15,7 +15,7 @@
 
 //***NEW START***
 :PROJECT_NAME: RainCatcher
-:WFM-RC-Version: 1.0.0
+:WFM-RC-Version: 1.1.0
 :WFM-RC-NodeVersion: 6 LTS
 //:WFM-RC-MongoDBVersion: <latest version>
 //:WFM-RC-RedisVersion: <latest version>
@@ -26,7 +26,7 @@
 :WFM-RC-PassportAuth-Example: /cloud/passportauth/example
 :Keycloak: Keycloak
 //api url
-:WFM-RC-Api-Version: 1.0.0
+:WFM-RC-Api-Version: 1.1.0
 :WFM-RC-Api-Default-Strategies: /auth-passport/docs/modules/_src_auth_defaultstrategies_.html
 :WFM-RC-Api-Passport-Auth: /auth-passport/docs/classes/_src_auth_passportauth_.passportauth.html
 :WFM-RC-Api-User-Repository: /auth-passport/docs/interfaces/_src_user_userrepository_.userrepository.html

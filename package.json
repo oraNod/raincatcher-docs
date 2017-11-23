@@ -1,6 +1,6 @@
 {
   "name": "@raincatcher/website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "RainCatcher website source code",
   "main": "index.js",
   "scripts": {
