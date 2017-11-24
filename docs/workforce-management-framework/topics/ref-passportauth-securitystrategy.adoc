@@ -12,7 +12,7 @@ For more information, see link:https://github.com/expressjs/session[express-sess
 [discrete]
 == Defining PassportAuth Access Control
 _Routes_ are protected by *PassportAuth* which provides role based access control.
-_AuthService_ is an an implementation of link:../../../raincatcher-docs/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[PassportAuth].
+_AuthService_ is an an implementation of link:../../../api/{WFM-RC-Api-Version}{WFM-RC-Api-Passport-Auth}[PassportAuth].
 For more information, see the following example:
 
 [source,typescript]

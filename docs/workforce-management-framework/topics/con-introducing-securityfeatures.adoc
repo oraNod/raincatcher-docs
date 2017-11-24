@@ -33,13 +33,13 @@ The *link:{WFM-RC-CoreTreeURL}{WFM-RC-Branch}/cloud/passportauth[PassportAuth Mo
 *Keycloak* is a complete identity management solution. It extends standard authorization and authentication functionality, and comes with all the overheads involved in running a separate server.
 Red Hat recommends using *Keycloak* in production to avail of the many features available for enterprise security including:
 
-* link:{WFM-RC-KeycloakURL}server_admin/topics/sso-protocols.html[Single-Sign On]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/user-federation.html[User Federation]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/authentication/x509.html[Client Cert Authentication]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/authentication/otp-policies.html[2FA with OTP]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/sessions/administering.html[User Session Management]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/events.html[Auditing]
-* link:{WFM-RC-KeycloakURL}server_admin/topics/threat/brute-force.html[Brute Force Detection]
+* Single-Sign On
+* User Federation
+* Client Cert Authentication
+* 2FA with OTP
+* User Session Management
+* Auditing
+* Brute Force Detection
 
 NOTE: *Keycloak* is _not_ available by default when running the default {PROJECT_NAME} solution.
 

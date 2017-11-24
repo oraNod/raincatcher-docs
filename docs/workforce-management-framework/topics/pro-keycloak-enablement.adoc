@@ -60,7 +60,7 @@ See xref:{context}-keycloak-configuration-production[{Keycloak} Configuration fo
 
 WARNING: Creating your own {Keycloak} Realm requireds an advanced understanding of {Keycloak} and its Node.js and Javascript Adapters.
 
-See the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/realms/create.html[realm] documentation for more information on how to create a new realm within a {Keycloak} instance.
+See the {Keycloak} link:https://github.com/keycloak/keycloak/blob/master/README.md[documentation] on realms for more information on how to create a new realm within a {Keycloak} instance.
 
 The realm must adhere to the following configurations in order to use it with the {PROJECT_NAME} applications:
 
@@ -102,14 +102,14 @@ Valid Redirect URIs: [Ensure that this is configured with the correct URL patter
 Web Origins: *
 ----
 
-** For more information on the configurations above, see the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/clients/client-oidc.html[OpenID Connect configurations] documentation.
+** For more information on the configurations above, see the {Keycloak} OpenID Connect configurations documentation.
 
 * User settings
 ** Ensure that each user has the following attribute fields:
 *** id: Used as an identifier for the user.
 *** avatar: A link to the user's avatar image to be displayed on the user panel (Used in the mobile application). 
 *** name: The name of the user to be displayed on the user panel (Used in the mobile application).
-** For more information on user attributes, see the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/users/attributes.html[user attributes] documentation.
+** For more information on user attributes, see the {Keycloak} user attributes documentation.
 ** Ensure that each user has the appropriate roles. For more information on roles, see xref:{context}-defining-keycloak-access-control[Defining {Keycloak} Access Control].
 
 [id={context}-adding-keycloak-configuration]
@@ -149,7 +149,7 @@ Web Origins: *
 ----
 NOTE: Ensure that the realm, auth-server-url and resource values correspond to your client configuration within your 
 realm. Ensure that the values for the fields *bearer-only*, *ssl-required* and *use-resource-role-mappings* are not changed.
-For more information, see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
+For more information, see the {Keycloak} link:https://github.com/keycloak/keycloak-nodejs-connect/blob/master/README.md[Node.js Adapter documentation].
 
 IMPORTANT: Filling in the realm, auth-server-url and resource fields in the keycloakConfig also enables {Keycloak} in the server application
 
@@ -161,7 +161,7 @@ within the application's link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.
 NOTE: Ensure that the values for the rest of the fields apart from the realm, url and clientId are not changed.
 
 For more information on Javascript Adapter configurations,
-see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/javascript-adapter.html[Javascript Adapter] documentation.
+see the {Keycloak} link:https://github.com/keycloak/keycloak-js-bower/blob/master/README.md[Javascript Adapter] documentation.
 
 [discrete]
 === Keycloak Configuration in the Portal Application
@@ -171,7 +171,7 @@ within the application's link:{WFM-RC-PortalURL}{WFM-RC-Release-Tag}/src/config.
 NOTE: Ensure that the values for the rest of the fields apart from the realm, url and clientId are not changed.
 
 For more information on Javascript Adapter configurations,
-see the {Keycloak} link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/javascript-adapter.html[Javascript Adapter] documentation.
+see the {Keycloak} link:https://github.com/keycloak/keycloak-js-bower/blob/master/README.md[Javascript Adapter] documentation.
 
 [id={context}-enabling-keycloak-on-the-server]
 == Enabling {Keycloak} on the {PROJECT_NAME} Applications
@@ -217,26 +217,18 @@ NOTE: Ensure that Passport.js is disabled by not requiring ./passport.
 See xref:{context}-credentials-for-the-demo-application[Credentials for the Admin Console] section
 to see the credentials used by the Keycloak docker image.
 
-For more information about the admin console, see {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/admin-console.html[admin console] documentation.
-
 [id={context}-keycloak-configuration-production]
 == {Keycloak} Configuration for Production Environments
 The provided {Keycloak} realm is configured for local development only. Ensure that you provide proper configurations
 for production environments.
 
-For more information on {Keycloak} server administration, see the link:{WFM-RC-KeycloakURL}server_admin/index.html[server administration] documentation.
-
 [discrete]
 === Client Configurations
 The existing {Keycloak} realm provides three clients for the server, mobile and portal applications. These three clients
-are using link:{WFM-RC-KeycloakURL}server_admin/topics/sso-protocols/oidc.html[OpenID Connect] authentication protocol.
+are using OpenID Connect authentication protocol.
 Ensure that these clients are configured properly to be secure for production environments.
-
-For more information, see the {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/clients/client-oidc.html[OpenID Connect Client Configurations] documentation.
 
 [discrete]
 === User Configuration
 The existing {Keycloak} realm is configured with sample users. Ensure that you provide proper user and user storage configuration when moving to production environments.
 
-For more information on user management, see {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/users.html[User Management] documentation. 
-For more information on user storage federations, see {Keycloak} link:{WFM-RC-KeycloakURL}server_admin/topics/user-federation.html[User Federation] documentation.

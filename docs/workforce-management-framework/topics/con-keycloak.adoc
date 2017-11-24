@@ -3,9 +3,9 @@
 
 *{Keycloak}* is a complete identity management solution.
 
-The *{PROJECT_NAME}* demo application allows for authentication and access management using link:http://www.keycloak.org/index.html[*{Keycloak}*]
+The *{PROJECT_NAME}* demo application allows for authentication and access management using link:http://www.keycloak.org[*{Keycloak}*]
 however, *{Keycloak}* is not the default authorization and authentication module for *{PROJECT_NAME}*.
 
 The configuration for *{Keycloak}'s* integration is found within the demo application.
 
-NOTE: To configure your own instance of *{Keycloak}*, see the link:{WFM-RC-KeycloakURL}getting_started/topics/first-boot.html[{Keycloak} Getting Started Guide].
+NOTE: To configure your own instance of *{Keycloak}*, see the {Keycloak} documentation Getting Started Guide.

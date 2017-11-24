@@ -46,7 +46,7 @@ const securityMiddleware = initKeycloak(app);
 +
 See the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup] as a reference on how this can be applied.
 
-For more information on how to setup the {Keycloak} Node.js Adapter, see the link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
+For more information on how to setup the {Keycloak} Node.js Adapter, see the link:https://github.com/keycloak/keycloak-nodejs-connect/blob/master/README.md[Node.js Adapter documentation].
 
 
 [id='{context}-protect-express-routes']
@@ -64,4 +64,4 @@ The {PROJECT_NAME} server application includes configurable admin and user roles
 This is used by the server application link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup].
 See the link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/src/modules/index.ts[security setup] as a reference on how routes can be protected.
 
-For more information on protecting express routes, see the link:{WFM-RC-KeycloakURL}securing_apps/topics/oidc/nodejs-adapter.html[Node.js Adapter documentation].
+For more information on protecting express routes, see the link:https://github.com/keycloak/keycloak-nodejs-connect/blob/master/README.md[Node.js Adapter documentation].

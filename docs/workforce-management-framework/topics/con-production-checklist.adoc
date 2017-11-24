@@ -50,7 +50,7 @@ Most important values
 === Cordova configuration
 
 Apache Cordova configuration needs to be adjusted before doing release.
-Configuration can be found in link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.xml[Cordova config.xml file]
+Configuration can be found in link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/config.xml[Cordova config.xml file]
 Developers should review Cordova file by removing permissions and plugins that aren't used.
 Additionally developers should restrict and remove any origins that aren't used in the application
 
