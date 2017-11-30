@@ -8,28 +8,28 @@ The latest list of modules is found at link:https://www.npmjs.com/org/raincatche
 |===
 |Module |Description
 
-|link:../../../api/{WFM-RC-Api-Version}/express-auth/docs/index.html[@raincatcher/express-auth]
+|link:../../../api/{WFM-RC-Api-Version}/express-auth/index.html[@raincatcher/express-auth]
 |The {PROJECT_NAME} Security Interface is used to apply authentication and authorization, used in conjunction with a security provider chosen by you.
 
-|link:../../../api/{WFM-RC-Api-Version}/auth-passport/docs/index.html[@raincatcher/auth-passport]
+|link:../../../api/{WFM-RC-Api-Version}/auth-passport/index.html[@raincatcher/auth-passport]
 |The {PROJECT_NAME} implementation of Passport.js which is the default security module for Mobile and Portal applications.
 
-|link:../../../api/{WFM-RC-Api-Version}/datasync-cloud/docs/index.html[@raincatcher/datasync-cloud]
+|link:../../../api/{WFM-RC-Api-Version}/datasync-cloud/index.html[@raincatcher/datasync-cloud]
 |The {PROJECT_NAME} Cloud implementation of fh-sync used in conjunction with @raincatcher/datasync-client. This is used to sync data between the Cloud and Mobile applications.
 
-|link:../../../api/{WFM-RC-Api-Version}/datasync-client/docs/index.html[@raincatcher/datasync-client]
+|link:../../../api/{WFM-RC-Api-Version}/datasync-client/index.html[@raincatcher/datasync-client]
 |The {PROJECT_NAME} Client implementation of fh-sync used in conjunction with @raincathcer/datasync-cloud. This is used to sync data between the Cloud and Mobile applications.
 
-|link:../../../api/{WFM-RC-Api-Version}/wfm/docs/index.html[@raincatcher/wfm]
+|link:../../../api/{WFM-RC-Api-Version}/wfm/index.html[@raincatcher/wfm]
 |The {PROJECT_NAME} Work Flow Management module which allows developers to map a business process into an organized set of tasks to suit a businesses needs.
 
-|link:../../../api/{WFM-RC-Api-Version}/wfm-rest-api/docs/index.html[@raincatcher/wfm-rest-api]
+|link:../../../api/{WFM-RC-Api-Version}/wfm-rest-api/index.html[@raincatcher/wfm-rest-api]
 |The {PROJECT_NAME} Work Flow Management API module exposes express API endpoints for Work Flow Management Objects.
 
-|link:../../../api/{WFM-RC-Api-Version}/wfm-user/docs/index.html[@raincatcher/wfm-user]
+|link:../../../api/{WFM-RC-Api-Version}/wfm-user/index.html[@raincatcher/wfm-user]
 |The {PROJECT_NAME} Aggregates all user operations for {PROJECT_NAME} modules.
 
-|link:../../../api/{WFM-RC-Api-Version}/wfm-demo-data/docs/index.html[@raincatcher/wfm-demo-data]
+|link:../../../api/{WFM-RC-Api-Version}/wfm-demo-data/index.html[@raincatcher/wfm-demo-data]
 |This is a sample module containing static data definitions and when running, it allows the user to see the {PROJECT_NAME} demo project example.
 
 |===

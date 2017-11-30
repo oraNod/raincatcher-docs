@@ -4,11 +4,12 @@
   "description": "RainCatcher website source code",
   "main": "index.js",
   "scripts": {
-    "buildAsciiDocs": "node ./website/cli.js asciidocs-build",
-    "buildApiDocs": "node ./website/cli.js apidocs-build",
-    "buildall": "npm run buildAsciiDocs && npm run buildApiDocs",
-    "watch": "nodemon -e adoc,xml,png,svg,js,css -w docs/ -w api/ -w resources/ --exec 'npm run buildall && http-server website/'",
-    "publishPage": "node ./website/cli.js publish"
+    "build:docs": "node ./website/cli.js asciidocs-build",
+    "build:api": "node ./website/cli.js apidocs-build",
+    "build:all": "npm run build:docs && npm run build:api",
+    "watch": "nodemon -e adoc,xml,png,svg,js,css -w docs/ -w api/ -w resources/ --exec 'npm run build:all && npm run serve'",
+    "serve": "http-server website/",
+    "publish": "node ./website/cli.js publish"
   },
   "dependencies": {
     "fs-extra": "^4.0.1",

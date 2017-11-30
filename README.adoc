@@ -63,11 +63,13 @@ Setup required packages (Node.js/npm required)
 
 Publishing
 
-    npm run buildAsciiDocs
-    npm run buildApiDocs
+    npm run build:docs
+    npm run build:api
     npm run publish
 
 NOTE: _ascidoctor_ needs to be installed on machine. To install asciidoctor run _gem install asciidoctor_
+
+NOTE: The `build:api` command relies on the generated API documentation from the core repository to be present at `./api/`. In order to supply a custom path, use `npm run build:api -- -f 'path/to/raincatcher-core/docs/api'`
 
 ==== Watching for changes
 

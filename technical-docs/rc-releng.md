@@ -102,8 +102,8 @@ git push --tags
 
 5. Build documentation
 
-  npm run buildAsciiDocs
-  npm run buildApiDocs
+        npm run build:docs
+        npm run build:api
 
 6. Publish to page:
 
@@ -111,4 +111,4 @@ git push --tags
 PLEASE TEST IF WEBSITE AND DOCUMENTATION WORK before release.
 PLEASE DO NOT DO THAT WITHOUT RELEASING APPLICATION
 
-    npm run publishPage
+    npm run publish
