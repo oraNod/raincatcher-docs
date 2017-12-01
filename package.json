@@ -9,9 +9,11 @@
     "build:all": "npm run build:docs && npm run build:api",
     "watch": "nodemon -e adoc,xml,png,svg,js,css -w docs/ -w api/ -w resources/ --exec 'npm run build:all && npm run serve'",
     "serve": "http-server website/",
-    "publish": "node ./website/cli.js publish"
+    "publish": "node ./website/cli.js publish",
+    "validate": "node ./website/cli.js checkLinks"
   },
   "dependencies": {
+    "bs-broken-links-checker": "^0.2.0",
     "fs-extra": "^4.0.1",
     "gh-pages": "^1.0.0",
     "moment": "^2.18.1",

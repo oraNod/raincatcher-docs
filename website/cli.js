@@ -21,6 +21,11 @@ yargs.usage('Usage: $0 <command>')
   }, apiHandler)
   .command('publish', 'Publish website to github pages', function(yargs) {
   }, publishHandler)
+  .command('checkLinks', 'Check for broken links', function(yargs) {
+    yargs
+      .alias('u', 'url')
+      .default('url', 'http://raincatcher.feedhenry.io/docs/')
+  }, checkPublishedWebsite)
   .demandCommand()
   .help()
   .argv;
@@ -47,6 +52,12 @@ function asciidocsHandler(argv) {
       { overwrite: true });
     console.log("Documentation copied to website");
   });
+}
+
+function checkPublishedWebsite(argv){
+  var BrokenLinksChecker = require('bs-broken-links-checker').BrokenLinksChecker,
+  brokenLinksChecker = new BrokenLinksChecker();
+  brokenLinksChecker.start(argv.url);
 }
 
 function publishWebsite() {
