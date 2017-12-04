@@ -1,4 +1,4 @@
-:RepoTemplateVersion: 1.0
+:RepoTemplateVersion: 1.1
 :RepoTemplateCodeName: Raincatcher
 :ProductName: Raincatcher
 

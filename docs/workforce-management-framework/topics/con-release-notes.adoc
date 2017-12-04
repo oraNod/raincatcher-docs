@@ -9,16 +9,15 @@ Both mobile and portal applications are fully customizable.
 
 === Starting the server application
 
-The `npm run start` command now runs the compiled JavaScript code as opposed to utilizing link:https://github.com/TypeStrong/ts-node[TypeScript Node] to run everything from the TypeScript sources.
-
-To run project using typescript source code use
+In previous releases of raincatcher the 'npm run start' command ran the project using the link:https://github.com/TypeStrong/ts-node[TypeScript Node] source code. With this release, that command now runs compiled JavaScript. 
+If you want to run the project using TypeScript source code:
 
 `npm run start:ts`.
 
 === File storage and Camera integration
 
-{PROJECT_NAME} steps can now capture and store photos using underlying file storage server.
-For more information please refer to link:#{context}-con-file-storage[File storage documentation].
+{PROJECT_NAME} steps can now capture and store photos using the underlying file storage server.
+For more information, see the link:#{context}-con-file-storage[File storage documentation].
 
 == 1.0.0 Release
 {PROJECT_NAME} 1.0.0 is a new product that was previously in tech preview. The Features are listed below.
