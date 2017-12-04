@@ -112,3 +112,10 @@ PLEASE TEST IF WEBSITE AND DOCUMENTATION WORK before release.
 PLEASE DO NOT DO THAT WITHOUT RELEASING APPLICATION
 
     npm run publish
+    
+7. Create tag for documentation repository with the version number
+
+```
+git tag v{semver} # recreates the tag pointing to current HEAD which should be master
+git push --tags
+```
