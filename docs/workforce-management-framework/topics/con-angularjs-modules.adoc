@@ -11,7 +11,7 @@ The latest list of modules is found at link:https://www.npmjs.com/org/raincatche
 |The {PROJECT_NAME} client-side authentication module for use with a KeyCloak back-end.
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-auth-passport[@raincatcher/angularjs-auth-passport]
-|The {PROJECT_NAME} client-side authentication module for use with a ExpressJS + link:passport.js[http://passportjs.org/].
+|The {PROJECT_NAME} client-side authentication module for use with a ExpressJS + link:http://passportjs.org/[passport.js].
 
 |link:https://github.com/feedhenry-raincatcher/raincatcher-angularjs/tree/master/packages/angularjs-auth[@raincatcher/angularjs-auth]
 |User Interface module for use with the authentication packages linked above.

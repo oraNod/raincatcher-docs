@@ -11,7 +11,7 @@ Application is created with 2 default profiles:
 - development (link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-dev.js[config-dev.js])
 - production (link:{WFM-RC-ServerURL}{WFM-RC-Release-Tag}/config-prod.js[config-prod.js])
 
-For more information about profiles go to link:{context}-ref-server[Server side reference]
+For more information about profiles go to xref:{context}-ref-server[Server side reference]
 
 When moving to production developers should review their configuration to make sure that a
 
@@ -40,7 +40,7 @@ Mobile configuration should be adjusted before building mobile application.
 Configuration can be found link:{WFM-RC-MobileURL}{WFM-RC-Release-Tag}/src/config.json[config.json file]
 
 Developers can adjust sync options improve overall performance.
-For more information see link:con-performance-guidelines.adoc[Performance Guide]
+For more information see xref:{context}-performance-guidelines[Performance Guide]
 Additionally Keycloak configuration can be changed.
 
 Most important values

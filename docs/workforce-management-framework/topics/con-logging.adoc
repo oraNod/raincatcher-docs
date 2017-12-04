@@ -3,7 +3,7 @@
 *{PROJECT_NAME} Logger* creates logging facade for JavaScript based applications that
 is used by all {PROJECT_NAME} modules. Developers can use custom loggers by wrapping their implementation into the provided logger interface.
 
-For more information about the _logger interface_ structure, see link:../../../api/{WFM-RC-Api-Version}/logger/docs/index.html[logger api documentation]
+For more information about the _logger interface_ structure, see link:../../../api/{WFM-RC-Api-Version}/logger/index.html[logger api documentation]
 
 The *{PROJECT_NAME}* demo application contains two implementations of the _logger interface_ a
 
